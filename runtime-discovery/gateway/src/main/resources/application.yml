@@ -23,6 +23,12 @@ spring:
         uri: lb://registry
         predicates:
         - Path=/eureka/**
+      - id: bikeservice
+        uri: lb://bike
+        predicates:
+        - Path=/bike/**
+        filters:
+        - StripPrefix=1
 
 info:
   app:

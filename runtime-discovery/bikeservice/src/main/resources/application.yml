@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: bike
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        time_zone: UTC
+    
+  datasource:
+    url: jdbc:mysql://www.rickhendriks.com:3306/S5Camping?useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false
+    username: S5Camping
+    password: S5Camping
+
+server:
+  port: 8763
+
+info:
+  app:
+    name: ${spring.application.name}
+
+eureka:
+  client:
+    registerWithEureka: true
+    serviceUrl: 
+      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+    healthcheck:
+      enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - mappings
+          - env
+          - health
+          - info
