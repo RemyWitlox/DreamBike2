@@ -36,3 +36,13 @@ services:
     environment:
       - JAVA_OPTS=
         -DEUREKA_SERVER=http://registry:8761/eureka
+  docking-service:
+    image: dreambike-dockingservice:latest
+    container_name: docking-service
+    expose:
+    - "8764"
+    depends_on:
+    - "registry"
+    environment:
+    - JAVA_OPTS=
+     -DEUREKA_SERVER=http://registry:8761/eureka
