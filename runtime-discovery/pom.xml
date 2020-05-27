@@ -12,6 +12,7 @@
         <module>registry</module>
         <module>gateway</module>
     	<module>bikeservice</module>
-  </modules>
+    	<module>docking</module>
+    </modules>
 
 </project>
