@@ -7,7 +7,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BikeRepository extends JpaRepository<Bike, Long> {
-	Set<Bike> findByBikeName(String bikeName);
+	Set<Bike> findByName(String name);
 
-	Set<Bike> findByBikeType(BikeType bikeType);
+	Set<Bike> findByType(BikeType type);
+
+	Bike findByBikeId(Long bikeId);
 }

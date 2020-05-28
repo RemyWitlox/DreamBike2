@@ -29,6 +29,10 @@ spring:
         - Path=/bike/**
         filters:
         - StripPrefix=1
+      - id: dockingservice
+        uri: lb://docking
+        predicates:
+        - Path=/docking/**
 
 info:
   app:

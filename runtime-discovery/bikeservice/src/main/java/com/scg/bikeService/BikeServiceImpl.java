@@ -17,18 +17,28 @@ public class BikeServiceImpl implements BikeService {
 	}
 
 	@Override
-	public Set<Bike> findByBikeName(String bikeName) {
-		return bikeRepository.findByBikeName(bikeName);
+	public Set<Bike> findByName(String name) {
+		return bikeRepository.findByName(name);
 	}
 
 	@Override
-	public Set<Bike> findByBikeType(BikeType bikeType) {
-		return bikeRepository.findByBikeType(bikeType);
+	public Set<Bike> findByType(BikeType type) {
+		return bikeRepository.findByType(type);
 	}
 
 	@Override
 	public List<Bike> findAll() {
 		return bikeRepository.findAll();
+	}
+
+	@Override
+	public Bike findByBikeId(Long bikeId) {
+		return bikeRepository.findByBikeId(bikeId);
+	}
+
+	@Override
+	public Bike save(Bike bike) {
+		return bikeRepository.save(bike);
 	}
 
 }

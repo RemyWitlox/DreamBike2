@@ -4,9 +4,13 @@ import java.util.List;
 import java.util.Set;
 
 public interface BikeService {
-	Set<Bike> findByBikeName(String bikeName);
+	Set<Bike> findByName(String name);
 
-	Set<Bike> findByBikeType(BikeType bikeType);
+	Set<Bike> findByType(BikeType type);
 
 	List<Bike> findAll();
+
+	Bike findByBikeId(Long bikeId);
+
+	Bike save(Bike bike);
 }

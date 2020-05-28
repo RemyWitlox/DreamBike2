@@ -3,12 +3,16 @@ package com.scg.docking;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("*")
 public class DockingStationRestController {
 	private final DockingService dockingService;
 
@@ -93,6 +97,42 @@ public class DockingStationRestController {
 		dockingStation.setLat(51.482542);
 		dockingStation.setLng(5.481652);
 		dockingService.save(dockingStation);
+	}
+
+	@PostMapping("newDocking")
+	public boolean newDocking(@RequestBody DockingDTO dockingDTO) {
+		DockingStation dockingStation = new DockingStation();
+		dockingStation.setActive(dockingDTO.getActive());
+		dockingStation.setBikes(dockingDTO.getBikes());
+		dockingStation.setCapacity(dockingDTO.getCapacity());
+		dockingStation.setCity(dockingDTO.getCity());
+		dockingStation.setLat(dockingDTO.getLat());
+		dockingStation.setLng(dockingDTO.getLng());
+		dockingStation.setName(dockingDTO.getName());
+		dockingService.save(dockingStation);
+		return true;
+	}
+
+	@PutMapping("updateDocking")
+	public boolean updateDocking(@RequestBody DockingStation dockingStation) {
+		DockingStation updDocking = dockingService.getOne(dockingStation.getDockingId());
+		updDocking.setActive(dockingStation.getActive());
+		updDocking.setBikes(dockingStation.getBikes());
+		updDocking.setCapacity(dockingStation.getCapacity());
+		updDocking.setCity(dockingStation.getCity());
+		updDocking.setLat(dockingStation.getLat());
+		updDocking.setLng(dockingStation.getLng());
+		updDocking.setName(dockingStation.getName());
+		dockingService.save(updDocking);
+		return true;
+	}
+
+	@DeleteMapping("deleteDocking")
+	public boolean deleteDocking(@RequestBody Long dockingId) {
+		DockingStation docking = dockingService.getOne(dockingId);
+		docking.setDeleted(true);
+		dockingService.save(docking);
+		return true;
 	}
 
 }
