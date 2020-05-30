@@ -25,7 +25,7 @@ eureka:
   client:
     registerWithEureka: true
     serviceUrl: 
-      defaultZone: ${EUREKA_SERVER:http://127.0.0.1:8761/eureka}
+      defaultZone: http://127.0.0.1:8761/eureka
     healthcheck:
       enabled: true
 
