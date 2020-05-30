@@ -23,13 +23,13 @@ spring:
         uri: lb://registry
         predicates:
         - Path=/eureka/**
-      - id: bikeservice
+      - id: bike
         uri: lb://bike
         predicates:
         - Path=/bike/**
         filters:
         - StripPrefix=1
-      - id: dockingservice
+      - id: docking
         uri: lb://docking
         predicates:
         - Path=/docking/**
@@ -42,7 +42,7 @@ eureka:
   client:
     registerWithEureka: true
     serviceUrl: 
-      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+      defaultZone: ${EUREKA_SERVER:http://127.0.0.1:8761/eureka}
     healthcheck:
       enabled: true
 

@@ -1,34 +1,35 @@
 version: '3'
 services:
   registry:
-    image: dreambike-registry:latest
+    image: dreambike/registry:latest
     container_name: registry
     expose: 
       - "8761"
-  greeting-service:
-    image: dreambike-service:latest
-    container_name: greeting-service
-    expose: 
-      - "8762"
-    depends_on: 
-      - "registry"
-    environment:
-      - JAVA_OPTS=
-        -DEUREKA_SERVER=http://registry:8761/eureka
+#  greeting-service:
+#    image: dreambike-service:latest
+#    container_name: greeting-service
+#    expose: 
+#      - "8762"
+#    depends_on: 
+#      - "registry"
+#    environment:
+#      - JAVA_OPTS=
+#        -DEUREKA_SERVER=http://registry:8761/eureka
   gateway:
-    image: dreambike-gateway:latest
+    image: dreambike/gateway:latest
     container_name: gateway
     ports:
       - "127.0.0.1:8080:8760"
     depends_on: 
       - registry
-      - greeting-service
+      - bike
+      - docking
     environment:
       - JAVA_OPTS=
         -DEUREKA_SERVER=http://registry:8761/eureka
-  bike-service:
-    image: dreambike-bikeservice:latest
-    container_name: bike-service
+  bike:
+    image: dreambike/bike:latest
+    container_name: bike
     expose:
       - "8763"
     depends_on:
@@ -36,13 +37,13 @@ services:
     environment:
       - JAVA_OPTS=
         -DEUREKA_SERVER=http://registry:8761/eureka
-  docking-service:
-    image: dreambike-dockingservice:latest
-    container_name: docking-service
+  docking:
+    image: dreambike/docking:latest
+    container_name: docking
     expose:
-    - "8764"
+      - "8764"
     depends_on:
-    - "registry"
+      - "registry"
     environment:
-    - JAVA_OPTS=
-     -DEUREKA_SERVER=http://registry:8761/eureka
+      - JAVA_OPTS=
+        -DEUREKA_SERVER=http://registry:8761/eureka
