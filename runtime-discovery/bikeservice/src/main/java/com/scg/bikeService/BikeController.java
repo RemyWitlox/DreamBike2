@@ -56,7 +56,7 @@ public class BikeController {
 	public boolean updateBike(@RequestBody Bike updatedBike) {
 		Bike bike = bikeService.findByBikeId(updatedBike.getBikeId());
 		bike.setDriver(updatedBike.getDriver());
-		bike.setActive(updatedBike.getActive());
+		bike.setBroken(updatedBike.getBroken());
 		bike.setName(updatedBike.getName());
 		bike.setSize(updatedBike.getSize());
 		bike.setType(updatedBike.getType());

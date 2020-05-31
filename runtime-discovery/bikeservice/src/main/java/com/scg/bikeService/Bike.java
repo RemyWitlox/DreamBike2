@@ -20,7 +20,7 @@ public class Bike {
 	private int size;
 	private LocalDate created;
 	private Boolean deleted = false;
-	private Boolean active = false;
+	private Boolean broken = false;
 
 	public Bike() {
 
@@ -82,12 +82,12 @@ public class Bike {
 		this.deleted = deleted;
 	}
 
-	public Boolean getActive() {
-		return active;
+	public Boolean getBroken() {
+		return broken;
 	}
 
-	public void setActive(Boolean active) {
-		this.active = active;
+	public void setBroken(Boolean broken) {
+		this.broken = broken;
 	}
 
 }

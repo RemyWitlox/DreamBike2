@@ -103,7 +103,6 @@ public class DockingStationRestController {
 		dockingStation.setActive(dockingDTO.getActive());
 		dockingStation.setBikes(dockingDTO.getBikes());
 		dockingStation.setCapacity(dockingDTO.getCapacity());
-		dockingStation.setCity(dockingDTO.getCity());
 		dockingStation.setLat(dockingDTO.getLat());
 		dockingStation.setLng(dockingDTO.getLng());
 		dockingStation.setName(dockingDTO.getName());
@@ -117,7 +116,6 @@ public class DockingStationRestController {
 		updDocking.setActive(dockingStation.getActive());
 		updDocking.setBikes(dockingStation.getBikes());
 		updDocking.setCapacity(dockingStation.getCapacity());
-		updDocking.setCity(dockingStation.getCity());
 		updDocking.setLat(dockingStation.getLat());
 		updDocking.setLng(dockingStation.getLng());
 		updDocking.setName(dockingStation.getName());
