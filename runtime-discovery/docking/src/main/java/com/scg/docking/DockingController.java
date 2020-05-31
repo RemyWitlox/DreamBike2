@@ -13,13 +13,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin("*")
-public class DockingStationRestController {
+public class DockingController {
 
 	private final DockingService dockingService;
 
 	@Autowired
-	public DockingStationRestController(DockingService dockingService) {
+	public DockingController(DockingService dockingService) {
 		this.dockingService = dockingService;
+	}
+
+	@GetMapping("/")
+	public String home() {
+		return "hello world";
 	}
 
 	@GetMapping("test")
