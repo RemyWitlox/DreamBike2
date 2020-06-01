@@ -3,8 +3,6 @@ services:
   registry:
     image: dreambike/registry:latest
     container_name: registry
-    ports:
-      - "127.0.0.1:8761:8761"
     expose: 
       - "8761"
 #  greeting-service:
@@ -21,7 +19,7 @@ services:
     image: dreambike/gateway:latest
     container_name: gateway
     ports:
-      - "127.0.0.1:8080:8760"
+      - "127.0.0.1:8181:8760"
     depends_on: 
       - registry
       - bike
