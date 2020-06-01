@@ -94,9 +94,5 @@ public class DockingStation {
 	public void setBikes(int bikes) {
 		this.bikes = bikes;
 	}
-	
-	
-	
-	
 
 }
