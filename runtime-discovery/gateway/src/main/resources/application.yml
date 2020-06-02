@@ -35,6 +35,15 @@ spring:
         - Path=/keycloak/**
         filters:
         - StripPrefix=1
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+            - GET
+            - POST
+            - PUT
+            - DELETE
 
 info:
   app:
