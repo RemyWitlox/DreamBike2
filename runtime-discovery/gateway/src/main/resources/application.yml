@@ -35,6 +35,10 @@ spring:
         - Path=/keycloak/**
         filters:
         - StripPrefix=1
+      - id: bikedocking
+        uri: lb://bikedocking
+        predicates:
+        - StripPrefix=1
       globalcors:
         corsConfigurations:
           '[/**]':

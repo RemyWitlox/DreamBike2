@@ -29,6 +29,7 @@ services:
       - registry
       - bike
       - docking
+      - bikedocking
   bike:
     image: dreambike/bike:latest
     container_name: bike
@@ -41,6 +42,13 @@ services:
     container_name: docking
     expose:
       - "8764"
+    depends_on:
+      - "registry"
+  bikedocking:
+    image: dreambike:bikedocking:latest
+    container_name: bikedocking
+    expose:
+      - "8765"
     depends_on:
       - "registry"
 #  mysql:
