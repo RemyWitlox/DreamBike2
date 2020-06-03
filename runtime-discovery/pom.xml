@@ -13,6 +13,7 @@
         <module>gateway</module>
     	<module>bikeservice</module>
     	<module>docking</module>
-    </modules>
+    <module>bikeDocking</module>
+  </modules>
 
 </project>
