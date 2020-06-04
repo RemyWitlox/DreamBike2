@@ -1,7 +1,7 @@
 package com.scg.bikeService;
 
 public enum BikeType {
-	BICYCLE("BICYCLE"), EBIKE("EBIKE"), SCOOTER("SCOOTER");
+	ROAD("ROAD"), ELECTRIC("ELECTRIC"), MOUNTAIN("MOUNTAIN");
 
 	private String code;
 
