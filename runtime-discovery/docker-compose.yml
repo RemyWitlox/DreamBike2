@@ -45,7 +45,7 @@ services:
     depends_on:
       - "registry"
   bikedocking:
-    image: dreambike:bikedocking:latest
+    image: dreambike/bikedocking:latest
     container_name: bikedocking
     expose:
       - "8765"

@@ -5,9 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotBlank;
-
-import org.hibernate.annotations.NaturalId;
 
 @Entity(name = "DOCKINGSTATION")
 public class DockingStation {
@@ -15,9 +12,9 @@ public class DockingStation {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long dockingId;
 
-	@NaturalId
+//	@NaturalId
 	@Column(name = "NAME", unique = true)
-	@NotBlank(message = "DockingStationName cant be empty")
+//	@NotBlank(message = "DockingStationName cant be empty")
 	private String name;
 
 	private Double lng;

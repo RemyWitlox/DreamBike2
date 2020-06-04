@@ -107,8 +107,9 @@ public class DockingController {
 
 	@PostMapping("newDocking")
 	public boolean newDocking(@RequestBody DockingDTO dockingDTO) {
+
 		DockingStation dockingStation = new DockingStation();
-		dockingStation.setActive(dockingDTO.getActive());
+		dockingStation.setActive(false);
 		dockingStation.setBikes(dockingDTO.getBikes());
 		dockingStation.setCapacity(dockingDTO.getCapacity());
 		dockingStation.setLat(dockingDTO.getLat());
