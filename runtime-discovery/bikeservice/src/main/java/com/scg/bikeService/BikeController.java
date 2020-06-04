@@ -70,4 +70,42 @@ public class BikeController {
 		return true;
 	}
 
+	@GetMapping("fillDB")
+	public void fillDB() {
+		Bike bike = new Bike();
+		bike.setName("Polygon Heist 2.0");
+		bike.setCreated(LocalDate.now());
+		bike.setDriver(BikeDriver.FEMALE);
+		bike.setType(BikeType.ELECTRIC);
+		bike.setSize(24);
+		bikeService.save(bike);
+		bike = new Bike();
+		bike.setName("2020 Path E5 Shimano E5000");
+		bike.setCreated(LocalDate.now());
+		bike.setDriver(BikeDriver.FEMALE);
+		bike.setType(BikeType.ELECTRIC);
+		bike.setSize(22);
+		bikeService.save(bike);
+		bike = new Bike();
+		bike.setName("Polygon Sierra AX");
+		bike.setCreated(LocalDate.now());
+		bike.setDriver(BikeDriver.MALE);
+		bike.setType(BikeType.ROAD);
+		bike.setSize(26);
+		bikeService.save(bike);
+		bike = new Bike();
+		bike.setName("2020 Path E5 Shimano E5000");
+		bike.setCreated(LocalDate.now());
+		bike.setDriver(BikeDriver.MALE);
+		bike.setType(BikeType.ELECTRIC);
+		bike.setSize(26);
+		bikeService.save(bike);
+		bike = new Bike();
+		bike.setCreated(LocalDate.now());
+		bike.setDriver(BikeDriver.CHILD);
+		bike.setType(BikeType.MOUNTAIN);
+		bike.setSize(14);
+		bikeService.save(bike);
+	}
+
 }

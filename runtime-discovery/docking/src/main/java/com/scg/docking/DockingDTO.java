@@ -6,7 +6,6 @@ public class DockingDTO {
 	private Double lat;
 	private int capacity;
 	private int bikes;
-	private Boolean active;
 
 	public DockingDTO() {
 
@@ -50,14 +49,6 @@ public class DockingDTO {
 
 	public void setBikes(int bikes) {
 		this.bikes = bikes;
-	}
-
-	public Boolean getActive() {
-		return active;
-	}
-
-	public void setActive(Boolean active) {
-		this.active = active;
 	}
 
 }
