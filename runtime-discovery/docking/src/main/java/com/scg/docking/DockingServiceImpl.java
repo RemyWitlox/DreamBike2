@@ -1,6 +1,7 @@
 package com.scg.docking;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,11 @@ public class DockingServiceImpl implements DockingService {
 	@Override
 	public DockingStation getOne(long id) {
 		return dockingRepository.findById(id).get();
+	}
+
+	@Override
+	public Set<DockingStation> getNotDeleted() {
+		return dockingRepository.FindByDeletedFalse();
 	}
 
 }

@@ -1,6 +1,7 @@
 package com.scg.docking;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -34,6 +35,11 @@ public class DockingController {
 	@GetMapping("getAll")
 	public List<DockingStation> getAllDockingStations() {
 		return this.dockingService.getAll();
+	}
+
+	@GetMapping("getNotDeleted")
+	public Set<DockingStation> getNotDeleted() {
+		return this.dockingService.getNotDeleted();
 	}
 
 	@GetMapping("getOne")
@@ -119,7 +125,7 @@ public class DockingController {
 	}
 
 	@PutMapping("updateDocking")
-	public boolean updateDocking(@RequestBody DockingStation dockingStation) {
+	public boolean updateDocking(@RequestBody DockingWithoutDeleteDTO dockingStation) {
 		DockingStation updDocking = dockingService.getOne(dockingStation.getDockingId());
 		updDocking.setActive(dockingStation.getActive());
 		updDocking.setBikes(dockingStation.getBikes());

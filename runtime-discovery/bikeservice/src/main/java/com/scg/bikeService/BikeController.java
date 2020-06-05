@@ -40,7 +40,7 @@ public class BikeController {
 	@PostMapping("newBike")
 	public boolean newBike(@RequestBody BikeDTO bikeDTO) {
 		Bike bike = new Bike();
-		bike.setCreated(LocalDate.now());
+		bike.setCreated(bikeDTO.getCreated());
 		bike.setDriver(bikeDTO.getDriver());
 		bike.setName(bikeDTO.getName());
 		bike.setSize(bikeDTO.getSize());
@@ -51,23 +51,32 @@ public class BikeController {
 	}
 
 	@PutMapping("updateBike")
-	public boolean updateBike(@RequestBody Bike updatedBike) {
-		Bike bike = bikeService.findByBikeId(updatedBike.getBikeId());
-		bike.setDriver(updatedBike.getDriver());
-		bike.setBroken(updatedBike.getBroken());
-		bike.setName(updatedBike.getName());
-		bike.setSize(updatedBike.getSize());
-		bike.setType(updatedBike.getType());
-		bikeService.save(bike);
-		return true;
+	public boolean updateBike(@RequestBody BikeWithoutDeletedDTO updatedBike) {
+		if (bikeService.findByBikeId(updatedBike.getBikeId()) == null) {
+			return false;
+		} else {
+			Bike bike = bikeService.findByBikeId(updatedBike.getBikeId());
+			bike.setDriver(updatedBike.getDriver());
+			bike.setBroken(updatedBike.getBroken());
+			bike.setName(updatedBike.getName());
+			bike.setSize(updatedBike.getSize());
+			bike.setType(updatedBike.getType());
+			bike.setCreated(updatedBike.getCreated());
+			bikeService.save(bike);
+			return true;
+		}
 	}
 
 	@DeleteMapping("deleteBike")
 	public boolean deleteBike(@RequestBody Long bikeId) {
-		Bike bike = bikeService.findByBikeId(bikeId);
-		bike.setDeleted(true);
-		bikeService.save(bike);
-		return true;
+		if (bikeService.findByBikeId(bikeId) == null) {
+			return false;
+		} else {
+			Bike bike = bikeService.findByBikeId(bikeId);
+			bike.setDeleted(true);
+			bikeService.save(bike);
+			return true;
+		}
 	}
 
 	@GetMapping("fillDB")
@@ -101,6 +110,7 @@ public class BikeController {
 		bike.setSize(26);
 		bikeService.save(bike);
 		bike = new Bike();
+		bike.setName("Kids Mountain Bike");
 		bike.setCreated(LocalDate.now());
 		bike.setDriver(BikeDriver.CHILD);
 		bike.setType(BikeType.MOUNTAIN);

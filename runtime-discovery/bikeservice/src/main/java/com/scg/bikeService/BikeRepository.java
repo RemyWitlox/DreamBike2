@@ -11,5 +11,9 @@ public interface BikeRepository extends JpaRepository<Bike, Long> {
 
 	Set<Bike> findByType(BikeType type);
 
+	Set<Bike> findByDriver(BikeDriver driver);
+
 	Bike findByBikeId(Long bikeId);
+
+	Set<Bike> findByDeletedFalse();
 }

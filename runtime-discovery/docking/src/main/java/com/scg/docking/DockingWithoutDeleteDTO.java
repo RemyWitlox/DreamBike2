@@ -1,31 +1,16 @@
 package com.scg.docking;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Entity(name = "DOCKINGSTATION")
-public class DockingStation {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class DockingWithoutDeleteDTO {
 	private long dockingId;
-
-//	@NaturalId
-	@Column(name = "NAME", unique = true)
-//	@NotBlank(message = "DockingStationName cant be empty")
 	private String name;
-
 	private Double lng;
 	private Double lat;
 	private int capacity;
 	private Boolean active;
 	private int bikes;
-	private Boolean deleted = false;
 	private String city;
 
-	public DockingStation() {
+	public DockingWithoutDeleteDTO() {
 
 	}
 
@@ -83,14 +68,6 @@ public class DockingStation {
 
 	public void setBikes(int bikes) {
 		this.bikes = bikes;
-	}
-
-	public Boolean getDeleted() {
-		return deleted;
-	}
-
-	public void setDeleted(Boolean deleted) {
-		this.deleted = deleted;
 	}
 
 	public String getCity() {

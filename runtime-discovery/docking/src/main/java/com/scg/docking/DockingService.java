@@ -1,6 +1,7 @@
 package com.scg.docking;
 
 import java.util.List;
+import java.util.Set;
 
 public interface DockingService {
 
@@ -9,4 +10,6 @@ public interface DockingService {
 	List<DockingStation> getAll();
 
 	DockingStation getOne(long id);
+
+	Set<DockingStation> getNotDeleted();
 }
