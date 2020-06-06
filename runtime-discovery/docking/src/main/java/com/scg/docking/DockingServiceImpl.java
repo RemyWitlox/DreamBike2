@@ -30,9 +30,9 @@ public class DockingServiceImpl implements DockingService {
 		return dockingRepository.findById(id).get();
 	}
 
-	@Override
-	public List<DockingStation> getNotDeleted() {
-		return dockingRepository.FindByDeletedFalse();
-	}
+//	@Override
+//	public List<DockingStation> getNotDeleted() {
+//		return dockingRepository.FindByDeletedFalse();
+//	}
 
 }

@@ -1,5 +1,6 @@
 package com.scg.docking;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,13 +34,20 @@ public class DockingController {
 
 	@GetMapping("getAll")
 	public List<DockingStation> getAllDockingStations() {
-		return this.dockingService.getAll();
+		List<DockingStation> dockingStations = this.dockingService.getAll();
+		List<DockingStation> notDeleted = new ArrayList<DockingStation>();
+		for (DockingStation ds : dockingStations) {
+			if (ds.getDeleted() == true) {
+				notDeleted.add(ds);
+			}
+		}
+		return notDeleted;
 	}
 
-	@GetMapping("getNotDeleted")
-	public List<DockingStation> getNotDeleted() {
-		return this.dockingService.getNotDeleted();
-	}
+//	@GetMapping("getNotDeleted")
+//	public List<DockingStation> getNotDeleted() {
+//		return this.dockingService.getNotDeleted();
+//	}
 
 	@GetMapping("getOne")
 	public DockingStation getOneDockingStation() {
