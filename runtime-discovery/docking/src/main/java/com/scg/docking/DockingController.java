@@ -36,6 +36,11 @@ public class DockingController {
 		return this.dockingService.getAll();
 	}
 
+//	@GetMapping("getNotDeleted")
+//	public List<DockingStation> getNotDeleted() {
+//		return this.dockingService.getNotDeleted();
+//	}
+
 	@GetMapping("getOne")
 	public DockingStation getOneDockingStation() {
 		long id = 1;
@@ -119,7 +124,7 @@ public class DockingController {
 	}
 
 	@PutMapping("updateDocking")
-	public boolean updateDocking(@RequestBody DockingStation dockingStation) {
+	public boolean updateDocking(@RequestBody DockingWithoutDeleteDTO dockingStation) {
 		DockingStation updDocking = dockingService.getOne(dockingStation.getDockingId());
 		updDocking.setActive(false);
 		updDocking.setBikes(dockingStation.getBikes());
