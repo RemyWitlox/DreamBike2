@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -67,8 +68,8 @@ public class BikeController {
 		}
 	}
 
-	@DeleteMapping("deleteBike")
-	public boolean deleteBike(@RequestBody Long bikeId) {
+	@DeleteMapping("deleteBike/{bikeId}")
+	public boolean deleteBike(@RequestParam Long bikeId) {
 		if (bikeService.findByBikeId(bikeId) == null) {
 			return false;
 		} else {
