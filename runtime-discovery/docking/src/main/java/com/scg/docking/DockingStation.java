@@ -23,7 +23,6 @@ public class DockingStation {
 	private Boolean active;
 	private int bikes;
 	private Boolean deleted = false;
-	private String city;
 
 	public DockingStation() {
 
@@ -92,13 +91,4 @@ public class DockingStation {
 	public void setDeleted(Boolean deleted) {
 		this.deleted = deleted;
 	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
 }

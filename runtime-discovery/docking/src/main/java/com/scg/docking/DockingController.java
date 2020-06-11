@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -136,8 +137,8 @@ public class DockingController {
 		return true;
 	}
 
-	@DeleteMapping("deleteDocking")
-	public boolean deleteDocking(@RequestBody Long dockingId) {
+	@DeleteMapping("deleteDocking/{dockingId}")
+	public boolean deleteDocking(@RequestParam Long dockingId) {
 		DockingStation docking = dockingService.getOne(dockingId);
 		docking.setDeleted(true);
 		dockingService.save(docking);

@@ -8,7 +8,6 @@ public class DockingWithoutDeleteDTO {
 	private int capacity;
 	private Boolean active;
 	private int bikes;
-	private String city;
 
 	public DockingWithoutDeleteDTO() {
 
@@ -68,14 +67,6 @@ public class DockingWithoutDeleteDTO {
 
 	public void setBikes(int bikes) {
 		this.bikes = bikes;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
 	}
 
 }
