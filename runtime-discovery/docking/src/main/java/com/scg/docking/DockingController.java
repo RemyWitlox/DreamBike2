@@ -127,7 +127,7 @@ public class DockingController {
 	@PutMapping("updateDocking")
 	public boolean updateDocking(@RequestBody DockingWithoutDeleteDTO dockingStation) {
 		DockingStation updDocking = dockingService.getOne(dockingStation.getDockingId());
-		updDocking.setActive(false);
+		updDocking.setActive(dockingStation.getActive());
 		updDocking.setBikes(dockingStation.getBikes());
 		updDocking.setCapacity(dockingStation.getCapacity());
 		updDocking.setLat(dockingStation.getLat());
