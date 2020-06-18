@@ -35,10 +35,10 @@ spring:
         - Path=/keycloak/**
         filters:
         - StripPrefix=1
-      - id: dockingbike
-        uri: lb://dockingbike
+      - id: bikedocking
+        uri: lb://bikedocking
         predicates:
-        - Path=/dockingbike/**
+        - Path=/bikedocking/**
         filters:
         - StripPrefix=1
       globalcors:
