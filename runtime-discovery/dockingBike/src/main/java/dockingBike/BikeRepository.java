@@ -1,10 +1,14 @@
 package dockingBike;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Set;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
 public interface BikeRepository extends JpaRepository<Bike, Long> {
 
-	Bike findByDocking(Docking docking);
+	Set<Bike> findByDocking(Docking docking);
 
 	Bike findByBikeId(Long bikeId);
 }

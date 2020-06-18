@@ -16,7 +16,7 @@ public class DockingRepositoryIntegrationTest {
 	private DockingRepository dockingRepository;
 
 	@Test
-	public void whenFindById_thenReturnDocking() {
+	public void whenFindByName_thenReturnDocking() {
 		// given
 		if (dockingRepository.findByName("test1") != null) {
 			dockingRepository.delete(dockingRepository.findByName("test1"));
