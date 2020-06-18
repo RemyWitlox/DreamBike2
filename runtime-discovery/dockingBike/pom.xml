@@ -9,7 +9,7 @@
   <groupId>com.scg</groupId>
   <artifactId>dockingBike</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>dockingBike</name>
+  <name>bikedocking</name>
   <description>dockingBike microservice for DreamBike</description>
   
   	<properties>

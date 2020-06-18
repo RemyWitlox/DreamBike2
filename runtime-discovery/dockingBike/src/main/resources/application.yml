@@ -1,6 +1,6 @@
 spring:
   application:
-    name: dockingBike
+    name: bikedocking
   jpa:
     hibernate:
       ddl-auto: update
