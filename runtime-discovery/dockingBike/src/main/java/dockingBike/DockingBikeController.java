@@ -46,16 +46,16 @@ public class DockingBikeController {
 	}
 
 	@PostMapping("addBikeToDocking")
-	public boolean addBikeToDocking(@RequestBody int bikeId, @RequestBody int dockingId) {
-		if (bikeService.getByBikeId(bikeId) == null) {
+	public boolean addBikeToDocking(@RequestBody DockingBikeDTO dockingBikeDTO) {
+		if (bikeService.getByBikeId(dockingBikeDTO.getBikeId()) == null) {
 			Bike bike = new Bike();
-			bike.setBikeId(bikeId);
+			bike.setBikeId(dockingBikeDTO.getBikeId());
 			bikeService.save(bike);
-			if (dockingService.getByDockingId(dockingId) == null) {
+			if (dockingService.getByDockingId(dockingBikeDTO.getDockingId()) == null) {
 				// docking bestaat niet!
 				return false;
 			} else {
-				Docking docking = dockingService.getByDockingId(dockingId);
+				Docking docking = dockingService.getByDockingId(dockingBikeDTO.getDockingId());
 				if (docking.getAvailable() > 0) {
 					docking.addBike(bike);
 					dockingService.save(docking);
@@ -66,13 +66,13 @@ public class DockingBikeController {
 			}
 
 		} else {
-			Bike bike = bikeService.getByBikeId(bikeId);
+			Bike bike = bikeService.getByBikeId(dockingBikeDTO.getBikeId());
 			Docking dockingOud = dockingService.getByDockingId(bike.getDocking().getDockingId());
-			if (dockingService.getByDockingId(dockingId) == null) {
+			if (dockingService.getByDockingId(dockingBikeDTO.getDockingId()) == null) {
 				// docking bestaat niet!
 				return false;
 			} else {
-				Docking dockingNieuw = dockingService.getByDockingId(dockingId);
+				Docking dockingNieuw = dockingService.getByDockingId(dockingBikeDTO.getDockingId());
 				if (dockingNieuw.getAvailable() > 0) {
 					dockingOud.removeBike(bike);
 					dockingNieuw.addBike(bike);
