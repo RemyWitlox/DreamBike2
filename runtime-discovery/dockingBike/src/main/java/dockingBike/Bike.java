@@ -1,7 +1,6 @@
 package dockingBike;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -13,8 +12,8 @@ public class Bike {
 	@Id
 	private int bikeId;
 
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "docking_id")
+	@ManyToOne
+	@JoinColumn(name = "dockingId")
 	private Docking docking;
 
 	public Bike() {

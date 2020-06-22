@@ -4,14 +4,18 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EntityExistsException;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.PostLoad;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "BD_DOCKING")
@@ -19,7 +23,9 @@ public class Docking {
 	@Id
 	private int dockingId;
 
-	@OneToMany(mappedBy = "docking", fetch = FetchType.EAGER)
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JsonManagedReference(value = "bikes")
+	@JoinColumn(name = "dockingId")
 	private Set<Bike> bikes;
 
 	private int capacity;
