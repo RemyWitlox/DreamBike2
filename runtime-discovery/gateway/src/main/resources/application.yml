@@ -29,6 +29,7 @@ spring:
         - Path=/docking/**
         filters:
         - StripPrefix=1
+        - TokenRelay=
       - id: keycloak
         uri: http://85.146.20.136:8080
         predicates:
