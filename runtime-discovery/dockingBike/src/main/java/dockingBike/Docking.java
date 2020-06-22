@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.EntityExistsException;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.PostLoad;
 import javax.persistence.Table;
@@ -20,8 +19,7 @@ public class Docking {
 	@Id
 	private int dockingId;
 
-	@OneToMany(fetch = FetchType.EAGER)
-	@JoinColumn(name = "bikeId")
+	@OneToMany(mappedBy = "docking", fetch = FetchType.EAGER)
 	private Set<Bike> bikes;
 
 	private int capacity;
@@ -67,8 +65,8 @@ public class Docking {
 	}
 
 	public void addBike(Bike bike) {
-		if (bikes == null) {
-			bikes = new Set<Bike>() {
+		if (this.bikes == null) {
+			this.bikes = new Set<Bike>() {
 
 				@Override
 				public int size() {

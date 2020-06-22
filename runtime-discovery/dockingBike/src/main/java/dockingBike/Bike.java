@@ -14,7 +14,7 @@ public class Bike {
 	private int bikeId;
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "dockingId")
+	@JoinColumn(name = "docking_id")
 	private Docking docking;
 
 	public Bike() {

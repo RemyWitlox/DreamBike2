@@ -33,11 +33,11 @@ public class DockingBikeController {
 	}
 
 	@PostMapping("addDocking")
-	public boolean createDocking(@RequestBody int capacity, @RequestBody int dockingId) {
-		if (dockingService.getByDockingId(dockingId) == null) {
+	public boolean createDocking(@RequestBody DockingDTO dockingDTO) {
+		if (dockingService.getByDockingId(dockingDTO.getDockingId()) == null) {
 			Docking docking = new Docking();
-			docking.setCapacity(capacity);
-			docking.setDockingId(dockingId);
+			docking.setCapacity(dockingDTO.getCapacity());
+			docking.setDockingId(dockingDTO.getDockingId());
 			this.dockingService.save(docking);
 			return true;
 		} else {
