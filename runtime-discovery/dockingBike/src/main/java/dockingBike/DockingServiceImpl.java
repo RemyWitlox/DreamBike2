@@ -14,7 +14,7 @@ public class DockingServiceImpl implements DockingService {
 	}
 
 	@Override
-	public Docking getByDockingId(Long dockingId) {
+	public Docking getByDockingId(int dockingId) {
 		return dockingRepository.findByDockingId(dockingId);
 	}
 

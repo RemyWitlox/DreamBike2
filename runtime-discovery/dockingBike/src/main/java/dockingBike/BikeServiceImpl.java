@@ -18,7 +18,7 @@ public class BikeServiceImpl implements BikeService {
 	}
 
 	@Override
-	public Long getDockingId(Long bikeId) {
+	public int getDockingId(int bikeId) {
 		return bikeRepository.getOne(bikeId).getDocking().getDockingId();
 	}
 
@@ -30,7 +30,7 @@ public class BikeServiceImpl implements BikeService {
 	}
 
 	@Override
-	public Bike getByBikeId(Long bikeId) {
+	public Bike getByBikeId(int bikeId) {
 		return bikeRepository.findByBikeId(bikeId);
 	}
 

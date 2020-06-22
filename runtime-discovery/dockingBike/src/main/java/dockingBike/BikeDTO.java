@@ -1,18 +1,17 @@
 package dockingBike;
 
-
 public class BikeDTO {
-	private Long bikeId;
+	private int bikeId;
 
 	public BikeDTO() {
 
 	}
 
-	public Long getBikeId() {
+	public int getBikeId() {
 		return bikeId;
 	}
 
-	public void setBikeId(Long bikeId) {
+	public void setBikeId(int bikeId) {
 		this.bikeId = bikeId;
 	}
 

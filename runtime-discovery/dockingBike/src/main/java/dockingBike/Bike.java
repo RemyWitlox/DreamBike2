@@ -1,6 +1,5 @@
 package dockingBike;
 
-
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -12,7 +11,7 @@ import javax.persistence.Table;
 @Table(name = "BD_Bike")
 public class Bike {
 	@Id
-	private Long bikeId;
+	private int bikeId;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "dockingId")
@@ -22,11 +21,11 @@ public class Bike {
 
 	}
 
-	public Long getBikeId() {
+	public int getBikeId() {
 		return bikeId;
 	}
 
-	public void setBikeId(Long bikeId) {
+	public void setBikeId(int bikeId) {
 		this.bikeId = bikeId;
 	}
 

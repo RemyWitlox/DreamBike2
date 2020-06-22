@@ -22,18 +22,18 @@ public class DockingBikeController {
 	}
 
 	@GetMapping("getDockingId/{bikeId}")
-	public Long getDockingId(@RequestParam Long bikeId) {
+	public int getDockingId(@RequestParam int bikeId) {
 		return this.bikeService.getByBikeId(bikeId).getDocking().getDockingId();
 	}
 
 	@GetMapping("getBikeIds/{dockingId}")
-	public Set<BikeDTO> getBikeIds(@RequestParam Long dockingId) {
+	public Set<BikeDTO> getBikeIds(@RequestParam int dockingId) {
 		Set<Bike> bikes = this.dockingService.getByDockingId(dockingId).getBikes();
 		return bikes.stream().map(bikeService::convertToDto).collect(Collectors.toSet());
 	}
 
 	@PostMapping("addDocking")
-	public boolean createDocking(@RequestBody int capacity, @RequestBody Long dockingId) {
+	public boolean createDocking(@RequestBody int capacity, @RequestBody int dockingId) {
 		if (dockingService.getByDockingId(dockingId) == null) {
 			Docking docking = new Docking();
 			docking.setCapacity(capacity);
@@ -46,7 +46,7 @@ public class DockingBikeController {
 	}
 
 	@PostMapping("addBikeToDocking")
-	public boolean addBikeToDocking(@RequestBody Long bikeId, @RequestBody Long dockingId) {
+	public boolean addBikeToDocking(@RequestBody int bikeId, @RequestBody int dockingId) {
 		if (bikeService.getByBikeId(bikeId) == null) {
 			Bike bike = new Bike();
 			bike.setBikeId(bikeId);

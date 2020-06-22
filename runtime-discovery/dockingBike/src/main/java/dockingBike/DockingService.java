@@ -2,7 +2,7 @@ package dockingBike;
 
 public interface DockingService {
 
-	Docking getByDockingId(Long dockingId);
+	Docking getByDockingId(int dockingId);
 
 	void save(Docking docking);
 

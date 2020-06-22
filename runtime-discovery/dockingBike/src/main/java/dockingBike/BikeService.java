@@ -2,11 +2,11 @@ package dockingBike;
 
 public interface BikeService {
 
-	Long getDockingId(Long bikeId);
+	int getDockingId(int bikeId);
 
 	BikeDTO convertToDto(Bike bike);
 
-	Bike getByBikeId(Long bikeId);
+	Bike getByBikeId(int bikeId);
 
 	Bike save(Bike bike);
 

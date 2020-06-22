@@ -6,9 +6,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BikeRepository extends JpaRepository<Bike, Long> {
+public interface BikeRepository extends JpaRepository<Bike, Integer> {
 
 	Set<Bike> findByDocking(Docking docking);
 
-	Bike findByBikeId(Long bikeId);
+	Bike findByBikeId(int bikeId);
 }

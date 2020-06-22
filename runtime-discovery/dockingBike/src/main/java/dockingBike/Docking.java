@@ -18,7 +18,7 @@ import javax.persistence.Transient;
 @Table(name = "BD_DOCKING")
 public class Docking {
 	@Id
-	private Long dockingId;
+	private int dockingId;
 
 	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "bikeId")
@@ -38,11 +38,11 @@ public class Docking {
 
 	}
 
-	public Long getDockingId() {
+	public int getDockingId() {
 		return dockingId;
 	}
 
-	public void setDockingId(Long dockingId) {
+	public void setDockingId(int dockingId) {
 		this.dockingId = dockingId;
 	}
 
