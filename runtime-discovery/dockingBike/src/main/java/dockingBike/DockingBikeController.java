@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -84,5 +85,14 @@ public class DockingBikeController {
 				}
 			}
 		}
+	}
+
+	@PutMapping("updDocking")
+	public boolean updDocking(@RequestBody DockingDTO dockingDTO) {
+		Docking docking = dockingService.getByDockingId(dockingDTO.getDockingId());
+		docking.setCapacity(dockingDTO.getCapacity());
+		dockingService.save(docking);
+		return true;
+
 	}
 }
