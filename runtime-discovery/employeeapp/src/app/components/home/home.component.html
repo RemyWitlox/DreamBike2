@@ -1,0 +1,58 @@
+<div class="back">
+  <div class="contentMargin">
+    <br />
+    <p id="homeNoUserTxt" *ngIf="!currentBackendUser">
+      You are not logged in. Please log in to continue.
+    </p>
+    <div *ngIf="currentBackendUser">
+      <h1 id="welcome">Welcome {{ currentBackendUser?.name }},</h1>
+      <p id="roleTxt">
+        Your current role is
+        <strong>{{
+          currentBackendUser?.role ? currentBackendUser?.role : "No role"
+        }}</strong
+        >. Now let's get started!
+      </p>
+      <div class="cardsbtns">
+        <mat-grid-list cols="3" rowHeight="1:1">
+          <mat-grid-tile>
+            <mat-card>
+              <button id="goDocking" class="btnImg" (click)="goDocking()">
+                <img src="../../../assets/docking.png" class="img" />
+              </button>
+              <mat-card-content>
+                <p>
+                  Docking Stations
+                </p>
+              </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card>
+              <button id="goBikes" class="btnImg" (click)="goBikes()">
+                <img src="../../../assets/bike.png" class="img" />
+              </button>
+              <mat-card-content>
+                <p>
+                  Bikes
+                </p>
+              </mat-card-content></mat-card
+            >
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card>
+              <button id="goRepairs" class="btnImg" (click)="goRepairs()">
+                <img src="../../../assets/repair.png" class="img" />
+              </button>
+              <mat-card-content>
+                <p>
+                  Repairs
+                </p>
+              </mat-card-content></mat-card
+            >
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+  </div>
+</div>

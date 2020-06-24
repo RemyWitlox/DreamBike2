@@ -12,9 +12,7 @@ public class Bike {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long bikeId;
-
 	private String name;
-
 	private BikeType type;
 	private BikeDriver driver;
 	private int size;
