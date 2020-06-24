@@ -23,12 +23,12 @@ public class DockingBikeController {
 		this.dockingService = dockingService;
 	}
 
-	@GetMapping("getDockingId/{bikeId}")
-	public int getDockingId(@PathVariable(value = "bikeId") int bikeId) {
+	@GetMapping("getDockingId/")
+	public int getDockingId(@RequestParam int bikeId) {
 		return this.bikeService.getByBikeId(bikeId).getDocking().getDockingId();
 	}
 
-	@GetMapping("getBikeIds/{dockingId}")
+	@GetMapping("getBikeIds/")
 	public Set<BikeDTO> getBikeIds(@RequestParam int dockingId) {
 		Set<Bike> bikes = this.dockingService.getByDockingId(dockingId).getBikes();
 		return bikes.stream().map(bikeService::convertToDto).collect(Collectors.toSet());
