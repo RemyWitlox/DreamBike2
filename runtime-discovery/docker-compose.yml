@@ -1,9 +1,8 @@
-version: '3.1'
+version: "3.1"
 
 #volumes:
 #  mysql_data:
 #    driver: local
-
 services:
   web:
     build: .
@@ -18,24 +17,24 @@ services:
   registry:
     image: dreambike/registry:latest
     container_name: registry
-    expose: 
+    expose:
       - "8761"
-#  greeting-service:
-#    image: dreambike-service:latest
-#    container_name: greeting-service
-#    expose: 
-#      - "8762"
-#    depends_on: 
-#      - "registry"
-#    environment:
-#      - JAVA_OPTS=
-#        -DEUREKA_SERVER=http://registry:8761/eureka
+  #  greeting-service:
+  #    image: dreambike-service:latest
+  #    container_name: greeting-service
+  #    expose:
+  #      - "8762"
+  #    depends_on:
+  #      - "registry"
+  #    environment:
+  #      - JAVA_OPTS=
+  #        -DEUREKA_SERVER=http://registry:8761/eureka
   gateway:
     image: dreambike/gateway:latest
     container_name: gateway
     ports:
       - "127.0.0.1:8181:8760"
-    depends_on: 
+    depends_on:
       - registry
       - bike
       - docking
@@ -62,11 +61,11 @@ services:
     depends_on:
       - "registry"
   angular-docker:
-     image: dreambike/angular-app:latest
-     container_name: angular-docker-container
-     build: ./employeeapp
-     ports:
-       - "9000:80"
+    image: dreambike/angular-app:latest
+    container_name: angular-docker-container
+    build: ./employeeapp
+    ports:
+      - "9000:80"
 #  mysql:
 #    image: mysql:5.7
 #    container_name: mysql
