@@ -79,7 +79,7 @@
     >Settings</a
   >
   <p style="bottom: 0; position: absolute; padding-left: 12px;">
-    {{ now | date: "dd-MM-yyyy hh:mm:ss" }}
+    {{ now | date: "dd-MM-yyyy HH:mm:ss" }}
   </p>
 </div>
 <div *ngIf="loading">
@@ -87,8 +87,10 @@
   <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 </div>
 <div class="content" *ngIf="!loading">
-  <router-outlet *ngIf="connected"></router-outlet>
-  <p id="conErr" *ngIf="!connected" style="margin-left: 25px;">
-    There is no connection with the database, please contact the IT crowd!
-  </p>
+  <div class="back">
+    <router-outlet *ngIf="connected"></router-outlet>
+    <p id="conErr" *ngIf="!connected" style="margin-left: 25px;">
+      There is no connection with the database, please contact the IT crowd!
+    </p>
+  </div>
 </div>

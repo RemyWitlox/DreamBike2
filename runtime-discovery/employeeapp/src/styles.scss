@@ -231,7 +231,6 @@ html {
   }
 
   .back {
-    background-color: #ffffff !important;
     /* Height and width fallback for older browsers. */
     height: calc(100% -66px);
     /* Set the height/width to match that of the viewport. */
@@ -241,6 +240,19 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("./assets/bigcity.png");
+  }
+
+  .content {
+    position: absolute;
+    background-color: #ffffff !important;
+    margin-left: 215px;
+    /* Height and width fallback for older browsers. */
+    height: calc(100% -66px);
+    width: calc(100% - 215px);
+
+    /* Set the height/width to match that of the viewport. */
+    height: calc(100vh - 66px);
+    width: calc(100vw - 215px);
   }
 }
 
