@@ -2,8 +2,8 @@
 # Build stage
 #
 FROM maven:3.6-jdk-8 AS build
-COPY src /home/app/src
-COPY pom.xml /home/app
+COPY runtime-discovery/gateway/src /home/app/src
+COPY runtime-discovery/gateway/pom.xml /home/app
 RUN mvn -f /home/app/pom.xml clean package
 
 FROM adoptopenjdk:8-jre-hotspot
