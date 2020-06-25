@@ -1,0 +1,35 @@
+$bg: silver;
+$bg-dark: rgb(70, 70, 70);
+$bg-light: rgb(170, 169, 169);
+
+$hover: rgb(215, 194, 120);
+$border: 2px solid $bg-dark;
+$border-radius: 0.5rem !default;
+$box-shadow: 0 1px #666;
+$alert: rgb(153, 1, 1);
+$active: rgb(10, 126, 29);
+
+.btnImg {
+  border-radius: 8px;
+  background-color: $bg;
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin-top: 3px !important;
+}
+
+.btnImg:hover {
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.24), 0 2px 3px 0 rgba(0, 0, 0, 0.19);
+  background-color: $hover;
+}
+
+.btnImg:active {
+  background-color: $active;
+  box-shadow: $box-shadow;
+  transform: translateY(2px);
+}
+.cardsbtns {
+  max-width: 600px;
+  margin-left: calc(23%);
+  margin-left: calc(23vw);
+}

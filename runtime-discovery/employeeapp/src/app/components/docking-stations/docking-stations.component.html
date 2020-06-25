@@ -1,0 +1,216 @@
+<div class="back">
+  <mat-tab-group>
+    <mat-tab label="Table">
+      <mat-button-toggle-group name="dsBtns">
+        <mat-button-toggle
+          id="onAddds"
+          class="btn"
+          style="height: 30px;"
+          (click)="onAdd()"
+          ><mat-icon style="margin-top: -2px; margin-left: -5px;">add</mat-icon
+          >New Docking Station</mat-button-toggle
+        >
+      </mat-button-toggle-group>
+      <hr />
+      <div *ngIf="loading && !connected">
+        <p id="dockLoadTxt">Loading,... Please wait.</p>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </div>
+      <div *ngIf="!connected && !loading">
+        <p id="dockConErr">
+          There is no connection to the database. Please try again or contact
+          us.
+        </p>
+      </div>
+      <div id="maintable" *ngIf="!loading && connected">
+        <table matSort (matSortChange)="sortData($event)">
+          <thead>
+            <tr>
+              <th style="max-width: 65px !important;"></th>
+              <th style="max-width: 30px !important;" mat-sort-header="id">
+                Id
+              </th>
+              <th mat-sort-header="name">Name</th>
+              <th style="max-width: 50px;" mat-sort-header="act">
+                Active
+              </th>
+              <th style="max-width: 65px;" mat-sort-header="bikes">
+                Bikes
+              </th>
+              <th style="max-width: 65px;" mat-sort-header="space">
+                Space
+              </th>
+              <th style="max-width: 65px;" mat-sort-header="capacity">
+                Capacity
+              </th>
+              <th style="max-width: 120px;" mat-sort-header="lat">
+                Latitude
+              </th>
+              <th style="max-width: 120px;" mat-sort-header="lng">
+                Longitude
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              id="onSelect"
+              *ngFor="let ds of sortedData; let i = index"
+              [class.selected]="ds === selectedDs"
+              [ngClass]="{ active: ds == selectedDs }"
+              (click)="onSelect(ds)"
+            >
+              <!-- (click)="onSelect(ds)" -->
+              <td style="margin-top: -5px; max-width: 65px !important;">
+                <button id="onEditds" class="buttonIcon" (click)="onEdit(ds)">
+                  <mat-icon area-hidden="true" class="icon">edit</mat-icon>
+                </button>
+                <button
+                  id="onDeleteds"
+                  *ngIf="!ds.active"
+                  class="buttonIcon"
+                  (click)="onDelete(ds)"
+                >
+                  <mat-icon area-hidden="true" class="icon">delete</mat-icon>
+                </button>
+              </td>
+              <td>
+                {{ ds.dockingId }}
+              </td>
+              <td>
+                {{ ds.name }}
+              </td>
+              <td style="max-width: 50px;">
+                <mat-checkbox
+                  id="{{ ds.dockingId }}"
+                  [checked]="ds.active"
+                  [(ngModel)]="ds.active"
+                  (change)="setActive(ds)"
+                ></mat-checkbox>
+              </td>
+              <td style="max-width: 65px;">
+                {{ ds.bikes }}
+              </td>
+              <td style="max-width: 65px;">
+                {{ ds.capacity - ds.bikes }}
+              </td>
+              <td style="max-width: 65px;">
+                {{ ds.capacity }}
+              </td>
+              <td style="max-width: 120px;">
+                {{ ds.lat }}
+              </td>
+              <td style="max-width: 120px;">
+                {{ ds.lng }}
+              </td>
+            </tr>
+            <tr></tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-tab>
+    <mat-tab label="Map">
+      <div *ngIf="loading && !connected">
+        <p>Loading,... Please wait.</p>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </div>
+      <div *ngIf="!connected && !loading">
+        <p>
+          There is no connection to the database. Please try again or contact
+          us.
+        </p>
+      </div>
+      <div *ngIf="connected && !loading">
+        <div class="inputContainer">
+          <mat-icon>search</mat-icon>
+          <input
+            matInput
+            id="typeahead-config"
+            type="text"
+            class="searchInput"
+            (selectItem)="selectedItem($event)"
+            [(ngModel)]="model"
+            [ngbTypeahead]="search"
+            [inputFormatter]="formatter"
+            [resultFormatter]="formatter"
+            [editable]="false"
+            [focusFirst]="true"
+            placement="bottom-left"
+            placeholder="Focus map on Docking Station:"
+            onfocus="this.value=''"
+          />
+        </div>
+        <hr />
+        <div class="wrapper" id="wrapmap">
+          <div class="first">
+            <agm-map
+              [latitude]="lat"
+              [longitude]="lng"
+              [zoom]="zoom"
+              [disableDefaultUI]="false"
+              [zoomControl]="false"
+            >
+              <agm-marker
+                *ngFor="let ds of dockingStations"
+                [latitude]="ds.lat"
+                [longitude]="ds.lng"
+                [label]="ds.bikes.toString()"
+                [markerDraggable]="false"
+                [opacity]="ds.active ? 1 : 0.5"
+              >
+                <agm-info-window>
+                  <strong
+                    >{{ ds.name }} {{ ds.bikes }}/{{ ds.capacity }}</strong
+                  >
+                </agm-info-window>
+              </agm-marker>
+            </agm-map>
+          </div>
+          <div>
+            <table
+              id="tableSmall"
+              matSort
+              (matSortChange)="sortData($event)"
+              class="table-scroll second"
+            >
+              <thead>
+                <tr style="margin-left: 5px !important;">
+                  <th style="width: 100% !important;" mat-sort-header="name">
+                    Name
+                  </th>
+                  <th style="max-width: 10px;" mat-sort-header="bikes">
+                    B
+                  </th>
+                  <th style="min-width: 40px;" mat-sort-header="capacity">
+                    / C
+                  </th>
+                  <th style="min-width: 16px;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  *ngFor="let ds of sortedData"
+                  [class.selected]="ds === selectedDs"
+                  [ngClass]="{ active: ds == selectedDs }"
+                  (click)="onSelect(ds)"
+                >
+                  <td style="width: 100% !important;">{{ ds.name }}</td>
+                  <td style="text-align: right;">{{ ds.bikes }}</td>
+                  <td>/{{ ds.capacity }}</td>
+                  <td style="min-width: 16px;">
+                    <mat-checkbox
+                      id="{{ ds.id }}"
+                      [checked]="ds.active"
+                      [(ngModel)]="ds.active"
+                      (change)="setActive(ds)"
+                    ></mat-checkbox>
+                  </td>
+                </tr>
+                <tr></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

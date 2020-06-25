@@ -1,0 +1,1092 @@
+[
+  {
+    "dockingId": 883,
+    "name": "Cordelia",
+    "city": "Gayny",
+    "bikes": 128,
+    "capacity": 139,
+    "active": false,
+    "lat": 60.3278292,
+    "lng": 54.3033879
+  },
+  {
+    "dockingId": 884,
+    "name": "Golf",
+    "city": "Danzi",
+    "bikes": 124,
+    "capacity": 133,
+    "active": false,
+    "lat": 44.573753,
+    "lng": 129.627161
+  },
+  {
+    "dockingId": 886,
+    "name": "Express",
+    "city": "Balboa",
+    "bikes": 129,
+    "capacity": 168,
+    "active": true,
+    "lat": 4.9497479,
+    "lng": -75.958017
+  },
+  {
+    "dockingId": 887,
+    "name": "Westridge",
+    "city": "Bebedahan",
+    "bikes": 44,
+    "capacity": 173,
+    "active": false,
+    "lat": -7.2527403,
+    "lng": 107.8774664
+  },
+  {
+    "dockingId": 888,
+    "name": "Shelley",
+    "city": "Jiangpan",
+    "bikes": 96,
+    "capacity": 185,
+    "active": true,
+    "lat": 22.781631,
+    "lng": 108.273158
+  },
+  {
+    "dockingId": 889,
+    "name": "Starling",
+    "city": "Igurubi",
+    "bikes": 149,
+    "capacity": 169,
+    "active": true,
+    "lat": -4,
+    "lng": 33.7
+  },
+  {
+    "dockingId": 890,
+    "name": "Manitowish",
+    "city": "Saint-Pierre",
+    "bikes": 17,
+    "capacity": 131,
+    "active": false,
+    "lat": 46.779204,
+    "lng": -56.173126
+  },
+  {
+    "dockingId": 891,
+    "name": "Vermont",
+    "city": "Midlands",
+    "bikes": 109,
+    "capacity": 183,
+    "active": false,
+    "lat": -20.3399053,
+    "lng": 57.5688474
+  },
+  {
+    "dockingId": 892,
+    "name": "Schiller",
+    "city": "Clonskeagh",
+    "bikes": 63,
+    "capacity": 199,
+    "active": true,
+    "lat": 53.3141205,
+    "lng": -6.2387374
+  },
+  {
+    "dockingId": 893,
+    "name": "Cambridge",
+    "city": "Jucás",
+    "bikes": 126,
+    "capacity": 186,
+    "active": true,
+    "lat": -6.4534018,
+    "lng": -39.6105142
+  },
+  {
+    "dockingId": 894,
+    "name": "Pankratz",
+    "city": "Taganskiy",
+    "bikes": 159,
+    "capacity": 160,
+    "active": true,
+    "lat": 55.7393377,
+    "lng": 37.6642542
+  },
+  {
+    "dockingId": 895,
+    "name": "Golf Course",
+    "city": "Modimolle",
+    "bikes": 93,
+    "capacity": 184,
+    "active": true,
+    "lat": -24.6079128,
+    "lng": 28.6054979
+  },
+  {
+    "dockingId": 896,
+    "name": "Thompson",
+    "city": "Gaoqiao",
+    "bikes": 14,
+    "capacity": 52,
+    "active": false,
+    "lat": 31.364902,
+    "lng": 108.249509
+  },
+  {
+    "dockingId": 897,
+    "name": "Myrtle",
+    "city": "Saint-Quentin-en-Yvelines",
+    "bikes": 177,
+    "capacity": 187,
+    "active": true,
+    "lat": 48.7835538,
+    "lng": 2.0439219
+  },
+  {
+    "dockingId": 898,
+    "name": "Schiller",
+    "city": "Łubowo",
+    "bikes": 48,
+    "capacity": 168,
+    "active": true,
+    "lat": 53.5862715,
+    "lng": 16.3876584
+  },
+  {
+    "dockingId": 899,
+    "name": "Oneill",
+    "city": "Göteborg",
+    "bikes": 122,
+    "capacity": 190,
+    "active": false,
+    "lat": 57.7325747,
+    "lng": 12.0715528
+  },
+  {
+    "dockingId": 911,
+    "name": "Stang",
+    "city": "Santa Monica",
+    "bikes": 133,
+    "capacity": 165,
+    "active": false,
+    "lat": 10.0342937,
+    "lng": 126.0415372
+  },
+  {
+    "dockingId": 912,
+    "name": "Boyd",
+    "city": "Shipu",
+    "bikes": 33,
+    "capacity": 34,
+    "active": false,
+    "lat": 29.202542,
+    "lng": 121.931606
+  },
+  {
+    "dockingId": 913,
+    "name": "Transport",
+    "city": "Mulyo",
+    "bikes": 46,
+    "capacity": 167,
+    "active": true,
+    "lat": -7.3348063,
+    "lng": 110.5102808
+  },
+  {
+    "dockingId": 914,
+    "name": "Moulton",
+    "city": "Shuangfeng",
+    "bikes": 89,
+    "capacity": 195,
+    "active": true,
+    "lat": 27.456658,
+    "lng": 112.175245
+  },
+  {
+    "dockingId": 915,
+    "name": "Roth",
+    "city": "Anka",
+    "bikes": 13,
+    "capacity": 195,
+    "active": false,
+    "lat": 11.9170674,
+    "lng": 5.9832577
+  },
+  {
+    "dockingId": 916,
+    "name": "Spenser",
+    "city": "Osiek",
+    "bikes": 1,
+    "capacity": 197,
+    "active": true,
+    "lat": 53.1595566,
+    "lng": 19.3969614
+  },
+  {
+    "dockingId": 917,
+    "name": "Derek",
+    "city": "Ambelókipoi",
+    "bikes": 1,
+    "capacity": 94,
+    "active": true,
+    "lat": 37.7582938,
+    "lng": 20.8728543
+  },
+  {
+    "dockingId": 918,
+    "name": "Butternut",
+    "city": "Rungis",
+    "bikes": 2,
+    "capacity": 101,
+    "active": true,
+    "lat": 48.7700185,
+    "lng": 2.3508225
+  },
+  {
+    "dockingId": 919,
+    "name": "Jenifer",
+    "city": "Lhabupu",
+    "bikes": 196,
+    "capacity": 198,
+    "active": true,
+    "lat": 29.859268,
+    "lng": 89.387008
+  },
+  {
+    "dockingId": 920,
+    "name": "School",
+    "city": "Niš",
+    "bikes": 189,
+    "capacity": 195,
+    "active": true,
+    "lat": 43.3209022,
+    "lng": 21.8957589
+  },
+  {
+    "dockingId": 921,
+    "name": "Superior",
+    "city": "Futian",
+    "bikes": 64,
+    "capacity": 144,
+    "active": true,
+    "lat": 22.521523,
+    "lng": 114.055023
+  },
+  {
+    "dockingId": 922,
+    "name": "Victoria",
+    "city": "Ciudad Darío",
+    "bikes": 13,
+    "capacity": 77,
+    "active": true,
+    "lat": 12.734087,
+    "lng": -86.1217424
+  },
+  {
+    "dockingId": 924,
+    "name": "Pierstorff",
+    "city": "Bressuire",
+    "bikes": 182,
+    "capacity": 195,
+    "active": false,
+    "lat": 46.8118134,
+    "lng": -0.5451553
+  },
+  {
+    "dockingId": 925,
+    "name": "Graceland",
+    "city": "Cikembang",
+    "bikes": 56,
+    "capacity": 86,
+    "active": true,
+    "lat": -6.8497345,
+    "lng": 106.8738909
+  },
+  {
+    "dockingId": 926,
+    "name": "Mockingbird",
+    "city": "Tarkwa",
+    "bikes": 98,
+    "capacity": 165,
+    "active": true,
+    "lat": 5.301832,
+    "lng": -1.9930466
+  },
+  {
+    "dockingId": 927,
+    "name": "Londonderry",
+    "city": "Wushan",
+    "bikes": 172,
+    "capacity": 174,
+    "active": true,
+    "lat": 31.074834,
+    "lng": 109.879153
+  },
+  {
+    "dockingId": 928,
+    "name": "Kenwood",
+    "city": "Huangshan",
+    "bikes": 55,
+    "capacity": 79,
+    "active": true,
+    "lat": 30.113962,
+    "lng": 118.169798
+  },
+  {
+    "dockingId": 929,
+    "name": "Union",
+    "city": "Puma",
+    "bikes": 63,
+    "capacity": 191,
+    "active": false,
+    "lat": -6.8316639,
+    "lng": 39.2827032
+  },
+  {
+    "dockingId": 930,
+    "name": "Crest Line",
+    "city": "Orlovo",
+    "bikes": 122,
+    "capacity": 135,
+    "active": true,
+    "lat": 51.789985,
+    "lng": 39.559439
+  },
+  {
+    "dockingId": 931,
+    "name": "Tennessee",
+    "city": "Luhe",
+    "bikes": 35,
+    "capacity": 109,
+    "active": true,
+    "lat": 23.301616,
+    "lng": 115.660142
+  },
+  {
+    "dockingId": 932,
+    "name": "Clarendon",
+    "city": "Hūn",
+    "bikes": 115,
+    "capacity": 149,
+    "active": true,
+    "lat": 28.6448398,
+    "lng": 15.9699878
+  },
+  {
+    "dockingId": 933,
+    "name": "Sloan",
+    "city": "Sangtian",
+    "bikes": 33,
+    "capacity": 192,
+    "active": true,
+    "lat": 27.122273,
+    "lng": 116.571317
+  },
+  {
+    "dockingId": 934,
+    "name": "Utah",
+    "city": "Jiapeng",
+    "bikes": 41,
+    "capacity": 64,
+    "active": false,
+    "lat": 21.48402,
+    "lng": 109.10459
+  },
+  {
+    "dockingId": 935,
+    "name": "Almo",
+    "city": "Besteiros",
+    "bikes": 3,
+    "capacity": 24,
+    "active": true,
+    "lat": 41.2263185,
+    "lng": -8.344485
+  },
+  {
+    "dockingId": 936,
+    "name": "Barby",
+    "city": "New Cebu",
+    "bikes": 73,
+    "capacity": 198,
+    "active": false,
+    "lat": 14.6100657,
+    "lng": 121.0078432
+  },
+  {
+    "dockingId": 937,
+    "name": "Monterey",
+    "city": "Riebiņi",
+    "bikes": 164,
+    "capacity": 199,
+    "active": false,
+    "lat": 56.343612,
+    "lng": 26.8013629
+  },
+  {
+    "dockingId": 938,
+    "name": "Oriole",
+    "city": "Meliau",
+    "bikes": 140,
+    "capacity": 186,
+    "active": true,
+    "lat": -0.2457577,
+    "lng": 110.2832217
+  },
+  {
+    "dockingId": 939,
+    "name": "Washington",
+    "city": "Cairo",
+    "bikes": 164,
+    "capacity": 196,
+    "active": true,
+    "lat": 30.0444196,
+    "lng": 31.2357116
+  },
+  {
+    "dockingId": 940,
+    "name": "Pleasure",
+    "city": "Jinshi",
+    "bikes": 129,
+    "capacity": 165,
+    "active": false,
+    "lat": 29.60548,
+    "lng": 111.877499
+  },
+  {
+    "dockingId": 941,
+    "name": "Towne",
+    "city": "Val-d'Or",
+    "bikes": 123,
+    "capacity": 150,
+    "active": true,
+    "lat": 48.1041936,
+    "lng": -77.7963772
+  },
+  {
+    "dockingId": 942,
+    "name": "Bartelt",
+    "city": "Mamboma",
+    "bikes": 52,
+    "capacity": 166,
+    "active": false,
+    "lat": 7.833333,
+    "lng": -11.666667
+  },
+  {
+    "dockingId": 943,
+    "name": "Forest",
+    "city": "Mangaldan",
+    "bikes": 182,
+    "capacity": 196,
+    "active": true,
+    "lat": 16.0662148,
+    "lng": 120.404904
+  },
+  {
+    "dockingId": 944,
+    "name": "Anthes",
+    "city": "Pijao",
+    "bikes": 115,
+    "capacity": 155,
+    "active": true,
+    "lat": 4.336584,
+    "lng": -75.702412
+  },
+  {
+    "dockingId": 945,
+    "name": "Farmco",
+    "city": "Lindavista",
+    "bikes": 112,
+    "capacity": 192,
+    "active": false,
+    "lat": 19.5037694,
+    "lng": -99.1324282
+  },
+  {
+    "dockingId": 946,
+    "name": "Schiller",
+    "city": "Xiaojiezi",
+    "bikes": 35,
+    "capacity": 131,
+    "active": false,
+    "lat": 34.390575,
+    "lng": 117.526125
+  },
+  {
+    "dockingId": 947,
+    "name": "Sugar",
+    "city": "Sofádes",
+    "bikes": 174,
+    "capacity": 183,
+    "active": false,
+    "lat": 39.335659,
+    "lng": 22.097651
+  },
+  {
+    "dockingId": 948,
+    "name": "Vermont",
+    "city": "Jiangcun",
+    "bikes": 118,
+    "capacity": 119,
+    "active": true,
+    "lat": 22.579117,
+    "lng": 113.081508
+  },
+  {
+    "dockingId": 949,
+    "name": "Redwing",
+    "city": "Toufang",
+    "bikes": 176,
+    "capacity": 181,
+    "active": false,
+    "lat": 27.252847,
+    "lng": 116.632891
+  },
+  {
+    "dockingId": 950,
+    "name": "Karstens",
+    "city": "Zhanghuban",
+    "bikes": 57,
+    "capacity": 87,
+    "active": false,
+    "lat": 26.393274,
+    "lng": 118.502373
+  },
+  {
+    "dockingId": 951,
+    "name": "Burning Wood",
+    "city": "Leiwang",
+    "bikes": 129,
+    "capacity": 171,
+    "active": true,
+    "lat": 22.066171,
+    "lng": 107.781956
+  },
+  {
+    "dockingId": 952,
+    "name": "Bobwhite",
+    "city": "Karadaglije",
+    "bikes": 44,
+    "capacity": 155,
+    "active": true,
+    "lat": 44.5706127,
+    "lng": 18.0176034
+  },
+  {
+    "dockingId": 953,
+    "name": "6th",
+    "city": "Vailoatai",
+    "bikes": 24,
+    "capacity": 187,
+    "active": true,
+    "lat": -14.3521224,
+    "lng": -170.7810162
+  },
+  {
+    "dockingId": 954,
+    "name": "Surrey",
+    "city": "Mahekou",
+    "bikes": 200,
+    "capacity": 200,
+    "active": true,
+    "lat": 29.541793,
+    "lng": 110.364953
+  },
+  {
+    "dockingId": 955,
+    "name": "Stone Corner",
+    "city": "Charlotte",
+    "bikes": 96,
+    "capacity": 130,
+    "active": false,
+    "lat": 35.21,
+    "lng": -80.69
+  },
+  {
+    "dockingId": 956,
+    "name": "Mayer",
+    "city": "Bachok",
+    "bikes": 75,
+    "capacity": 106,
+    "active": true,
+    "lat": 6.0375069,
+    "lng": 102.3406606
+  },
+  {
+    "dockingId": 957,
+    "name": "Loftsgordon",
+    "city": "Göteborg",
+    "bikes": 123,
+    "capacity": 159,
+    "active": false,
+    "lat": 57.6900919,
+    "lng": 11.94588
+  },
+  {
+    "dockingId": 959,
+    "name": "Sauthoff",
+    "city": "Berlín",
+    "bikes": 8,
+    "capacity": 140,
+    "active": false,
+    "lat": 13.4960361,
+    "lng": -88.5299428
+  },
+  {
+    "dockingId": 960,
+    "name": "Dapin",
+    "city": "Yang Chum Noi",
+    "bikes": 182,
+    "capacity": 190,
+    "active": false,
+    "lat": 15.241178,
+    "lng": 104.4024704
+  },
+  {
+    "dockingId": 961,
+    "name": "School",
+    "city": "Courbevoie",
+    "bikes": 198,
+    "capacity": 199,
+    "active": false,
+    "lat": 48.8981844,
+    "lng": 2.2478659
+  },
+  {
+    "dockingId": 962,
+    "name": "Victoria",
+    "city": "Dongsheng",
+    "bikes": 192,
+    "capacity": 193,
+    "active": true,
+    "lat": 39.822507,
+    "lng": 109.963338
+  },
+  {
+    "dockingId": 963,
+    "name": "Schiller",
+    "city": "Karangintan",
+    "bikes": 191,
+    "capacity": 199,
+    "active": false,
+    "lat": -3.4865398,
+    "lng": 114.9754175
+  },
+  {
+    "dockingId": 964,
+    "name": "Sullivan",
+    "city": "Mahong",
+    "bikes": 88,
+    "capacity": 121,
+    "active": false,
+    "lat": 34.2948431,
+    "lng": 117.1897677
+  },
+  {
+    "dockingId": 965,
+    "name": "Northview",
+    "city": "Bandhagen",
+    "bikes": 64,
+    "capacity": 66,
+    "active": false,
+    "lat": 59.2542117,
+    "lng": 18.027354
+  },
+  {
+    "dockingId": 966,
+    "name": "Ridge Oak",
+    "city": "Chrząstowice",
+    "bikes": 106,
+    "capacity": 135,
+    "active": false,
+    "lat": 50.6657079,
+    "lng": 18.0732903
+  },
+  {
+    "dockingId": 967,
+    "name": "Boyd",
+    "city": "Segbwema",
+    "bikes": 123,
+    "capacity": 194,
+    "active": false,
+    "lat": 7.9929954,
+    "lng": -10.9524441
+  },
+  {
+    "dockingId": 968,
+    "name": "Harper",
+    "city": "Koło",
+    "bikes": 182,
+    "capacity": 197,
+    "active": false,
+    "lat": 52.279986,
+    "lng": 17.3522939
+  },
+  {
+    "dockingId": 969,
+    "name": "Boyd",
+    "city": "Babakansari",
+    "bikes": 196,
+    "capacity": 198,
+    "active": true,
+    "lat": -6.837527,
+    "lng": 107.2104935
+  },
+  {
+    "dockingId": 970,
+    "name": "Katie",
+    "city": "Colatina",
+    "bikes": 188,
+    "capacity": 195,
+    "active": false,
+    "lat": -19.5365508,
+    "lng": -40.6258001
+  },
+  {
+    "dockingId": 971,
+    "name": "Thackeray",
+    "city": "Vila Chã",
+    "bikes": 190,
+    "capacity": 195,
+    "active": false,
+    "lat": 40.7339545,
+    "lng": -7.8160659
+  },
+  {
+    "dockingId": 972,
+    "name": "Badeau",
+    "city": "Hebi",
+    "bikes": 22,
+    "capacity": 155,
+    "active": false,
+    "lat": 35.748233,
+    "lng": 114.297201
+  },
+  {
+    "dockingId": 973,
+    "name": "Welch",
+    "city": "Dayou",
+    "bikes": 93,
+    "capacity": 159,
+    "active": false,
+    "lat": 26.141854,
+    "lng": 116.188408
+  },
+  {
+    "dockingId": 974,
+    "name": "Badeau",
+    "city": "Kuala Lumpur",
+    "bikes": 107,
+    "capacity": 187,
+    "active": true,
+    "lat": 3.1523104,
+    "lng": 101.7178316
+  },
+  {
+    "dockingId": 975,
+    "name": "Bultman",
+    "city": "Notranje Gorice",
+    "bikes": 174,
+    "capacity": 195,
+    "active": true,
+    "lat": 45.9865292,
+    "lng": 14.3999988
+  },
+  {
+    "dockingId": 976,
+    "name": "Paget",
+    "city": "Svatava",
+    "bikes": 51,
+    "capacity": 125,
+    "active": true,
+    "lat": 50.1922582,
+    "lng": 12.6257516
+  },
+  {
+    "dockingId": 977,
+    "name": "Di Loreto",
+    "city": "Salcedo",
+    "bikes": 101,
+    "capacity": 114,
+    "active": true,
+    "lat": 14.5560877,
+    "lng": 121.0155081
+  },
+  {
+    "dockingId": 978,
+    "name": "Fulton",
+    "city": "Quinocay",
+    "bikes": 93,
+    "capacity": 102,
+    "active": false,
+    "lat": -12.3625094,
+    "lng": -76.2272716
+  },
+  {
+    "dockingId": 979,
+    "name": "Lawn",
+    "city": "Pantenan",
+    "bikes": 145,
+    "capacity": 153,
+    "active": false,
+    "lat": -6.9158643,
+    "lng": 112.4351068
+  },
+  {
+    "dockingId": 980,
+    "name": "Donald",
+    "city": "Uvarovka",
+    "bikes": 160,
+    "capacity": 162,
+    "active": false,
+    "lat": 55.527934,
+    "lng": 35.6160989
+  },
+  {
+    "dockingId": 981,
+    "name": "Merrick",
+    "city": "Nurabelen",
+    "bikes": 128,
+    "capacity": 165,
+    "active": false,
+    "lat": -8.5181178,
+    "lng": 122.8282569
+  },
+  {
+    "dockingId": 982,
+    "name": "Rowland",
+    "city": "Donostia-San Sebastian",
+    "bikes": 46,
+    "capacity": 70,
+    "active": false,
+    "lat": 43.3152889,
+    "lng": -1.9514657
+  },
+  {
+    "dockingId": 983,
+    "name": "Magdeline",
+    "city": "Tallahassee",
+    "bikes": 41,
+    "capacity": 147,
+    "active": false,
+    "lat": 30.4649282,
+    "lng": -84.3857442
+  },
+  {
+    "dockingId": 984,
+    "name": "Myrtle",
+    "city": "Sumpur Kudus",
+    "bikes": 93,
+    "capacity": 198,
+    "active": true,
+    "lat": -0.4050276,
+    "lng": 100.9354944
+  },
+  {
+    "dockingId": 985,
+    "name": "Pond",
+    "city": "Cradock",
+    "bikes": 72,
+    "capacity": 126,
+    "active": false,
+    "lat": -33.8780645,
+    "lng": 18.5748049
+  },
+  {
+    "dockingId": 986,
+    "name": "Jackson",
+    "city": "Rizal",
+    "bikes": 182,
+    "capacity": 188,
+    "active": true,
+    "lat": 14.5665378,
+    "lng": 121.1092186
+  },
+  {
+    "dockingId": 990,
+    "name": "Sullivan",
+    "city": "Lila",
+    "bikes": 110,
+    "capacity": 163,
+    "active": false,
+    "lat": 9.600306,
+    "lng": 124.105576
+  },
+  {
+    "dockingId": 991,
+    "name": "Lerdahl",
+    "city": "Mergayu",
+    "bikes": 175,
+    "capacity": 179,
+    "active": false,
+    "lat": -8.1658601,
+    "lng": 111.7763713
+  },
+  {
+    "dockingId": 992,
+    "name": "5th",
+    "city": "Tarikolot",
+    "bikes": 177,
+    "capacity": 177,
+    "active": false,
+    "lat": -6.4991921,
+    "lng": 106.8915948
+  },
+  {
+    "dockingId": 993,
+    "name": "Grim",
+    "city": "Haoxin",
+    "bikes": 90,
+    "capacity": 103,
+    "active": false,
+    "lat": 23.1451405,
+    "lng": 113.2558405
+  },
+  {
+    "dockingId": 994,
+    "name": "Westport",
+    "city": "Karlskrona",
+    "bikes": 85,
+    "capacity": 116,
+    "active": false,
+    "lat": 56.1993557,
+    "lng": 15.6309078
+  },
+  {
+    "dockingId": 995,
+    "name": "Kensington",
+    "city": "Kasoa",
+    "bikes": 192,
+    "capacity": 200,
+    "active": true,
+    "lat": 5.5300711,
+    "lng": -0.4408037
+  },
+  {
+    "dockingId": 996,
+    "name": "Namekagon",
+    "city": "Karak",
+    "bikes": 25,
+    "capacity": 72,
+    "active": true,
+    "lat": 30.3301201,
+    "lng": 66.9043672
+  },
+  {
+    "dockingId": 997,
+    "name": "Almo",
+    "city": "Xianshuigu",
+    "bikes": 58,
+    "capacity": 70,
+    "active": true,
+    "lat": 38.979636,
+    "lng": 117.395313
+  },
+  {
+    "dockingId": 998,
+    "name": "Crescent Oaks",
+    "city": "Malinovskiy",
+    "bikes": 180,
+    "capacity": 182,
+    "active": true,
+    "lat": 61.2067486,
+    "lng": 62.8101616
+  },
+  {
+    "dockingId": 999,
+    "name": "American Ash",
+    "city": "Guifões",
+    "bikes": 118,
+    "capacity": 200,
+    "active": true,
+    "lat": 41.2007787,
+    "lng": -8.6725287
+  },
+  {
+    "dockingId": 1000,
+    "name": "Amoth",
+    "city": "Moussoro",
+    "bikes": 189,
+    "capacity": 197,
+    "active": true,
+    "lat": 13.648096,
+    "lng": 16.493598
+  },
+  {
+    "dockingId": 1001,
+    "lat": 51.441262,
+    "lng": 5.477672,
+    "name": "Centrum Eindhoven",
+    "city": "",
+    "bikes": 124,
+    "capacity": 260,
+    "active": true
+  },
+  {
+    "dockingId": 1002,
+    "lat": 51.441851,
+    "lng": 5.468059,
+    "name": "Stadion Eindhoven",
+    "city": "",
+    "bikes": 86,
+    "capacity": 215,
+    "active": true
+  },
+  {
+    "dockingId": 1003,
+    "lat": 51.448966,
+    "lng": 5.45733,
+    "name": "Strijp-S Eindhoven",
+    "city": "",
+    "bikes": 37,
+    "capacity": 297,
+    "active": true
+  },
+  {
+    "dockingId": 1004,
+    "lat": 51.440791,
+    "lng": 5.500513,
+    "name": "Tongelre Eindhoven",
+    "city": "",
+    "bikes": 87,
+    "capacity": 105,
+    "active": true
+  },
+  {
+    "dockingId": 1005,
+    "lat": 51.417809,
+    "lng": 5.450364,
+    "name": "Gestel  Eindhoven",
+    "city": "",
+    "bikes": 137,
+    "capacity": 184,
+    "active": true
+  },
+  {
+    "dockingId": 1006,
+    "lat": 51.420344,
+    "lng": 5.496238,
+    "name": "Stratum  Eindhoven",
+    "city": "",
+    "bikes": 18,
+    "capacity": 394,
+    "active": true
+  },
+  {
+    "dockingId": 1007,
+    "lat": 51.461553,
+    "lng": 5.472903,
+    "name": "Woensel Zuid Eindhoven",
+    "city": "",
+    "bikes": 72,
+    "capacity": 143,
+    "active": true
+  },
+  {
+    "dockingId": 1008,
+    "lat": 51.482542,
+    "lng": 5.481652,
+    "name": "Woensel Noord Eindhoven",
+    "city": "",
+    "bikes": 37,
+    "capacity": 104,
+    "active": true
+  }
+]

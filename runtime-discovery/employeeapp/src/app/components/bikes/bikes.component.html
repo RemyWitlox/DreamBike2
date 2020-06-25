@@ -1,0 +1,102 @@
+<div class="back">
+  <div class="contentMargin">
+    <mat-button-toggle-group name="bikeBtns">
+      <mat-button-toggle
+        id="onAdd"
+        class="btn"
+        style="height: 30px;"
+        (click)="onAdd()"
+        ><mat-icon style="margin-top: -2px; margin-left: -5px;">add</mat-icon
+        >New Bike</mat-button-toggle
+      >
+    </mat-button-toggle-group>
+    <hr />
+    <div *ngIf="loading && !connected">
+      <p id="bikesLoadTxt">Loading,... Please wait.</p>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+    <div *ngIf="!connected && !loading">
+      <p id="bikesConErr">
+        There is no connection to the database. Please try again or contact us.
+      </p>
+    </div>
+    <div id="maintable" *ngIf="!loading && connected">
+      <table matSort (matSortChange)="sortData($event)">
+        <thead>
+          <tr>
+            <th style="max-width: 75px;"></th>
+            <th style="max-width: 50px;" mat-sort-header="bikeId">Id</th>
+            <th style="max-width: 50px;" mat-sort-header="name">
+              Name
+            </th>
+            <th style="max-width: 65px;" mat-sort-header="type">
+              Type
+            </th>
+            <th style="max-width: 65px;" mat-sort-header="driver">
+              Driver
+            </th>
+            <th style="max-width: 65px;" mat-sort-header="size">
+              Size
+            </th>
+            <th style="max-width: 50px;" mat-sort-header="broken">
+              Broken
+            </th>
+            <th style="max-width: 120px;" mat-sort-header="created">
+              Created
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            id="onSelect"
+            *ngFor="let bike of sortedData; let i = index"
+            [class.selected]="bike === selectedBike"
+            [ngClass]="{ active: bike == selectedBike }"
+            (click)="onSelect(bike)"
+          >
+            <td style="margin-top: -5px; max-width: 75px;">
+              <button id="onEdit" class="buttonIcon" (click)="onEdit(bike)">
+                <mat-icon area-hidden="true" class="icon">edit</mat-icon>
+              </button>
+              <button id="onDelete" class="buttonIcon" (click)="onDelete(bike)">
+                <mat-icon area-hidden="true" class="icon">delete</mat-icon>
+              </button>
+              <button
+                id="onDocking"
+                class="buttonIcon"
+                (click)="onDocking(bike)"
+              >
+                <mat-icon area-hidden="true" class="icon">home</mat-icon>
+              </button>
+            </td>
+            <td style="max-width: 50px;">
+              {{ bike.bikeId }}
+            </td>
+            <td>
+              {{ bike.name }}
+            </td>
+            <td style="max-width: 65px;">
+              {{ getType(bike.type) }}
+            </td>
+            <td style="max-width: 65px;">
+              {{ getDriver(bike.driver) }}
+            </td>
+            <td style="max-width: 65px;">{{ bike.size }}"</td>
+            <td style="max-width: 50px;">
+              <mat-checkbox
+                id="{{ bike.bikeId }}"
+                [checked]="bike.broken"
+                [(ngModel)]="bike.broken"
+                (change)="setBroken(bike)"
+              ></mat-checkbox>
+            </td>
+            <td style="max-width: 120px;">
+              {{ bike.created | date: "dd-MM-yyyy" }}
+            </td>
+          </tr>
+          <tr></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

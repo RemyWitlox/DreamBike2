@@ -1,0 +1,123 @@
+$bg: silver;
+$bg-dark: rgb(70, 70, 70);
+$bg-light: rgb(170, 169, 169);
+$hover: rgb(215, 194, 120);
+$border: 2px solid $bg-dark;
+$border-radius: 0.5rem !default;
+$box-shadow: 0 1px #666;
+$alert: rgb(153, 1, 1);
+$active: rgb(10, 126, 29);
+
+.ngb-typeahead-window {
+  z-index: 1000;
+}
+
+::ng-deep .dropdown-menu {
+  width: 350px;
+  z-index: 1000;
+}
+
+#maintable {
+  max-height: 540px !important;
+  /* Position */
+  display: block;
+  overflow-y: scroll;
+
+  table {
+    width: 100%;
+    /* Decoration */
+    border-spacing: 0;
+    border: 1px solid black;
+    border-left: 3px solid black;
+  }
+
+  thead {
+    background-color: black;
+    color: $hover;
+    border-left: 3px solid black;
+  }
+
+  thead th {
+    font-weight: normal !important;
+  }
+
+  tbody {
+    max-height: 740px !important;
+    /* Decoration */
+    background-color: $bg;
+    border-left: 3px solid black;
+  }
+
+  tbody tr:hover {
+    background-color: $hover !important;
+    cursor: pointer;
+  }
+
+  tbody tr:nth-child(2n) {
+    background-color: $bg-light;
+  }
+
+  tbody tr.active {
+    background-color: $active !important;
+    color: white !important;
+  }
+}
+
+.searchInput {
+  width: 400px;
+  height: 25px;
+  contain: none;
+  align-self: start;
+  background-color: inherit;
+  border: 1px solid black;
+  box-shadow: $box-shadow;
+  padding-left: 2px;
+}
+
+.searchInput:focus {
+  width: 400px;
+  height: 25px;
+  contain: none;
+  align-self: start;
+  background-color: rgba($active, 0.4);
+  outline: none;
+  border: 1px solid black;
+  box-shadow: $box-shadow;
+  padding-left: 2px;
+}
+
+/* Styling for google map */
+agm-map {
+  height: 100%;
+  display: block;
+  border: 1px solid black;
+  position: relative;
+}
+
+.inputContainer {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.wrapper {
+  /* Height and width fallback for older browsers. */
+  height: calc(100% - 184px);
+  height: calc(100vh - 184px);
+  width: inherit;
+  overflow: hidden;
+}
+
+.first {
+  height: calc(100% - 184px);
+  height: calc(100vh - 184px);
+  width: calc(100% - 580px);
+  width: calc(100vw - 580px);
+  float: left;
+}
+
+.second {
+  width: 315px;
+  overflow: hidden;
+}

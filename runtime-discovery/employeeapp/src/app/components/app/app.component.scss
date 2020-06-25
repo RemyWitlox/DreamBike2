@@ -1,0 +1,88 @@
+$bg: silver;
+$bg-dark: rgb(70, 70, 70);
+$bg-light: rgb(170, 169, 169);
+$hover: rgb(215, 194, 120);
+$border: 2px solid $bg-dark;
+$border-radius: 0.5rem !default;
+$box-shadow: 0 1px #666;
+$alert: rgb(153, 1, 1);
+$active: rgb(10, 126, 29);
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: $hover;
+}
+
+a:active {
+  color: $active;
+}
+
+span {
+  color: $hover;
+}
+
+/* Styling for horizontal menu - class="horizontalMenu" */
+.horizontalMenu {
+  color: black;
+  width: 100%;
+  min-width: 805px;
+}
+
+.navigation-items {
+  list-style: none;
+  margin: 0;
+  margin-right: 0;
+  cursor: pointer;
+}
+
+.label {
+  color: white;
+  display: inline-block;
+  line-height: 30px;
+  width: 85%;
+}
+
+/* Styling for vertical menu - class="verticalMenu" */
+.verticalMenu {
+  background-color: $bg-light;
+  position: absolute;
+  top: 64px;
+  bottom: 0;
+  border-left: 15px solid black;
+  width: 200px;
+  float: left;
+  height: calc(100%-64px);
+}
+
+.verticalMenu a {
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.verticalMenu a:hover {
+  background-color: $hover;
+  color: black;
+}
+
+.verticalMenu a.active {
+  background-color: $active;
+  color: white;
+}
+
+.content {
+  position: absolute;
+  margin-left: 215px;
+  /* Height and width fallback for older browsers. */
+  height: calc(100% -64px);
+  width: calc(100% - 215px);
+
+  /* Set the height/width to match that of the viewport. */
+  height: calc(100vh - 64px);
+  width: calc(100vw - 215px);
+}

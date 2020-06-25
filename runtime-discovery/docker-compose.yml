@@ -24,7 +24,7 @@ services:
     image: dreambike/gateway:latest
     container_name: gateway
     ports:
-      - "127.0.0.1:8181:8760"
+      - "8181:8760"
     depends_on: 
       - registry
       - bike
@@ -51,7 +51,15 @@ services:
       - "8765"
     depends_on:
       - "registry"
-#  mysql:
+  angular-docker:
+     image: dreambike/angular-app:latest
+     container_name: angular-docker-container
+     build: ./employeeapp
+     ports:
+       - "9000:80"
+
+    
+    #  mysql:
 #    image: mysql:5.7
 #    container_name: mysql
 #    volumes:

@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -54,6 +55,7 @@ public class DockingBikeController {
 			bikeService.save(bike);
 			if (dockingService.getByDockingId(dockingBikeDTO.getDockingId()) == null) {
 				// docking bestaat niet!
+				System.out.println("addBikeToDocking kan niet uitgevoerd worden: docking bestaat niet!");
 				return false;
 			} else {
 				Docking docking = dockingService.getByDockingId(dockingBikeDTO.getDockingId());
@@ -62,6 +64,7 @@ public class DockingBikeController {
 					dockingService.save(docking);
 					return true;
 				} else {
+					System.out.println("addBikeToDocking kan niet uitgevoerd worden: docking is niet beschikbaar!");
 					return false;
 				}
 			}
@@ -71,6 +74,7 @@ public class DockingBikeController {
 			Docking dockingOud = dockingService.getByDockingId(bike.getDocking().getDockingId());
 			if (dockingService.getByDockingId(dockingBikeDTO.getDockingId()) == null) {
 				// docking bestaat niet!
+				System.out.println("addBikeToDocking kan niet uitgevoerd worden: docking bestaat niet!");
 				return false;
 			} else {
 				Docking dockingNieuw = dockingService.getByDockingId(dockingBikeDTO.getDockingId());
@@ -81,6 +85,7 @@ public class DockingBikeController {
 					dockingService.save(dockingNieuw);
 					return true;
 				} else {
+					System.out.println("addBikeToDocking kan niet uitgevoerd worden: docking is niet beschikbaar!");
 					return false;
 				}
 			}

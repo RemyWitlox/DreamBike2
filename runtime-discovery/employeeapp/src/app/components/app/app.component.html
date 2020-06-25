@@ -1,0 +1,94 @@
+<h1 hidden>{{ title }}</h1>
+<mat-sidenav-container class="horizontalMenu">
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <div style="padding-left: 15px;">
+        <img
+          style="height: 50px;"
+          alt="DreambikeLogo"
+          src="assets/notxtsqr.png"
+        />
+        <span style="padding-left: 15px;">
+          {{ subtitle }} -
+          <small
+            ><small
+              ><small>{{ currentApplicationVersion }}</small></small
+            ></small
+          >
+        </span>
+      </div>
+      <div
+        fxFlex
+        fxLayout
+        fxLayoutAlign="flex-end"
+        id="horizontalMenu"
+        *ngIf="connected && !loading"
+      >
+        <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+          <li *ngIf="!currentBackendUser">
+            <a id="onLoginApp" (click)="onLogin()">
+              <mat-icon class="icon">input</mat-icon>
+              <a id="label" class="label">Login</a>
+            </a>
+          </li>
+          <li>
+            <a>
+              <mat-icon class="icon">home</mat-icon>
+              <a id="label" class="label">Home</a>
+            </a>
+          </li>
+          <li>
+            <a>
+              <mat-icon class="icon">dashboard</mat-icon>
+              <a id="label" class="label">Dashboard</a>
+            </a>
+          </li>
+          <li *ngIf="currentBackendUser">
+            <a id="onLogoutApp" (click)="onLogout()">
+              <mat-icon class="icon">input</mat-icon>
+              <a id="label" class="label">LogOut</a>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<!-- Verticaal menu -->
+<div id="verticalMenu" class="verticalMenu" *ngIf="connected && !loading">
+  <a routerLinkActive="active" routerLink="home">Home</a>
+  <a
+    routerLinkActive="active"
+    routerLink="dockingStations"
+    *ngIf="currentBackendUser"
+    >Docking Stations</a
+  >
+  <a routerLinkActive="active" routerLink="bikes" *ngIf="currentBackendUser"
+    >Bikes</a
+  >
+  <a routerLinkActive="active" routerLink="repairs" *ngIf="currentBackendUser"
+    >Repairs</a
+  >
+  <a
+    routerLinkActive="active"
+    routerLink="analytics"
+    *ngIf="isAdmin || isManagement"
+    >Analytics</a
+  >
+  <a routerLinkActive="active" routerLink="settings" *ngIf="isAdmin"
+    >Settings</a
+  >
+  <p style="bottom: 0; position: absolute; padding-left: 12px;">
+    {{ now | date: "dd-MM-yyyy hh:mm:ss" }}
+  </p>
+</div>
+<div *ngIf="loading">
+  <p id="appLoadTxt" style="margin-left: 230px;">Loading,... Please wait.</p>
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<div class="content" *ngIf="!loading">
+  <router-outlet *ngIf="connected"></router-outlet>
+  <p id="conErr" *ngIf="!connected" style="margin-left: 25px;">
+    There is no connection with the database, please contact the IT crowd!
+  </p>
+</div>

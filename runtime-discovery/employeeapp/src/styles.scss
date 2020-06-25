@@ -1,0 +1,292 @@
+@import "./assets/dreambike.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+$bg: silver;
+$bg-dark: rgb(70, 70, 70);
+$bg-light: rgb(170, 169, 169);
+$hover: rgb(215, 194, 120);
+$border: 2px solid $bg-dark;
+$border-radius: 0.5rem !default;
+$box-shadow: 0 1px #666;
+$alert: rgb(153, 1, 1);
+$active: rgb(10, 126, 29);
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  height: 100%;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+
+  /* Styling for background - class="bg" */
+  .bg {
+    background-color: $bg;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .mat-checkbox-layout {
+    vertical-align: top;
+    margin-top: 2px;
+    border: 1px solid black;
+  }
+
+  .mat-checkbox .mat-checkbox-ripple {
+    height: 0px;
+    width: 0px;
+  }
+
+  /* button voor icons*/
+  .buttonIcon {
+    cursor: pointer;
+    background-color: transparent;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-left: 1px;
+    padding-right: 1px;
+    border: 0px;
+  }
+
+  .buttonIcon:hover {
+    background-color: transparent;
+    border: 0px;
+  }
+
+  .buttonIcon:active {
+    background-color: transparent;
+    border: 0px;
+  }
+
+  /* Styling for tabels with scroll - class="table-scroll" */
+  .mat-cell,
+  .mat-header-cell {
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+
+  .table-scroll {
+    min-width: calc(500px+180px);
+    width: 100%;
+    table-layout: auto;
+    empty-cells: show;
+    border-collapse: separate;
+
+    /* Decoration */
+    border-spacing: 0;
+    border: 1px solid black;
+  }
+
+  .table-scroll thead {
+    display: block;
+    background-color: black;
+    color: $hover;
+    border-left: 3px solid black;
+  }
+
+  .table-scroll tbody {
+    /* Position */
+    max-height: 500px;
+    display: block;
+    overflow-y: scroll;
+    /* Decoration */
+    background-color: $bg;
+    border-left: 3px solid black;
+  }
+
+  .table-scroll tr {
+    display: block;
+    padding: 3px;
+    cursor: default;
+  }
+
+  .table-scroll td {
+    display: table-cell;
+    vertical-align: inherit;
+  }
+
+  .table-scroll tr th {
+    display: table-cell;
+    vertical-align: inherit;
+    text-align: -internal-center;
+
+    flex-basis: 100%;
+    vertical-align: middle;
+    padding: -1px;
+  }
+
+  .table-scroll thead tr {
+    margin-right: 0px;
+  }
+
+  /* Other options */
+  .table-scroll tbody tr:nth-child(2n) {
+    background-color: $bg-light;
+  }
+
+  .table-scroll thead tr {
+    margin-right: 20px;
+  }
+
+  .inputContainer {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* Styling for all the buttons - class="btn" */
+  .btn {
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    border: $border;
+    border-radius: 5px;
+    box-shadow: $box-shadow;
+  }
+
+  .btn:hover {
+    background-color: $hover;
+  }
+
+  .btn:active {
+    color: white;
+    background-color: $active;
+    box-shadow: $box-shadow;
+    transform: translateY(2px);
+  }
+
+  .img {
+    width: 150px;
+    height: 150px;
+    margin-left: -5px;
+  }
+
+  /* mat- icon kleiner dan normaal: */
+  .mat-icon {
+    transform: scale(0.75);
+  }
+
+  .icon {
+    display: inline-block;
+    height: 30px;
+    margin: 0 auto;
+    margin-right: 10px;
+    padding-right: 5px;
+    text-align: center;
+    vertical-align: middle;
+    width: 15%;
+  }
+
+  .alert {
+    font-size: small;
+    color: $alert;
+  }
+
+  .mat-grid-tile .mat-grid-tile-footer {
+    display: grid;
+  }
+
+  // buttons on home page:
+  .mat-card {
+    font-size: 15px;
+    line-height: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    background-color: #ffffff;
+  }
+
+  .mat-card-content {
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  /* No more default outline that chrome always uses */
+  *:focus {
+    outline: none;
+  }
+
+  /* Margin right side of the menu */
+  .contentMargin {
+    margin-left: 10px;
+  }
+
+  // toggle buttons:
+  .mat-button-toggle-group {
+    margin-top: 10px;
+  }
+
+  .mat-button-toggle-button {
+    max-height: 28px;
+  }
+
+  .mat-button-toggle-label-content {
+    line-height: 28px !important;
+  }
+
+  .back {
+    background-color: #ffffff !important;
+    /* Height and width fallback for older browsers. */
+    height: calc(100% -66px);
+    /* Set the height/width to match that of the viewport. */
+    height: calc(100vh - 66px);
+    margin: 0px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("./assets/bigcity.png");
+  }
+}
+
+.mat-tab-body-wrapper {
+  margin-left: 10px;
+}
+
+.mat.tab.label :hover {
+  color: black;
+  background-color: $hover;
+}
+
+.mat-tab-label-container {
+  max-height: 28px;
+}
+
+.mat-tab-labels {
+  max-height: 28px;
+}
+
+.mat-tab-label {
+  max-height: 28px;
+  border-right: 1px solid black;
+}
+
+.mat-tab-label.mat-tab-label-active {
+  color: white;
+  background-color: $active;
+}
+
+::ng-deep .mat-tooltip {
+  white-space: pre-line !important;
+  max-width: 30px !important;
+}
+
+::ng-deep.mat-tab-label,
+::ng-deep.mat-tab-label-active {
+  max-height: 28px !important;
+  padding: 3px !important;
+  margin: 3px !important;
+  font-size: 14px;
+}
+
+::ng-deep.mat-dialog-container {
+  padding: 0px !important;
+  padding-top: 24px !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
