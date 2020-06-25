@@ -1,17 +1,17 @@
 # stage 1
-FROM node:alpine AS dreambike-fe-build
+FROM node:alpine AS build
 WORKDIR /app
-COPY . .
+COPY . /app
 RUN npm install && npm run build
 
 # stage 2
 FROM nginx:alpine
-COPY --from=dreambike-fe-build app/dist/employeeapp /usr/share/nginx/html
+COPY --from=build app/dist/employeeapp /usr/share/nginx/html
 EXPOSE 80
 
-# used by: docker build --pull --name employeeapp --rm -f "Dockerfile" -t employeeapp:latest "."
-# build with: docker build -t angular-app .
+# build with: docker build -t dreambike/angular-app --pull=true .
 # run with: docker run --name angular-app -it --rm -p 9000:80 angular-app
+# push to dreambike: docker push dreambike/angular-app:latest
 # run in compose: docker-compose up -d
 
 # add to docker-compose.yml:
