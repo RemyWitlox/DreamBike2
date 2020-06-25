@@ -1,4 +1,6 @@
 export const environment = {
+  system: 'prod',
+  version: 'jenkinsBuildNO',
   appVersion: require('../../package.json').version,
   production: true,
   // for fake backend:

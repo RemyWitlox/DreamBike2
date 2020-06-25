@@ -2,7 +2,7 @@
 FROM node:alpine AS build
 WORKDIR /app
 COPY . /app
-RUN npm install && npm run build && npm cache clean --force
+RUN npm install && npm run build:prod && npm cache clean --force
 
 # stage 2
 FROM nginx:alpine

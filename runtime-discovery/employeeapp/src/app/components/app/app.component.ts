@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   loading: boolean;
   connected: boolean;
   title = 'Dreambike';
-  currentApplicationVersion = environment.appVersion;
+  currentApplicationVersion = environment.version;
   subtitle = 'DreamBike Employee Application';
   currentBackendUser: ReceiveUser;
   now: Date;
