@@ -3,7 +3,6 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  version: 'jenkinsBuildNO' + '-dev',
   appVersion: require('../../package.json').version + '-dev',
   production: false,
   // for fake backend:
