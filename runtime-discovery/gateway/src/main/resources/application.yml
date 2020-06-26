@@ -7,12 +7,6 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: service
-        uri: lb://service
-        predicates:
-        - Path=/service/**
-        filters:
-        - StripPrefix=1
       - id: registry
         uri: lb://registry
         predicates:
@@ -23,12 +17,42 @@ spring:
         uri: lb://registry
         predicates:
         - Path=/eureka/**
-      - id: bikeservice
+      - id: bike
         uri: lb://bike
         predicates:
         - Path=/bike/**
         filters:
         - StripPrefix=1
+      - id: docking
+        uri: lb://docking
+        predicates:
+        - Path=/docking/**
+        filters:
+        - StripPrefix=1
+        - TokenRelay=
+      - id: keycloak
+        uri: http://85.146.20.136:8080
+        predicates:
+        - Path=/keycloak/**
+        filters:
+        - StripPrefix=1
+      - id: bikedocking
+        uri: lb://bikedocking
+        predicates:
+        - Path=/bikedocking/**
+        filters:
+        - StripPrefix=1
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods:
+            - GET
+            - POST
+            - PUT
+            - DELETE
+            - HEAD
 
 info:
   app:
@@ -38,7 +62,7 @@ eureka:
   client:
     registerWithEureka: true
     serviceUrl: 
-      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+      defaultZone: http://registry:8761/eureka
     healthcheck:
       enabled: true
 

@@ -1,0 +1,61 @@
+<div mat-dialog-content style="height: 400px;">
+  <h1 id="titelBikeDockD" mat-dialog-title>{{ intro }}</h1>
+  <form
+    [formGroup]="bikeDockForm"
+    (ngSubmit)="onConfirm()"
+    style="display: block !important;"
+  >
+    <mat-form-field style="width: 300px;">
+      <mat-label for="bike">Bike</mat-label>
+      <input matInput disabled [value]="bike.name" />
+    </mat-form-field>
+
+    <mat-form-field style="width: 300px;" floatLabel="always">
+      <mat-label for="docking">Docking Station</mat-label>
+      <div class="inputContainer">
+        <mat-icon>search</mat-icon>
+        <input
+          matInput
+          id="typeahead-config"
+          type="text"
+          class="searchInput"
+          formControlName="docking"
+          (selectItem)="selectedItem($event)"
+          [ngbTypeahead]="search"
+          [inputFormatter]="formatter"
+          [resultFormatter]="formatter"
+          [editable]="false"
+          [focusFirst]="true"
+          placement="bottom-left"
+          placeholder="Search for a docking station:"
+          onfocus="this.value=''"
+        />
+      </div>
+    </mat-form-field>
+    <div
+      mat-dialog-actions
+      style="margin-top: 75px; display: block !important;"
+    >
+      <button
+        id="onConfirmBikeDockD"
+        mat-button
+        class="btn"
+        cdkFocusInitial
+        (ngSubmit)="onConfirm()"
+      >
+        Submit
+      </button>
+      <button
+        id="onCancelBikeDockD"
+        mat-button
+        class="btn"
+        (click)="onCancel()"
+      >
+        Cancel
+      </button>
+      <p id="errorBikeDockD" *ngIf="error" class="alert">
+        {{ error }}
+      </p>
+    </div>
+  </form>
+</div>

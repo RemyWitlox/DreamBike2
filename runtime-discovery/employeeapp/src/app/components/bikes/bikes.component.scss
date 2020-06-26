@@ -1,0 +1,60 @@
+$bg: silver;
+$bg-dark: rgb(70, 70, 70);
+$bg-light: rgb(170, 169, 169);
+$hover: rgb(215, 194, 120);
+$border: 2px solid $bg-dark;
+$border-radius: 0.5rem !default;
+$box-shadow: 0 1px #666;
+$alert: rgb(153, 1, 1);
+$active: rgb(10, 126, 29);
+
+::ng-deep .dropdown-menu {
+  width: 350px;
+  z-index: 1000;
+}
+
+#maintable {
+  max-height: 540px !important;
+  /* Position */
+  display: block;
+  overflow-y: scroll;
+
+  table {
+    width: 100%;
+    /* Decoration */
+    border-spacing: 0;
+    border: 1px solid black;
+    border-left: 3px solid black;
+  }
+
+  thead {
+    background-color: black;
+    color: $hover;
+    border-left: 3px solid black;
+  }
+
+  thead th {
+    font-weight: normal !important;
+  }
+
+  tbody {
+    max-height: 740px !important;
+    /* Decoration */
+    background-color: $bg;
+    border-left: 3px solid black;
+  }
+
+  tbody tr:hover {
+    background-color: $hover;
+    cursor: pointer;
+  }
+
+  tbody tr:nth-child(2n) {
+    background-color: $bg-light;
+  }
+
+  tbody tr.active {
+    background-color: $active !important;
+    color: white !important;
+  }
+}

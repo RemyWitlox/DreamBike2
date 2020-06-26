@@ -1,48 +1,82 @@
-version: '3'
+version: "3.1"
+
+#volumes:
+#  mysql_data:
+#    driver: local
 services:
   registry:
-    image: dreambike-registry:latest
+    image: dreambike/registry:latest
     container_name: registry
-    expose: 
+    expose:
       - "8761"
-  greeting-service:
-    image: dreambike-service:latest
-    container_name: greeting-service
-    expose: 
-      - "8762"
-    depends_on: 
-      - "registry"
-    environment:
-      - JAVA_OPTS=
-        -DEUREKA_SERVER=http://registry:8761/eureka
+  #  greeting-service:
+  #    image: dreambike-service:latest
+  #    container_name: greeting-service
+  #    expose:
+  #      - "8762"
+  #    depends_on:
+  #      - "registry"
+  #    environment:
+  #      - JAVA_OPTS=
+  #        -DEUREKA_SERVER=http://registry:8761/eureka
   gateway:
-    image: dreambike-gateway:latest
+    image: dreambike/gateway:latest
     container_name: gateway
     ports:
-      - "127.0.0.1:8080:8760"
-    depends_on: 
+      - "127.0.0.1:8181:8760"
+    depends_on:
       - registry
-      - greeting-service
-    environment:
-      - JAVA_OPTS=
-        -DEUREKA_SERVER=http://registry:8761/eureka
-  bike-service:
-    image: dreambike-bikeservice:latest
-    container_name: bike-service
+      - bike
+      - docking
+      - bikedocking
+  bike:
+    image: dreambike/bike:latest
+    container_name: bike
     expose:
       - "8763"
     depends_on:
       - "registry"
-    environment:
-      - JAVA_OPTS=
-        -DEUREKA_SERVER=http://registry:8761/eureka
-  docking-service:
-    image: dreambike-dockingservice:latest
-    container_name: docking-service
+  docking:
+    image: dreambike/docking:latest
+    container_name: docking
     expose:
-    - "8764"
+      - "8764"
     depends_on:
-    - "registry"
-    environment:
-    - JAVA_OPTS=
-     -DEUREKA_SERVER=http://registry:8761/eureka
+      - "registry"
+  bikedocking:
+    image: dreambike/bikedocking:latest
+    container_name: bikedocking
+    expose:
+      - "8765"
+    depends_on:
+      - "registry"
+  angular-docker:
+    image: dreambike/angular-app:latest
+    container_name: angular-app
+    build: ./employeeapp
+    ports:
+      - "9000:80"
+#  mysql:
+#    image: mysql:5.7
+#    container_name: mysql
+#    volumes:
+#    - mysql_data:/var/lib/mysql
+#    environment:
+#      MYSQL_ROOT_PASSWORD: root
+#      MYSQL_DATABASE: keycloak
+#      MYSQL_USER: keycloak
+#      MYSQL_PASSWORD: password
+#  keycloak:
+#    image: quay.io/keycloak/keycloak:latest
+#    container_name: keycloak
+#    environment:
+#      DB_VENDOR: MYSQL
+#      DB_ADDR: http://85.146.20.136/
+#      DB_PORT: 3306
+#      DB_DATABASE: keycloak
+#      DB_USER: keycloak
+#      DB_PASSWORD: keycloak
+#      KEYCLOAK_USER: admin
+#      KEYCLOAK_PASSWORD: admin
+#    ports:
+#      - "127.0.0.1:8282:8080"

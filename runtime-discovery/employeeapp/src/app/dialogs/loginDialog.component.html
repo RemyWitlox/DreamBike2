@@ -1,0 +1,52 @@
+<div mat-dialog-content style="height: 300px;">
+  <h1 id="titelLogin" mat-dialog-title>Login</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onConfirm()">
+    <mat-form-field>
+      <mat-label for="username">Username</mat-label>
+      <input
+        matInput
+        maxlength="50"
+        formControlName="username"
+        required
+        autocomplete="off"
+        [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+      />
+      <mat-hint
+        *ngIf="submitted && f.username.errors && f.username.errors.required"
+        >Username is required</mat-hint
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="password">Password</mat-label>
+      <input
+        matInput
+        type="password"
+        maxlength="255"
+        formControlName="password"
+        required
+        autocomplete="off"
+      />
+      <mat-hint
+        *ngIf="submitted && f.password.errors && f.password.errors.required"
+        >Password is required</mat-hint
+      >
+    </mat-form-field>
+    <div mat-dialog-actions>
+      <button
+        id="onConfirmLoginD"
+        mat-button
+        class="btn"
+        (ngSubmit)="onConfirm()"
+        [disabled]="!loginForm.valid"
+      >
+        Login
+      </button>
+      <button id="onCancelLoginD" mat-button class="btn" (click)="onCancel()">
+        Cancel
+      </button>
+      <p id="errorLoginD" *ngIf="error" class="alert">
+        {{ error }}
+      </p>
+    </div>
+  </form>
+</div>

@@ -9,4 +9,6 @@ public interface DockingService {
 	List<DockingStation> getAll();
 
 	DockingStation getOne(long id);
+//
+//	List<DockingStation> getNotDeleted();
 }

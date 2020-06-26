@@ -5,30 +5,27 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotBlank;
-
-import org.hibernate.annotations.NaturalId;
 
 @Entity(name = "DOCKINGSTATION")
 public class DockingStation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long dockingId;
-	
-	@NaturalId
+
+//	@NaturalId
 	@Column(name = "NAME", unique = true)
-	@NotBlank(message = "DockingStationName cant be empty")
+//	@NotBlank(message = "DockingStationName cant be empty")
 	private String name;
-	
+
 	private Double lng;
 	private Double lat;
 	private int capacity;
 	private Boolean active;
-	private String city;
 	private int bikes;
-	
+	private Boolean deleted = false;
+
 	public DockingStation() {
-		
+
 	}
 
 	public long getDockingId() {
@@ -79,14 +76,6 @@ public class DockingStation {
 		this.active = active;
 	}
 
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
 	public int getBikes() {
 		return bikes;
 	}
@@ -94,9 +83,12 @@ public class DockingStation {
 	public void setBikes(int bikes) {
 		this.bikes = bikes;
 	}
-	
-	
-	
-	
 
+	public Boolean getDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(Boolean deleted) {
+		this.deleted = deleted;
+	}
 }
