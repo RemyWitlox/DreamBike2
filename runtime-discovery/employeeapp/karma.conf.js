@@ -9,25 +9,31 @@ module.exports = function (config) {
       require("karma-jasmine"),
       require("karma-chrome-launcher"),
       require("karma-jasmine-html-reporter"),
+      require("karma-junit-reporter"),
       require("karma-coverage-istanbul-reporter"),
       require("@angular-devkit/build-angular/plugins/karma"),
     ],
+    coverageIstanbulReporter: {
+      dir: require("path").join(__dirname, "./coverage/employeeapp"),
+      reports: ["html", "lcovonly", "text-summary"],
+      fixWebpackSourcePaths: true,
+    },
     client: {
       clearContext: false, // leave Jasmine Spec Runner output visible in browser
       jasmine: {
         random: false,
       },
     },
-    coverageIstanbulReporter: {
-      dir: require("path").join(__dirname, "./coverage/employeeapp"),
-      reports: ["html", "lcovonly", "text-summary"],
-      fixWebpackSourcePaths: true,
+    reporters: ["junit"],
+    junitReporter: {
+      outputDir: "karma-results",
+      outputFile: "karma-results.xml",
     },
-    reporters: ["progress", "kjhtml"],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: true,
+    autoWatch: false,
+    singleRun: true,
     browsers: ["ChromeHeadlessNoSandbox"],
     customLaunchers: {
       ChromeHeadlessNoSandbox: {
@@ -41,7 +47,6 @@ module.exports = function (config) {
         ],
       },
     },
-    singleRun: false,
     junitReporter: {
       outputDir: "test-reports",
       // results will be saved as $outputDir/$browserName.xml
