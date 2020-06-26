@@ -11,10 +11,16 @@ exports.config = {
   allScriptsTimeout: 11000,
   specs: ["./src/**/*.e2e-spec.ts"],
   capabilities: {
-    browserName: "chrome",
+    browserName: "ChromeHeadless",
     // new
     chromeOptions: {
-      args: ["--no-sandbox", "--headless", "--window-size=1024,768"],
+      args: [
+        "--headless",
+        "--disable-gpu",
+        "--window-size=800x600",
+        "--disable-dev-shm-usage",
+        "--no-sandbox",
+      ],
     },
   },
   directConnect: true,
