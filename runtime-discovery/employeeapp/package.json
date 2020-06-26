@@ -1,6 +1,7 @@
 {
-  "name": "frontend-dreambike",
-  "version": "4.3.2",
+  "name": "employeeapp",
+  "version": "4.3.5",
+  "author": "Remy Witlox and Rick Hendriks",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

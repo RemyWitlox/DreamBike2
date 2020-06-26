@@ -1,83 +1,107 @@
 <?xml version="1.0"?>
-<testsuite name="HeadlessChrome 83.0.4103 (Windows 10.0.0)" package="" timestamp="2020-06-26T17:42:30" id="0" hostname="DESKTOP-CEBE10P" tests="73" errors="0" failures="0" time="3.901">
+<testsuite name="HeadlessChrome 83.0.4103 (Windows 10.0.0)" package="" timestamp="2020-06-26T19:02:36" id="0" hostname="DESKTOP-CEBE10P" tests="73" errors="0" failures="0" time="5.949">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/83.0.4103.116 Safari/537.36"/>
   </properties>
-  <testcase name="AnalyticsComponent    &lt;----    Under Construction    ---> should create" time="0.149" classname="AnalyticsComponent    &lt;----    Under Construction    --->"/>
-  <testcase name="AnalyticsComponent    &lt;----    Under Construction    ---> should be under construction" time="0.009" classname="AnalyticsComponent    &lt;----    Under Construction    --->"/>
-  <testcase name="AppComponent should create the app" time="0.117" classname="AppComponent"/>
-  <testcase name="AppComponent should have a titel and subtitle" time="0.1" classname="AppComponent"/>
-  <testcase name="AppComponent should have a horizontal menu with login if not loged in" time="0.049" classname="AppComponent"/>
-  <testcase name="AppComponent should have a horizontal menu with logout if loged in" time="0.065" classname="AppComponent"/>
-  <testcase name="AppComponent should have a vertical menu with all options when loged in as Admin" time="0.051" classname="AppComponent"/>
-  <testcase name="AppComponent should have a vertical menu without settings or analytics when loged in as Employee" time="0.044" classname="AppComponent"/>
-  <testcase name="AppComponent should have a vertical menu without analytics when loged in as Manager" time="0.045" classname="AppComponent"/>
-  <testcase name="AppComponent should have a progress bar and text when loading" time="0.034" classname="AppComponent"/>
-  <testcase name="AppComponent should show a message when connection has failed" time="0.026" classname="AppComponent"/>
-  <testcase name="AppComponent should have a router-outlet when connection is available" time="0.041" classname="AppComponent"/>
-  <testcase name="AppComponent should open the Login dialog" time="0.04" classname="AppComponent"/>
-  <testcase name="AppComponent should logout a user when logout button pressed" time="0.042" classname="AppComponent"/>
-  <testcase name="BikesComponent should create the app" time="0.058" classname="BikesComponent"/>
-  <testcase name="BikesComponent should have a progress bar and text when loading" time="0.03" classname="BikesComponent"/>
-  <testcase name="BikesComponent should show a message when connection has failed" time="0.027" classname="BikesComponent"/>
-  <testcase name="BikesComponent should show a table of bikes" time="0.105" classname="BikesComponent"/>
-  <testcase name="BikesComponent should open the dialog on add" time="0.076" classname="BikesComponent"/>
-  <testcase name="BikesComponent should open the dialog on edit" time="0.069" classname="BikesComponent"/>
-  <testcase name="BikesComponent should open the dialog on delete" time="0.077" classname="BikesComponent"/>
-  <testcase name="BikesComponent should select a bike when clicking in the table" time="0.066" classname="BikesComponent"/>
-  <testcase name="BikesComponent should open the dialog on changing the docking station of the bike" time="0.075" classname="BikesComponent"/>
-  <testcase name="DockingStationsComponent should create the app" time="0.092" classname="DockingStationsComponent"/>
-  <testcase name="DockingStationsComponent should have the tabs Table and Map" time="0.048" classname="DockingStationsComponent"/>
-  <testcase name="DockingStationsComponent should have a progress bar and text when loading" time="0.05" classname="DockingStationsComponent"/>
-  <testcase name="DockingStationsComponent should show a message when connection has failed" time="0.048" classname="DockingStationsComponent"/>
-  <testcase name="DockingStationsComponent should show a table of docking stations" time="0.117" classname="DockingStationsComponent"/>
-  <testcase name="DockingStationsComponent should open the dialog on add" time="0.115" classname="DockingStationsComponent"/>
-  <testcase name="DockingStationsComponent should open the dialog on edit" time="0.114" classname="DockingStationsComponent"/>
-  <testcase name="DockingStationsComponent should open the dialog on delete" time="0.115" classname="DockingStationsComponent"/>
-  <testcase name="DockingStationsComponent should select a docking station when clicking in the table" time="0.113" classname="DockingStationsComponent"/>
-  <testcase name="DockingStationsComponent should go to tab Map when clicking on it" time="0.158" classname="DockingStationsComponent"/>
-  <testcase name="HomeComponent should create" time="0.027" classname="HomeComponent"/>
-  <testcase name="HomeComponent should alert user when not logged in" time="0.012" classname="HomeComponent"/>
-  <testcase name="HomeComponent should say Welcome to loged in user" time="0.009" classname="HomeComponent"/>
-  <testcase name="HomeComponent should show 3 tiles" time="0.009" classname="HomeComponent"/>
-  <testcase name="HomeComponent should go to Docking Stations on clicking the button" time="0.01" classname="HomeComponent"/>
-  <testcase name="HomeComponent should go to Bikes on clicking the button" time="0.01" classname="HomeComponent"/>
-  <testcase name="HomeComponent should go to Repairs on clicking the button" time="0.01" classname="HomeComponent"/>
-  <testcase name="RepairsComponent    &lt;----    Under Construction    ---> should create" time="0.009" classname="RepairsComponent    &lt;----    Under Construction    --->"/>
-  <testcase name="RepairsComponent    &lt;----    Under Construction    ---> should be under construction" time="0.005" classname="RepairsComponent    &lt;----    Under Construction    --->"/>
-  <testcase name="SettingsComponent    &lt;----    Under Construction    ---> should create" time="0.008" classname="SettingsComponent    &lt;----    Under Construction    --->"/>
-  <testcase name="SettingsComponent    &lt;----    Under Construction    ---> should be under construction" time="0.008" classname="SettingsComponent    &lt;----    Under Construction    --->"/>
-  <testcase name="     - Dialog - Add/Edit Bike Dialog should be created" time="0.103" classname="     - Dialog - Add/Edit Bike Dialog"/>
-  <testcase name="     - Dialog - Add/Edit Bike Dialog should show titel and buttons" time="0.074" classname="     - Dialog - Add/Edit Bike Dialog"/>
-  <testcase name="     - Dialog - Add/Edit Bike Dialog should close when cancel button pressed" time="0.077" classname="     - Dialog - Add/Edit Bike Dialog"/>
-  <testcase name="     - Dialog - Add/Edit Docking Station on Bike Dialog should be created" time="0.022" classname="     - Dialog - Add/Edit Docking Station on Bike Dialog"/>
-  <testcase name="     - Dialog - Add/Edit Docking Station on Bike Dialog should show titel and buttons" time="0.02" classname="     - Dialog - Add/Edit Docking Station on Bike Dialog"/>
-  <testcase name="     - Dialog - Add/Edit Docking Station on Bike Dialog should hide error initialy" time="0.019" classname="     - Dialog - Add/Edit Docking Station on Bike Dialog"/>
-  <testcase name="     - Dialog - Add/Edit Docking Station on Bike Dialog should close when cancel button pressed" time="0.025" classname="     - Dialog - Add/Edit Docking Station on Bike Dialog"/>
-  <testcase name="     - Dialog - Delete Dialog should be created" time="0.012" classname="     - Dialog - Delete Dialog"/>
-  <testcase name="     - Dialog - Delete Dialog should show titel, text and buttons" time="0.012" classname="     - Dialog - Delete Dialog"/>
-  <testcase name="     - Dialog - Delete Dialog should close when No button pressed" time="0.013" classname="     - Dialog - Delete Dialog"/>
+  <testcase name="AnalyticsComponent    &lt;----    Under Construction    ---> should create" time="0.194" classname="AnalyticsComponent    &lt;----    Under Construction    --->"/>
+  <testcase name="AnalyticsComponent    &lt;----    Under Construction    ---> should be under construction" time="0.011" classname="AnalyticsComponent    &lt;----    Under Construction    --->"/>
+  <testcase name="AppComponent should create the app" time="0.176" classname="AppComponent"/>
+  <testcase name="AppComponent should have a titel and subtitle" time="0.144" classname="AppComponent"/>
+  <testcase name="AppComponent should have a horizontal menu with login if not loged in" time="0.062" classname="AppComponent"/>
+  <testcase name="AppComponent should have a horizontal menu with logout if loged in" time="0.062" classname="AppComponent"/>
+  <testcase name="AppComponent should have a vertical menu with all options when loged in as Admin" time="0.083" classname="AppComponent"/>
+  <testcase name="AppComponent should have a vertical menu without settings or analytics when loged in as Employee" time="0.061" classname="AppComponent"/>
+  <testcase name="AppComponent should have a vertical menu without analytics when loged in as Manager" time="0.078" classname="AppComponent"/>
+  <testcase name="AppComponent should have a progress bar and text when loading" time="0.045" classname="AppComponent"/>
+  <testcase name="AppComponent should show a message when connection has failed" time="0.039" classname="AppComponent"/>
+  <testcase name="AppComponent should have a router-outlet when connection is available" time="0.048" classname="AppComponent"/>
+  <testcase name="AppComponent should open the Login dialog" time="0.046" classname="AppComponent"/>
+  <testcase name="AppComponent should logout a user when logout button pressed" time="0.046" classname="AppComponent"/>
+  <testcase name="BikesComponent should create the app" time="0.072" classname="BikesComponent"/>
+  <testcase name="BikesComponent should have a progress bar and text when loading" time="0.042" classname="BikesComponent"/>
+  <testcase name="BikesComponent should show a message when connection has failed" time="0.041" classname="BikesComponent"/>
+  <testcase name="BikesComponent should show a table of bikes" time="0.152" classname="BikesComponent"/>
+  <testcase name="BikesComponent should open the dialog on add" time="0.137" classname="BikesComponent"/>
+  <testcase name="BikesComponent should open the dialog on edit" time="0.122" classname="BikesComponent"/>
+  <testcase name="BikesComponent should open the dialog on delete" time="0.107" classname="BikesComponent"/>
+  <testcase name="BikesComponent should select a bike when clicking in the table" time="0.103" classname="BikesComponent"/>
+  <testcase name="BikesComponent should open the dialog on changing the docking station of the bike" time="0.098" classname="BikesComponent"/>
+  <testcase name="DockingStationsComponent should create the app" time="0.12" classname="DockingStationsComponent"/>
+  <testcase name="DockingStationsComponent should have the tabs Table and Map" time="0.078" classname="DockingStationsComponent"/>
+  <testcase name="DockingStationsComponent should have a progress bar and text when loading" time="0.09" classname="DockingStationsComponent"/>
+  <testcase name="DockingStationsComponent should show a message when connection has failed" time="0.091" classname="DockingStationsComponent"/>
+  <testcase name="DockingStationsComponent should show a table of docking stations" time="0.206" classname="DockingStationsComponent"/>
+  <testcase name="DockingStationsComponent should open the dialog on add" time="0.185" classname="DockingStationsComponent"/>
+  <testcase name="DockingStationsComponent should open the dialog on edit" time="0.185" classname="DockingStationsComponent"/>
+  <testcase name="DockingStationsComponent should open the dialog on delete" time="0.188" classname="DockingStationsComponent"/>
+  <testcase name="DockingStationsComponent should select a docking station when clicking in the table" time="0.232" classname="DockingStationsComponent"/>
+  <testcase name="DockingStationsComponent should go to tab Map when clicking on it" time="0.259" classname="DockingStationsComponent"/>
+  <testcase name="HomeComponent should create" time="0.036" classname="HomeComponent"/>
+  <testcase name="HomeComponent should alert user when not logged in" time="0.017" classname="HomeComponent"/>
+  <testcase name="HomeComponent should say Welcome to loged in user" time="0.012" classname="HomeComponent"/>
+  <testcase name="HomeComponent should show 3 tiles" time="0.011" classname="HomeComponent"/>
+  <testcase name="HomeComponent should go to Docking Stations on clicking the button" time="0.011" classname="HomeComponent"/>
+  <testcase name="HomeComponent should go to Bikes on clicking the button" time="0.016" classname="HomeComponent"/>
+  <testcase name="HomeComponent should go to Repairs on clicking the button" time="0.013" classname="HomeComponent"/>
+  <testcase name="RepairsComponent    &lt;----    Under Construction    ---> should create" time="0.012" classname="RepairsComponent    &lt;----    Under Construction    --->"/>
+  <testcase name="RepairsComponent    &lt;----    Under Construction    ---> should be under construction" time="0.008" classname="RepairsComponent    &lt;----    Under Construction    --->"/>
+  <testcase name="SettingsComponent    &lt;----    Under Construction    ---> should create" time="0.011" classname="SettingsComponent    &lt;----    Under Construction    --->"/>
+  <testcase name="SettingsComponent    &lt;----    Under Construction    ---> should be under construction" time="0.012" classname="SettingsComponent    &lt;----    Under Construction    --->"/>
+  <testcase name="     - Dialog - Add/Edit Bike Dialog should be created" time="0.167" classname="     - Dialog - Add/Edit Bike Dialog"/>
+  <testcase name="     - Dialog - Add/Edit Bike Dialog should show titel and buttons" time="0.108" classname="     - Dialog - Add/Edit Bike Dialog"/>
+  <testcase name="     - Dialog - Add/Edit Bike Dialog should close when cancel button pressed" time="0.081" classname="     - Dialog - Add/Edit Bike Dialog"/>
+  <testcase name="     - Dialog - Add/Edit Docking Station on Bike Dialog should be created" time="0.033" classname="     - Dialog - Add/Edit Docking Station on Bike Dialog"/>
+  <testcase name="     - Dialog - Add/Edit Docking Station on Bike Dialog should show titel and buttons" time="0.028" classname="     - Dialog - Add/Edit Docking Station on Bike Dialog"/>
+  <testcase name="     - Dialog - Add/Edit Docking Station on Bike Dialog should hide error initialy" time="0.029" classname="     - Dialog - Add/Edit Docking Station on Bike Dialog"/>
+  <testcase name="     - Dialog - Add/Edit Docking Station on Bike Dialog should close when cancel button pressed" time="0.039" classname="     - Dialog - Add/Edit Docking Station on Bike Dialog"/>
+  <testcase name="     - Dialog - Delete Dialog should be created" time="0.017" classname="     - Dialog - Delete Dialog"/>
+  <testcase name="     - Dialog - Delete Dialog should show titel, text and buttons" time="0.014" classname="     - Dialog - Delete Dialog"/>
+  <testcase name="     - Dialog - Delete Dialog should close when No button pressed" time="0.021" classname="     - Dialog - Delete Dialog"/>
   <testcase name="     - Dialog - Delete Dialog should delete when Yes button pressed" time="0.015" classname="     - Dialog - Delete Dialog"/>
-  <testcase name="     - Dialog - Add/Edit Docking Station Dialog should be created" time="0.069" classname="     - Dialog - Add/Edit Docking Station Dialog"/>
-  <testcase name="     - Dialog - Add/Edit Docking Station Dialog should show titel and buttons" time="0.05" classname="     - Dialog - Add/Edit Docking Station Dialog"/>
-  <testcase name="     - Dialog - Add/Edit Docking Station Dialog should hide error initialy" time="0.047" classname="     - Dialog - Add/Edit Docking Station Dialog"/>
-  <testcase name="     - Dialog - Add/Edit Docking Station Dialog should close when cancel button pressed" time="0.056" classname="     - Dialog - Add/Edit Docking Station Dialog"/>
-  <testcase name="     - Dialog - Add/Edit Docking Station Dialog should show disabled sumbit-button if there is no name entry" time="0.082" classname="     - Dialog - Add/Edit Docking Station Dialog"/>
-  <testcase name="     - Dialog - Add/Edit Docking Station Dialog should show disabled sumbit-button if there is no bikes entry" time="0.047" classname="     - Dialog - Add/Edit Docking Station Dialog"/>
-  <testcase name="     - Dialog - Add/Edit Docking Station Dialog should show disabled sumbit-button if there is no capacity entry" time="0.048" classname="     - Dialog - Add/Edit Docking Station Dialog"/>
-  <testcase name="     - Dialog - Add/Edit Docking Station Dialog should show disabled sumbit-button if there is no latitude entry" time="0.055" classname="     - Dialog - Add/Edit Docking Station Dialog"/>
-  <testcase name="     - Dialog - Add/Edit Docking Station Dialog should show disabled sumbit-button if there is no longitude entry" time="0.044" classname="     - Dialog - Add/Edit Docking Station Dialog"/>
-  <testcase name="     - Dialog - Add/Edit Docking Station Dialog should show sumbit-button if the form is complete" time="0.055" classname="     - Dialog - Add/Edit Docking Station Dialog"/>
-  <testcase name="     - Dialog - Login Dialog should be created" time="0.037" classname="     - Dialog - Login Dialog"/>
-  <testcase name="     - Dialog - Login Dialog should show titel and buttons" time="0.041" classname="     - Dialog - Login Dialog"/>
-  <testcase name="     - Dialog - Login Dialog should hide error initialy" time="0.035" classname="     - Dialog - Login Dialog"/>
-  <testcase name="     - Dialog - Login Dialog should close when cancel button pressed" time="0.04" classname="     - Dialog - Login Dialog"/>
-  <testcase name="     - Dialog - Login Dialog should show disabled login-button if there is no password entry" time="0.043" classname="     - Dialog - Login Dialog"/>
-  <testcase name="     - Dialog - Login Dialog should show disabled login-button if there is no login entry" time="0.03" classname="     - Dialog - Login Dialog"/>
-  <testcase name="     - Dialog - Login Dialog should show login-button if the entries are valid" time="0.038" classname="     - Dialog - Login Dialog"/>
-  <testcase name="     - Dialog - Login Dialog should login when login button pressed" time="0.21" classname="     - Dialog - Login Dialog"/>
+  <testcase name="     - Dialog - Add/Edit Docking Station Dialog should be created" time="0.078" classname="     - Dialog - Add/Edit Docking Station Dialog"/>
+  <testcase name="     - Dialog - Add/Edit Docking Station Dialog should show titel and buttons" time="0.069" classname="     - Dialog - Add/Edit Docking Station Dialog"/>
+  <testcase name="     - Dialog - Add/Edit Docking Station Dialog should hide error initialy" time="0.093" classname="     - Dialog - Add/Edit Docking Station Dialog"/>
+  <testcase name="     - Dialog - Add/Edit Docking Station Dialog should close when cancel button pressed" time="0.099" classname="     - Dialog - Add/Edit Docking Station Dialog"/>
+  <testcase name="     - Dialog - Add/Edit Docking Station Dialog should show disabled sumbit-button if there is no name entry" time="0.145" classname="     - Dialog - Add/Edit Docking Station Dialog"/>
+  <testcase name="     - Dialog - Add/Edit Docking Station Dialog should show disabled sumbit-button if there is no bikes entry" time="0.118" classname="     - Dialog - Add/Edit Docking Station Dialog"/>
+  <testcase name="     - Dialog - Add/Edit Docking Station Dialog should show disabled sumbit-button if there is no capacity entry" time="0.091" classname="     - Dialog - Add/Edit Docking Station Dialog"/>
+  <testcase name="     - Dialog - Add/Edit Docking Station Dialog should show disabled sumbit-button if there is no latitude entry" time="0.101" classname="     - Dialog - Add/Edit Docking Station Dialog"/>
+  <testcase name="     - Dialog - Add/Edit Docking Station Dialog should show disabled sumbit-button if there is no longitude entry" time="0.078" classname="     - Dialog - Add/Edit Docking Station Dialog"/>
+  <testcase name="     - Dialog - Add/Edit Docking Station Dialog should show sumbit-button if the form is complete" time="0.093" classname="     - Dialog - Add/Edit Docking Station Dialog"/>
+  <testcase name="     - Dialog - Login Dialog should be created" time="0.056" classname="     - Dialog - Login Dialog"/>
+  <testcase name="     - Dialog - Login Dialog should show titel and buttons" time="0.063" classname="     - Dialog - Login Dialog"/>
+  <testcase name="     - Dialog - Login Dialog should hide error initialy" time="0.051" classname="     - Dialog - Login Dialog"/>
+  <testcase name="     - Dialog - Login Dialog should close when cancel button pressed" time="0.067" classname="     - Dialog - Login Dialog"/>
+  <testcase name="     - Dialog - Login Dialog should show disabled login-button if there is no password entry" time="0.061" classname="     - Dialog - Login Dialog"/>
+  <testcase name="     - Dialog - Login Dialog should show disabled login-button if there is no login entry" time="0.06" classname="     - Dialog - Login Dialog"/>
+  <testcase name="     - Dialog - Login Dialog should show login-button if the entries are valid" time="0.065" classname="     - Dialog - Login Dialog"/>
+  <testcase name="     - Dialog - Login Dialog should login when login button pressed" time="0.247" classname="     - Dialog - Login Dialog"/>
   <system-out>
-    <![CDATA[HeadlessChrome 83.0.4103 (Windows 10.0.0) WARN: 'Can't bind to 'ngModel' since it isn't a known property of 'mat-checkbox'.'
+    <![CDATA[HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: 'dev is true'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) WARN: 'Can't bind to 'ngModel' since it isn't a known property of 'mat-checkbox'.'
 ,HeadlessChrome 83.0.4103 (Windows 10.0.0) WARN: 'Can't bind to 'ngModel' since it isn't a known property of 'mat-checkbox'.'
 ,HeadlessChrome 83.0.4103 (Windows 10.0.0) WARN: 'Can't bind to 'ngModel' since it isn't a known property of 'mat-checkbox'.'
 ,HeadlessChrome 83.0.4103 (Windows 10.0.0) WARN: 'Can't bind to 'ngModel' since it isn't a known property of 'mat-checkbox'.'
@@ -794,9 +818,11 @@ TypeError: Cannot read property 'name' of null
 ,HeadlessChrome 83.0.4103 (Windows 10.0.0) WARN: 'Element matching '[cdkFocusInitial]' is not focusable.', <button id="onConfirmDeleteD" mat-button="" cdkfocusinitial="" class="btn"> Yes </button>
 ,HeadlessChrome 83.0.4103 (Windows 10.0.0) WARN: 'Element matching '[cdkFocusInitial]' is not focusable.', <button id="onConfirmDeleteD" mat-button="" cdkfocusinitial="" class="btn"> Yes </button>
 ,HeadlessChrome 83.0.4103 (Windows 10.0.0) WARN: 'Element matching '[cdkFocusInitial]' is not focusable.', <button id="onConfirmDeleteD" mat-button="" cdkfocusinitial="" class="btn"> Yes </button>
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: HttpErrorResponse{headers: HttpHeaders{normalizedNames: Map{}, lazyUpdate: null, headers: Map{}}, status: 0, statusText: 'Unknown Error', url: 'http://localhost:8181/bike/getAll', ok: false, name: 'HttpErrorResponse', message: 'Http failure response for http://localhost:8181/bike/getAll: 0 Unknown Error', error: ProgressEvent{isTrusted: true}}
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: HttpErrorResponse{headers: HttpHeaders{normalizedNames: Map{}, lazyUpdate: null, headers: Map{}}, status: 0, statusText: 'Unknown Error', url: 'http://localhost:8181/docking/getAll', ok: false, name: 'HttpErrorResponse', message: 'Http failure response for http://localhost:8181/docking/getAll: 0 Unknown Error', error: ProgressEvent{isTrusted: true}}
 ,HeadlessChrome 83.0.4103 (Windows 10.0.0) ERROR: 'ERROR', TypeError: Cannot read property 'returnUrl' of undefined
 TypeError: Cannot read property 'returnUrl' of undefined
-    at LoginDialog.ngOnInit (http://localhost:9876/_karma_webpack_/main.js:17199:82)
+    at LoginDialog.ngOnInit (http://localhost:9876/_karma_webpack_/main.js:17462:82)
     at callHook (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4726:1)
     at callHooks (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4690:1)
     at executeInitAndCheckHooks (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4630:1)
@@ -808,7 +834,7 @@ TypeError: Cannot read property 'returnUrl' of undefined
     at refreshView (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:12051:1)
 ,HeadlessChrome 83.0.4103 (Windows 10.0.0) ERROR: 'ERROR', TypeError: Cannot read property 'returnUrl' of undefined
 TypeError: Cannot read property 'returnUrl' of undefined
-    at LoginDialog.ngOnInit (http://localhost:9876/_karma_webpack_/main.js:17199:82)
+    at LoginDialog.ngOnInit (http://localhost:9876/_karma_webpack_/main.js:17462:82)
     at callHook (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4726:1)
     at callHooks (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4690:1)
     at executeInitAndCheckHooks (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4630:1)
@@ -820,7 +846,7 @@ TypeError: Cannot read property 'returnUrl' of undefined
     at refreshView (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:12051:1)
 ,HeadlessChrome 83.0.4103 (Windows 10.0.0) ERROR: 'ERROR', TypeError: Cannot read property 'returnUrl' of undefined
 TypeError: Cannot read property 'returnUrl' of undefined
-    at LoginDialog.ngOnInit (http://localhost:9876/_karma_webpack_/main.js:17199:82)
+    at LoginDialog.ngOnInit (http://localhost:9876/_karma_webpack_/main.js:17462:82)
     at callHook (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4726:1)
     at callHooks (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4690:1)
     at executeInitAndCheckHooks (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4630:1)
@@ -832,7 +858,7 @@ TypeError: Cannot read property 'returnUrl' of undefined
     at refreshView (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:12051:1)
 ,HeadlessChrome 83.0.4103 (Windows 10.0.0) ERROR: 'ERROR', TypeError: Cannot read property 'returnUrl' of undefined
 TypeError: Cannot read property 'returnUrl' of undefined
-    at LoginDialog.ngOnInit (http://localhost:9876/_karma_webpack_/main.js:17199:82)
+    at LoginDialog.ngOnInit (http://localhost:9876/_karma_webpack_/main.js:17462:82)
     at callHook (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4726:1)
     at callHooks (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4690:1)
     at executeInitAndCheckHooks (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4630:1)
@@ -844,7 +870,7 @@ TypeError: Cannot read property 'returnUrl' of undefined
     at refreshView (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:12051:1)
 ,HeadlessChrome 83.0.4103 (Windows 10.0.0) ERROR: 'ERROR', TypeError: Cannot read property 'returnUrl' of undefined
 TypeError: Cannot read property 'returnUrl' of undefined
-    at LoginDialog.ngOnInit (http://localhost:9876/_karma_webpack_/main.js:17199:82)
+    at LoginDialog.ngOnInit (http://localhost:9876/_karma_webpack_/main.js:17462:82)
     at callHook (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4726:1)
     at callHooks (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4690:1)
     at executeInitAndCheckHooks (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4630:1)
@@ -856,7 +882,7 @@ TypeError: Cannot read property 'returnUrl' of undefined
     at refreshView (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:12051:1)
 ,HeadlessChrome 83.0.4103 (Windows 10.0.0) ERROR: 'ERROR', TypeError: Cannot read property 'returnUrl' of undefined
 TypeError: Cannot read property 'returnUrl' of undefined
-    at LoginDialog.ngOnInit (http://localhost:9876/_karma_webpack_/main.js:17199:82)
+    at LoginDialog.ngOnInit (http://localhost:9876/_karma_webpack_/main.js:17462:82)
     at callHook (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4726:1)
     at callHooks (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4690:1)
     at executeInitAndCheckHooks (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4630:1)
@@ -868,7 +894,7 @@ TypeError: Cannot read property 'returnUrl' of undefined
     at refreshView (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:12051:1)
 ,HeadlessChrome 83.0.4103 (Windows 10.0.0) ERROR: 'ERROR', TypeError: Cannot read property 'returnUrl' of undefined
 TypeError: Cannot read property 'returnUrl' of undefined
-    at LoginDialog.ngOnInit (http://localhost:9876/_karma_webpack_/main.js:17199:82)
+    at LoginDialog.ngOnInit (http://localhost:9876/_karma_webpack_/main.js:17462:82)
     at callHook (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4726:1)
     at callHooks (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4690:1)
     at executeInitAndCheckHooks (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4630:1)
@@ -880,7 +906,7 @@ TypeError: Cannot read property 'returnUrl' of undefined
     at refreshView (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:12051:1)
 ,HeadlessChrome 83.0.4103 (Windows 10.0.0) ERROR: 'ERROR', TypeError: Cannot read property 'returnUrl' of undefined
 TypeError: Cannot read property 'returnUrl' of undefined
-    at LoginDialog.ngOnInit (http://localhost:9876/_karma_webpack_/main.js:17199:82)
+    at LoginDialog.ngOnInit (http://localhost:9876/_karma_webpack_/main.js:17462:82)
     at callHook (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4726:1)
     at callHooks (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4690:1)
     at executeInitAndCheckHooks (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/fesm2015/core.js:4630:1)
@@ -912,6 +938,7 @@ TypeError: Cannot read property 'click' of null
     at ProxyZoneSpec.push../node_modules/zone.js/dist/zone-testing.js.ProxyZoneSpec.onInvokeTask (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:323:1)
     at ZoneDelegate.invokeTask (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-evergreen.js:398:1)
     at Zone.runTask (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-evergreen.js:167:1)'
+,HeadlessChrome 83.0.4103 (Windows 10.0.0) LOG: HttpErrorResponse{headers: HttpHeaders{normalizedNames: Map{}, lazyUpdate: null, headers: Map{}}, status: 0, statusText: 'Unknown Error', url: 'http://localhost:8181/bike/getAll', ok: false, name: 'HttpErrorResponse', message: 'Http failure response for http://localhost:8181/bike/getAll: 0 Unknown Error', error: ProgressEvent{isTrusted: true}}
 
 ]]>
   </system-out>
