@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
   currentBackendUser: ReceiveUser;
   now: Date;
   interval;
+  dev: boolean;
 
   constructor(
     private dialog: MatDialog,
@@ -31,18 +32,40 @@ export class AppComponent implements OnInit {
     private zone: NgZone
   ) {}
 
-  getCurrentBackendUser() {
-    this.authenticationService.currentBackendUser.subscribe(
-      (x) => (this.currentBackendUser = x)
-    );
+  setDevColor() {
+    console.log('set color');
+
+    if ((this.dev = true)) {
+      console.log('true');
+
+      return 'primary';
+    } else {
+      console.log('falseks');
+
+      return 'rgb(124, 20, 20)';
+    }
   }
 
   ngOnInit() {
     this.loading = true;
+    this.dev = false;
     this.interval = setInterval(() => {
       this.onConnect();
     }, 5000);
     this.zone.run(() => this.getCurrentBackendUser());
+    if (this.currentApplicationVersion.includes('dev')) {
+      console.log('dev is true');
+      this.dev = true;
+    } else {
+      console.log('dev is false');
+      this.dev = false;
+    }
+  }
+
+  getCurrentBackendUser() {
+    this.authenticationService.currentBackendUser.subscribe(
+      (x) => (this.currentBackendUser = x)
+    );
   }
 
   get isAdmin() {

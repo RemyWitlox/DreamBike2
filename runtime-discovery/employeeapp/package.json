@@ -1,6 +1,7 @@
 {
-  "name": "frontend-dreambike",
-  "version": "4.3.2",
+  "name": "employeeapp",
+  "version": "4.3.6",
+  "author": "Remy Witlox and Rick Hendriks",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -54,6 +55,7 @@
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~3.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
+    "karma-junit-reporter": "^2.0.1",
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
