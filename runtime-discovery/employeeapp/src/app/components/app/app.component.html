@@ -1,7 +1,12 @@
 <h1 hidden>{{ title }}</h1>
 <mat-sidenav-container class="horizontalMenu">
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar
+      [ngClass]="{
+        prod: !dev,
+        dev: dev
+      }"
+    >
       <div style="padding-left: 15px;">
         <img
           style="height: 50px; vertical-align: -5px;"
@@ -79,7 +84,7 @@
     >Settings</a
   >
   <p style="bottom: 0; position: absolute; padding-left: 12px;">
-    {{ now | date: "dd-MM-yyyy HH:mm:ss" }}
+    <small>{{ now | date: "dd-MM-yyyy HH:mm:ss" }}</small>
   </p>
 </div>
 <div *ngIf="loading">

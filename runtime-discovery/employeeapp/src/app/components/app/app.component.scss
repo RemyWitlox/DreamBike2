@@ -32,6 +32,19 @@ span {
   min-width: 805px;
 }
 
+.dev {
+  background: linear-gradient(
+    90deg,
+    black 0%,
+    $alert 70%,
+    $alert 100%
+  ) !important;
+}
+
+.prod {
+  color: primary;
+}
+
 .navigation-items {
   list-style: none;
   margin: 0;
