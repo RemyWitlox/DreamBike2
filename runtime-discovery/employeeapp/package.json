@@ -1,6 +1,6 @@
 {
   "name": "employeeapp",
-  "version": "4.3.5",
+  "version": "4.3.6",
   "author": "Remy Witlox and Rick Hendriks",
   "scripts": {
     "ng": "ng",
