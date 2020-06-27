@@ -7,7 +7,7 @@ services:
     expose:
       - "8761"
   gateway:
-    image: dreambike/gateway:prod
+    image: dreambike/gateway:latest
     container_name: gateway
     ports:
       - "8181:8760"
