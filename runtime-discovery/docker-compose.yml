@@ -5,7 +5,7 @@ version: "3.1"
 #    driver: local
 services:
   registry:
-    image: dreambike/registry:latest
+    image: dreambike/registry:prod
     container_name: registry
     expose:
       - "8761"
@@ -20,7 +20,7 @@ services:
   #      - JAVA_OPTS=
   #        -DEUREKA_SERVER=http://registry:8761/eureka
   gateway:
-    image: dreambike/gateway:latest
+    image: dreambike/gateway:prod
     container_name: gateway
     ports:
       - "127.0.0.1:8181:8760"
@@ -30,28 +30,28 @@ services:
       - docking
       - bikedocking
   bike:
-    image: dreambike/bike:latest
+    image: dreambike/bike:prod
     container_name: bike
     expose:
       - "8763"
     depends_on:
       - "registry"
   docking:
-    image: dreambike/docking:latest
+    image: dreambike/docking:prod
     container_name: docking
     expose:
       - "8764"
     depends_on:
       - "registry"
   bikedocking:
-    image: dreambike/bikedocking:latest
+    image: dreambike/bikedocking:prod
     container_name: bikedocking
     expose:
       - "8765"
     depends_on:
       - "registry"
   angular-docker:
-    image: dreambike/angular-app:latest
+    image: dreambike/angular-app:prod
     container_name: angular-app
     build: ./employeeapp
     ports:
