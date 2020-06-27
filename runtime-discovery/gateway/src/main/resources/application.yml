@@ -54,7 +54,7 @@ spring:
             - DELETE
             - HEAD
   security:    oauth2:      client:        provider:          keycloak:
-            issuer-uri: http://85.146.20.136:8080/auth/realms/DreamBikeKeycloak/
+            issuer-uri: http://85.146.20.136:8080/auth/realms/DreamBikeKeycloak
             user-name-attribute: preferred_username
         registration:          keycloak:
             client-id: loginapp
