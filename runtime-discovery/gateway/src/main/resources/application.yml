@@ -53,6 +53,7 @@ spring:
             - DELETE
             - HEAD
 
+
 info:
   app:
     name: ${spring.application.name}
