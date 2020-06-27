@@ -6,6 +6,7 @@ spring:
     name: gateway  
   cloud:
     gateway:
+      default-filters:      - TokenRelay
       routes:
       - id: registry
         uri: lb://registry
@@ -52,6 +53,12 @@ spring:
             - PUT
             - DELETE
             - HEAD
+  security:    oauth2:      client:        provider:          keycloak:
+            issuer-uri: http://85.146.20.136:8080/auth/realms/DreamBikeKeycloak/
+            user-name-attribute: preferred_username
+        registration:          keycloak:
+            client-id: loginapp
+            client-secret: e729b79d-4280-4ce4-bcf3-4fd6321bc491
 
 
 info:
