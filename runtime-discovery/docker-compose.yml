@@ -1,29 +1,16 @@
 version: "3.1"
 
-#volumes:
-#  mysql_data:
-#    driver: local
 services:
   registry:
     image: dreambike/registry:prod
     container_name: registry
     expose:
       - "8761"
-  #  greeting-service:
-  #    image: dreambike-service:latest
-  #    container_name: greeting-service
-  #    expose:
-  #      - "8762"
-  #    depends_on:
-  #      - "registry"
-  #    environment:
-  #      - JAVA_OPTS=
-  #        -DEUREKA_SERVER=http://registry:8761/eureka
   gateway:
     image: dreambike/gateway:prod
     container_name: gateway
     ports:
-      - "127.0.0.1:8181:8760"
+      - "8181:8760"
     depends_on:
       - registry
       - bike
@@ -56,27 +43,3 @@ services:
     build: ./employeeapp
     ports:
       - "9000:80"
-#  mysql:
-#    image: mysql:5.7
-#    container_name: mysql
-#    volumes:
-#    - mysql_data:/var/lib/mysql
-#    environment:
-#      MYSQL_ROOT_PASSWORD: root
-#      MYSQL_DATABASE: keycloak
-#      MYSQL_USER: keycloak
-#      MYSQL_PASSWORD: password
-#  keycloak:
-#    image: quay.io/keycloak/keycloak:latest
-#    container_name: keycloak
-#    environment:
-#      DB_VENDOR: MYSQL
-#      DB_ADDR: http://85.146.20.136/
-#      DB_PORT: 3306
-#      DB_DATABASE: keycloak
-#      DB_USER: keycloak
-#      DB_PASSWORD: keycloak
-#      KEYCLOAK_USER: admin
-#      KEYCLOAK_PASSWORD: admin
-#    ports:
-#      - "127.0.0.1:8282:8080"
