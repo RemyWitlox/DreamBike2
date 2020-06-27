@@ -6,7 +6,7 @@ version: '3'
 
 services:
   registry:
-    image: dreambike/registry:latest
+    image: dreambike/registry:devrick
     container_name: registry
     expose: 
       - "8761"
@@ -21,7 +21,7 @@ services:
 #      - JAVA_OPTS=
 #        -DEUREKA_SERVER=http://registry:8761/eureka
   gateway:
-    image: dreambike/gateway:latest
+    image: dreambike/gateway:devrick
     container_name: gateway
     ports:
       - "8181:8760"
@@ -31,21 +31,21 @@ services:
       - docking
       - bikedocking
   bike:
-    image: dreambike/bike:latest
+    image: dreambike/bike:devrick
     container_name: bike
     expose:
       - "8763"
     depends_on:
       - "registry"
   docking:
-    image: dreambike/docking:latest
+    image: dreambike/docking:devrick
     container_name: docking
     expose:
       - "8764"
     depends_on:
       - "registry"
   bikedocking:
-    image: dreambike/bikedocking:latest
+    image: dreambike/bikedocking:devrick
     container_name: bikedocking
     expose:
       - "8765"
