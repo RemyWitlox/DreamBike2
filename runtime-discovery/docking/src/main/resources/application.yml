@@ -15,7 +15,8 @@ spring:
     password: S5Camping    
     
   security:    oauth2:
-        resourceserver:          jwt:            jwk-set-uri: http://85.146.20.136:8080/auth/realms/DreamBikeKeycloak/protocol/openid-connect/certs#      client:#        provider:#          keycloak:
+        resourceserver:          jwt:
+            issuer-uri:  http://85.146.20.136:8080/auth/realms/DreamBikeKeycloak#      client:#        provider:#          keycloak:
 #            issuer-uri: http://85.146.20.136:8080/auth/realms/DreamBikeKeycloak
 #            user-name-attribute: preferred_username
 #        registration:
