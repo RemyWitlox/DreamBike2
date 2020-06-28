@@ -9,6 +9,8 @@ import org.springframework.security.oauth2.client.registration.ReactiveClientReg
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.security.web.server.header.XFrameOptionsServerHttpHeadersWriter.Mode;
 
+import com.scg.bikeService.CrossOrigin;
+
 @SpringBootApplication
 @EnableEurekaClient
 public class Gateway {
@@ -17,6 +19,7 @@ public class Gateway {
 		SpringApplication.run(Gateway.class, args);
 	}
 
+	@CrossOrigin(origins = "*")
 	@Bean
 	public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http,
 			ReactiveClientRegistrationRepository clientRegistrationRepository) {
