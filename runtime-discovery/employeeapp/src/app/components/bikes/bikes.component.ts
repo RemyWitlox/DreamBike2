@@ -88,14 +88,13 @@ export class BikesComponent {
         this.sortedData = bikes.sort((a, b) => {
           return compare(a.bikeId, b.bikeId, true);
         });
+        this.loading = false;
         this.connected = true;
       },
       (err) => {
         console.log(err);
-        this.connected = false;
-      },
-      () => {
         this.loading = false;
+        this.connected = false;
       }
     );
     this.selectedBike = new Bike();
@@ -209,6 +208,8 @@ export class BikesComponent {
           return compare(a.type, b.type, isAsc);
         case 'driver':
           return compare(a.driver, b.driver, isAsc);
+        case 'size':
+          return compare(a.size, b.size, isAsc);
         case 'broken':
           return compare(a.broken.toString(), b.broken.toString(), isAsc);
         case 'created':

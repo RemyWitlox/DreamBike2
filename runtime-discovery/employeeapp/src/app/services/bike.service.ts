@@ -10,7 +10,7 @@ export class BikeService {
   url: string = 'http://localhost:8181/bike/';
   urlBd: string = 'http://localhost:8181/bikedocking/';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   updateBikeDock(bike: Bike, dock: DockingStation): Observable<any> {
     const url = this.urlBd + 'addBikeToDocking';
@@ -42,7 +42,7 @@ export class BikeService {
   }
 
   deleteBike(id): Observable<any> {
-    const url = this.url + 'deleteBike/' + id;
+    const url = this.url + 'deleteBike';
     return this.http.delete<any>(url, {
       params: {
         bikeId: id,

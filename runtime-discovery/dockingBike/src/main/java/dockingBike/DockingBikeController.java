@@ -26,13 +26,13 @@ public class DockingBikeController {
 	}
 
 	@CrossOrigin(origins = "http://localhost:9000/")
-	@GetMapping("getDockingId/")
+	@GetMapping("getDockingId")
 	public int getDockingId(@RequestParam int bikeId) {
 		return this.bikeService.getByBikeId(bikeId).getDocking().getDockingId();
 	}
 
 	@CrossOrigin(origins = "http://localhost:9000/")
-	@GetMapping("getBikeIds/")
+	@GetMapping("getBikeIds")
 	public Set<BikeDTO> getBikeIds(@RequestParam int dockingId) {
 		Set<Bike> bikes = this.dockingService.getByDockingId(dockingId).getBikes();
 		return bikes.stream().map(bikeService::convertToDto).collect(Collectors.toSet());

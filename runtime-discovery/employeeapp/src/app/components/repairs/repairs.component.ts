@@ -46,12 +46,11 @@ export class RepairsComponent {
             return compare(a.bikeId, b.bikeId, true);
           });
         this.connected = true;
+        this.loading = false;
       },
       (err) => {
         console.log(err);
         this.connected = false;
-      },
-      () => {
         this.loading = false;
       }
     );
@@ -109,8 +108,8 @@ export class RepairsComponent {
           return compare(a.type, b.type, isAsc);
         case 'driver':
           return compare(a.driver, b.driver, isAsc);
-        case 'broken':
-          return compare(a.broken.toString(), b.broken.toString(), isAsc);
+        case 'size':
+          return compare(a.size, b.size, isAsc);
         case 'created':
           return compare(a.created.toString(), b.created.toString(), isAsc);
         default:
