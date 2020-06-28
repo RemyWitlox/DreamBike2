@@ -1,34 +1,18 @@
 <h1 hidden>{{ title }}</h1>
 <mat-sidenav-container class="horizontalMenu">
   <mat-sidenav-content>
-    <mat-toolbar
-      [ngClass]="{
+    <mat-toolbar [ngClass]="{
         prod: !dev,
         dev: dev
-      }"
-    >
+      }">
       <div style="padding-left: 15px;">
-        <img
-          style="height: 50px; vertical-align: -5px;"
-          alt="DreambikeLogo"
-          src="assets/notxtsqr.png"
-        />
+        <img style="height: 50px; vertical-align: -5px;" alt="DreambikeLogo" src="assets/notxtsqr.png" />
         <span style="padding-left: 15px;">
           {{ subtitle }} -
-          <small
-            ><small
-              ><small>version {{ currentApplicationVersion }}</small></small
-            ></small
-          >
+          <small><small><small>version {{ currentApplicationVersion }}</small></small></small>
         </span>
       </div>
-      <div
-        fxFlex
-        fxLayout
-        fxLayoutAlign="flex-end"
-        id="horizontalMenu"
-        *ngIf="connected && !loading"
-      >
+      <div fxFlex fxLayout fxLayoutAlign="flex-end" id="horizontalMenu" *ngIf="connected && !loading">
         <ul fxLayout fxLayoutGap="20px" class="navigation-items">
           <li *ngIf="!currentBackendUser">
             <a id="onLoginApp" (click)="onLogin()">
@@ -62,27 +46,11 @@
 <!-- Verticaal menu -->
 <div id="verticalMenu" class="verticalMenu" *ngIf="connected && !loading">
   <a routerLinkActive="active" routerLink="home">Home</a>
-  <a
-    routerLinkActive="active"
-    routerLink="dockingStations"
-    *ngIf="currentBackendUser"
-    >Docking Stations</a
-  >
-  <a routerLinkActive="active" routerLink="bikes" *ngIf="currentBackendUser"
-    >Bikes</a
-  >
-  <a routerLinkActive="active" routerLink="repairs" *ngIf="currentBackendUser"
-    >Repairs</a
-  >
-  <a
-    routerLinkActive="active"
-    routerLink="analytics"
-    *ngIf="isAdmin || isManagement"
-    >Analytics</a
-  >
-  <a routerLinkActive="active" routerLink="settings" *ngIf="isAdmin"
-    >Settings</a
-  >
+  <a routerLinkActive="active" routerLink="dockingStations" *ngIf="currentBackendUser">Docking Stations</a>
+  <a routerLinkActive="active" routerLink="bikes" *ngIf="currentBackendUser">Bikes</a>
+  <a routerLinkActive="active" routerLink="repairs" *ngIf="currentBackendUser">Repairs</a>
+  <a routerLinkActive="active" routerLink="analytics" *ngIf="isAdmin || isManagement">Analytics</a>
+  <a routerLinkActive="active" routerLink="settings" *ngIf="isAdmin">Settings</a>
   <p style="bottom: 0; position: absolute; padding-left: 12px;">
     <small>{{ now | date: "dd-MM-yyyy HH:mm:ss" }}</small>
   </p>

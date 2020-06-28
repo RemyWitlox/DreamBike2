@@ -1,20 +1,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.6.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-  <groupId>com.scg</groupId>
-  <artifactId>bikeservice</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>bikeservice</name>
-  <description>Bikes microservice for DreamBike</description>
-  
-  	<properties>
-  	    <maven.compiler.target>1.8</maven.compiler.target>
-    	<maven.compiler.source>1.8</maven.compiler.source>
+	<groupId>com.scg</groupId>
+	<artifactId>bikeservice</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>bikeservice</name>
+	<description>Bikes microservice for DreamBike</description>
+
+	<properties>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
 		<maven.test.skip>true</maven.test.skip>
@@ -32,35 +32,35 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
 		<dependency>
-	<groupId>com.sun.xml.bind</groupId>
-	<artifactId>jaxb-core</artifactId>
-	<version>2.3.0.1</version>
-</dependency>
-<dependency>
-	<groupId>javax.xml.bind</groupId>
-	<artifactId>jaxb-api</artifactId>
-	</dependency>
-	<dependency>
-		<groupId>com.sun.xml.bind</groupId>
-		<artifactId>jaxb-impl</artifactId>
-		<version>2.3.1</version>
-	</dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-core</artifactId>
+			<version>2.3.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.3.1</version>
+		</dependency>
 
-<dependency>
+		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 
 		<dependency>
-		  <groupId>org.modelmapper.extensions</groupId>
-		  <artifactId>modelmapper-spring</artifactId>
-		  <version>2.3.0</version>
+			<groupId>org.modelmapper.extensions</groupId>
+			<artifactId>modelmapper-spring</artifactId>
+			<version>2.3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -73,12 +73,12 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-				<dependency>
+		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 	</dependencies>
-	
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -90,9 +90,9 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
-	  
-  	<build>
+
+
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -101,4 +101,3 @@
 		</plugins>
 	</build>
 </project>
-
