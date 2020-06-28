@@ -25,20 +25,20 @@ public class DockingBikeController {
 		this.dockingService = dockingService;
 	}
 
-	@CrossOrigin(origins = "*")
+	@CrossOrigin(origins = "http://localhost:9000/")
 	@GetMapping("getDockingId/")
 	public int getDockingId(@RequestParam int bikeId) {
 		return this.bikeService.getByBikeId(bikeId).getDocking().getDockingId();
 	}
 
-	@CrossOrigin(origins = "*")
+	@CrossOrigin(origins = "http://localhost:9000/")
 	@GetMapping("getBikeIds/")
 	public Set<BikeDTO> getBikeIds(@RequestParam int dockingId) {
 		Set<Bike> bikes = this.dockingService.getByDockingId(dockingId).getBikes();
 		return bikes.stream().map(bikeService::convertToDto).collect(Collectors.toSet());
 	}
 
-	@CrossOrigin(origins = "*")
+	@CrossOrigin(origins = "http://localhost:9000/")
 	@PostMapping("addDocking")
 	public boolean createDocking(@RequestBody DockingDTO dockingDTO) {
 		if (dockingService.getByDockingId(dockingDTO.getDockingId()) == null) {
@@ -52,7 +52,7 @@ public class DockingBikeController {
 		}
 	}
 
-	@CrossOrigin(origins = "*")
+	@CrossOrigin(origins = "http://localhost:9000/")
 	@PostMapping("addBikeToDocking")
 	public boolean addBikeToDocking(@RequestBody DockingBikeDTO dockingBikeDTO) {
 		if (bikeService.getByBikeId(dockingBikeDTO.getBikeId()) == null) {
@@ -98,7 +98,7 @@ public class DockingBikeController {
 		}
 	}
 
-	@CrossOrigin(origins = "*")
+	@CrossOrigin(origins = "http://localhost:9000/")
 	@PutMapping("updDocking")
 	public boolean updDocking(@RequestBody DockingDTO dockingDTO) {
 		Docking docking = dockingService.getByDockingId(dockingDTO.getDockingId());

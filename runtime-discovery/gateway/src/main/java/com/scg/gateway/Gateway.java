@@ -19,7 +19,7 @@ public class Gateway {
 		SpringApplication.run(Gateway.class, args);
 	}
 
-	@CrossOrigin(origins = "*")
+	@CrossOrigin(origins = "http://localhost:9000/")
 	@Bean
 	public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http,
 			ReactiveClientRegistrationRepository clientRegistrationRepository) {

@@ -23,25 +23,25 @@ public class BikeController {
 		this.bikeService = bikeService;
 	}
 
-	@CrossOrigin(origins = "*")
+	@CrossOrigin(origins = "http://localhost:9000/")
 	@GetMapping("getAll")
 	public List<Bike> getAllBikes() {
 		return this.bikeService.findAll();
 	}
 
-	@CrossOrigin(origins = "*")
+	@CrossOrigin(origins = "http://localhost:9000/")
 	@GetMapping("getByBikeType")
 	public Set<Bike> getBikesByBikeType(BikeType bikeType) {
 		return this.bikeService.findByType(bikeType);
 	}
 
-	@CrossOrigin(origins = "*")
+	@CrossOrigin(origins = "http://localhost:9000/")
 	@GetMapping("getByBikeName")
 	public Set<Bike> getBikeByBikeName(String bikeName) {
 		return this.bikeService.findByName(bikeName);
 	}
 
-	@CrossOrigin(origins = "*")
+	@CrossOrigin(origins = "http://localhost:9000/")
 	@PostMapping("newBike")
 	public boolean newBike(@RequestBody BikeDTO bikeDTO) {
 		Bike bike = new Bike();
@@ -55,7 +55,7 @@ public class BikeController {
 
 	}
 
-	@CrossOrigin(origins = "*")
+	@CrossOrigin(origins = "http://localhost:9000/")
 	@PutMapping("updateBike")
 	public boolean updateBike(@RequestBody BikeWithoutDeletedDTO updatedBike) {
 		if (bikeService.findByBikeId(updatedBike.getBikeId()) == null) {
@@ -73,7 +73,7 @@ public class BikeController {
 		}
 	}
 
-	@CrossOrigin(origins = "*")
+	@CrossOrigin(origins = "http://localhost:9000/")
 	@DeleteMapping("deleteBike/{bikeId}")
 	public boolean deleteBike(@RequestParam Long bikeId) {
 		if (bikeService.findByBikeId(bikeId) == null) {
@@ -86,7 +86,7 @@ public class BikeController {
 		}
 	}
 
-	@CrossOrigin(origins = "*")
+	@CrossOrigin(origins = "http://localhost:9000/")
 	@GetMapping("fillDB")
 	public void fillDB() {
 		Bike bike = new Bike();
