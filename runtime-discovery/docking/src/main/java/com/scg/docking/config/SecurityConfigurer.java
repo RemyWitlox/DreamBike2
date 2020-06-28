@@ -53,7 +53,7 @@ public class SecurityConfigurer extends ResourceServerConfigurerAdapter {
 //				.disable().authorizeRequests().antMatchers(securityProperties.getApiMatcher()).authenticated()
 //				.antMatchers("*").permitAll();
 		http.cors().configurationSource(corsConfigurationSource()).and().headers().frameOptions().disable().and().csrf()
-				.disable().authorizeRequests().antMatchers("*").permitAll().and().formLogin()
+				.disable().authorizeRequests().antMatchers("/**").permitAll().and().formLogin()
 				.successHandler(new AuthenticationSuccessHandler() {
 					@Override
 					public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
