@@ -15,7 +15,7 @@ spring:
     password: S5Camping    
     
   security:    oauth2:
-        resourceserver:          jwt:            jwk-set-uri: http://85.146.20.136:8080/auth/realms/DreamBikeKeycloak/protocol/openid-connect            issuer-uri: http://85.146.20.136:8080/auth/realms/DreamBikeKeycloak#      client:#        provider:#          keycloak:
+        resourceserver:          jwt:            jwk-set-uri: http://85.146.20.136:8080/auth/realms/DreamBikeKeycloak/protocol/openid-connect#      client:#        provider:#          keycloak:
 #            issuer-uri: http://85.146.20.136:8080/auth/realms/DreamBikeKeycloak
 #            user-name-attribute: preferred_username
 #        registration:
@@ -34,15 +34,15 @@ spring:
 #      max-age: 3600
 #    issuer-uri: http://gateway:8181/keycloak/auth/realms/DreamBikeKeycloak
 #
-security:
-  oauth2:
-    resource:
-      id: loginapp
-      token-info-uri: http://85.146.20.136:8080/auth/realms/DreamBikeKeycloak/protocol/openid-connect/token/introspect
-      user-info-uri: http://85.146.20.136:8080/auth/realms/DreamBikeKeycloak/protocol/openid-connect/userinfo
-      jwt:
-        key-value: -----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnFlDGfpUaqYreBIDCv7UvJN66po47nMquFfb5y4L1giUmUdbed1pWTVRQHaWStqIpFdmQ4hDIcVAB6+nfuIs8+fIuDxMe2zkbwG/59lMkzac28jF7nZQP/9x1l+DTs5TqA7RZV/l1DjA3b8Kzu7TdMboHMlHpk582Itvf4tL/EZQsd9cxpF6oDem0wK/MZVraKGfRHzrE9MIbPtCWHtMDW9Yg0pSIkkF3gX9UO72oCktS+kcNgu0PLT3MBOi0rr9g7fTUP4RSBr1N/P48m+L0SP6PtChXBY9aUgCnx6MExAsFpASwtztabQYNC4Dy0g8LyQnmY0AAaPaEH/ydU6cvwIDAQAB\n-----END PUBLIC KEY-----
-#        
+#security:
+#  oauth2:
+#    resource:
+#      id: loginapp
+#      token-info-uri: http://85.146.20.136:8080/auth/realms/DreamBikeKeycloak/protocol/openid-connect/token/introspect
+#      user-info-uri: http://85.146.20.136:8080/auth/realms/DreamBikeKeycloak/protocol/openid-connect/userinfo
+#      jwt:
+#        key-value: -----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnFlDGfpUaqYreBIDCv7UvJN66po47nMquFfb5y4L1giUmUdbed1pWTVRQHaWStqIpFdmQ4hDIcVAB6+nfuIs8+fIuDxMe2zkbwG/59lMkzac28jF7nZQP/9x1l+DTs5TqA7RZV/l1DjA3b8Kzu7TdMboHMlHpk582Itvf4tL/EZQsd9cxpF6oDem0wK/MZVraKGfRHzrE9MIbPtCWHtMDW9Yg0pSIkkF3gX9UO72oCktS+kcNgu0PLT3MBOi0rr9g7fTUP4RSBr1N/P48m+L0SP6PtChXBY9aUgCnx6MExAsFpASwtztabQYNC4Dy0g8LyQnmY0AAaPaEH/ydU6cvwIDAQAB\n-----END PUBLIC KEY-----
+##        
 server:
   port: 8764
 
