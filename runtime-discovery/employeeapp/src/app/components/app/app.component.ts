@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
     private authenticationService: AuthenticationService,
     private loginService: LoginService,
     private zone: NgZone
-  ) {}
+  ) { }
 
   setDevColor() {
     console.log('set color');
@@ -49,9 +49,9 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.loading = true;
     this.dev = false;
-    this.interval = setInterval(() => {
-      this.onConnect();
-    }, 5000);
+    // this.interval = setInterval(() => {
+    //   this.onConnect();
+    // }, 5000);
     this.zone.run(() => this.getCurrentBackendUser());
     if (this.currentApplicationVersion.includes('dev')) {
       console.log('dev is true');
