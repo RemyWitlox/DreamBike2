@@ -7,6 +7,8 @@ import { BikeDialog, DeleteDialog } from 'src/app/dialogs';
 import { MatDialog } from '@angular/material/dialog';
 import { BikeDockDialog } from 'src/app/dialogs/bikeDock-dialog';
 import { BikeService } from 'src/app/services/bike.service';
+import { DockingStation } from 'src/app/models';
+import { DockingService } from 'src/app/services';
 
 @Component({
   selector: 'app-bikes',
@@ -20,14 +22,30 @@ export class BikesComponent {
   public selectedBike: Bike;
   public loading: boolean;
   public connected: boolean;
+  public dockingStations: DockingStation[];
 
-  constructor(public dialog: MatDialog, public bikeService: BikeService) {
+  constructor(
+    public dialog: MatDialog,
+    public bikeService: BikeService,
+    public dockingService: DockingService
+  ) {
     this.connected = false;
     this.loading = false;
   }
 
   ngOnInit(): void {
     this.getBikes();
+  }
+
+  public getDockingStations(): void {
+    this.dockingService.getDockingStations().subscribe(
+      (ds) => {
+        this.dockingStations = ds;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 
   public getType(type) {
@@ -38,6 +56,28 @@ export class BikesComponent {
   public getDriver(driver) {
     const d: String = BikeDriver[driver];
     return d;
+  }
+
+  public getDs(bike): string {
+    console.log(bike);
+    let dockingId: string = '';
+    let dockString = '';
+    let ds;
+    this.bikeService.getDsOnBike(bike).subscribe(
+      (result) => {
+        console.log(result);
+        dockingId = result;
+        ds = this.dockingStations.find(
+          (x) => (x.dockingId = Number(dockingId))
+        );
+        dockString = ds.name;
+        console.log(result);
+      },
+      (error) => {
+        dockString = 'No Docking Station';
+      }
+    );
+    return dockString;
   }
 
   public getBikes(): void {
