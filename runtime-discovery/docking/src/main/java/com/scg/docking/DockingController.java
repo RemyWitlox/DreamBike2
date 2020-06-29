@@ -25,19 +25,16 @@ public class DockingController {
 		this.dockingService = dockingService;
 	}
 
-	@CrossOrigin(origins = "http://localhost:9000/")
 	@GetMapping("/")
 	public String home() {
 		return "hello world";
 	}
 
-	@CrossOrigin(origins = "http://localhost:9000/")
 	@GetMapping("test")
 	public String getTest() {
 		return "test";
 	}
 
-	@CrossOrigin(origins = "http://localhost:9000/")
 	@GetMapping("getAll")
 	public List<DockingStation> getAllDockingStations() {
 //		return this.dockingService.getAll();
@@ -57,7 +54,6 @@ public class DockingController {
 //		return this.dockingService.getNotDeleted();
 //	}
 
-	@CrossOrigin(origins = "http://localhost:9000/")
 	@GetMapping("getOne")
 	public DockingStation getOneDockingStation() {
 		long id = 1;
@@ -66,7 +62,6 @@ public class DockingController {
 		return dock;
 	}
 
-	@CrossOrigin(origins = "http://localhost:9000/")
 	@GetMapping("/fillDB")
 	public void fillDB() {
 		DockingStation dockingStation = new DockingStation();
@@ -127,7 +122,6 @@ public class DockingController {
 		dockingService.save(dockingStation);
 	}
 
-	@CrossOrigin(origins = "http://localhost:9000/")
 	@PostMapping("newDocking")
 	public boolean newDocking(@RequestBody DockingDTO dockingDTO) {
 
@@ -142,7 +136,6 @@ public class DockingController {
 		return true;
 	}
 
-	@CrossOrigin(origins = "http://localhost:9000/")
 	@PutMapping("updateDocking")
 	public boolean updateDocking(@RequestBody DockingWithoutDeleteDTO dockingStation) {
 		DockingStation updDocking = dockingService.getOne(dockingStation.getDockingId());
@@ -156,7 +149,6 @@ public class DockingController {
 		return true;
 	}
 
-	@CrossOrigin(origins = "http://localhost:9000/")
 	@DeleteMapping("deleteDocking/{dockingId}")
 	public boolean deleteDocking(@RequestParam Long dockingId) {
 		DockingStation docking = dockingService.getOne(dockingId);
