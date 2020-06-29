@@ -59,25 +59,6 @@ export class BikesComponent {
     return d;
   }
 
-  public setDsOnBike() {
-    let dockings = this.dockingStations;
-    let dockingId: number;
-    let ds: DockingStation;
-    for (var bike of this.bikes) {
-      this.bikeService.getDsOnBike(bike).subscribe(
-        (result) => {
-          dockingId = Number(result);
-          ds = dockings?.find(x => x.dockingId == dockingId)
-          bike.docking = ds;
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-    }
-    console.log(this.bikes);
-  }
-
   public getBikes(): void {
     this.loading = true;
     this.bikeService.getBikes().subscribe(
@@ -88,7 +69,6 @@ export class BikesComponent {
         });
         this.loading = false;
         this.connected = true;
-        this.setDsOnBike();
       },
       (err) => {
         console.log(err);
