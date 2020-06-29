@@ -1,14 +1,9 @@
 <mat-tab-group>
   <mat-tab label="Table">
     <mat-button-toggle-group name="dsBtns">
-      <mat-button-toggle
-        id="onAddds"
-        class="btn"
-        style="height: 30px;"
-        (click)="onAdd()"
-        ><mat-icon style="margin-top: -2px; margin-left: -5px;">add</mat-icon
-        >New Docking Station</mat-button-toggle
-      >
+      <mat-button-toggle id="onAddds" class="btn" style="height: 30px;" (click)="onAdd()">
+        <mat-icon style="margin-top: -2px; margin-left: -5px;">add</mat-icon>New Docking Station
+      </mat-button-toggle>
     </mat-button-toggle-group>
     <hr />
     <div *ngIf="loading && !connected">
@@ -50,24 +45,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr
-            id="onSelect"
-            *ngFor="let ds of sortedData; let i = index"
-            [class.selected]="ds === selectedDs"
-            [ngClass]="{ active: ds == selectedDs }"
-            (click)="onSelect(ds)"
-          >
+          <tr id="onSelect" *ngFor="let ds of sortedData; let i = index" [class.selected]="ds === selectedDs"
+            [ngClass]="{ active: ds == selectedDs }" (click)="onSelect(ds)">
             <!-- (click)="onSelect(ds)" -->
             <td style="margin-top: -5px; max-width: 65px !important;">
               <button id="onEditds" class="buttonIcon" (click)="onEdit(ds)">
                 <mat-icon area-hidden="true" class="icon">edit</mat-icon>
               </button>
-              <button
-                id="onDeleteds"
-                *ngIf="!ds.active"
-                class="buttonIcon"
-                (click)="onDelete(ds)"
-              >
+              <button id="onDeleteds" *ngIf="!ds.active" class="buttonIcon" (click)="onDelete(ds)">
                 <mat-icon area-hidden="true" class="icon">delete</mat-icon>
               </button>
             </td>
@@ -78,12 +63,8 @@
               {{ ds.name }}
             </td>
             <td style="max-width: 50px;">
-              <mat-checkbox
-                id="{{ ds.dockingId }}"
-                [checked]="ds.active"
-                [(ngModel)]="ds.active"
-                (change)="setActive(ds)"
-              ></mat-checkbox>
+              <mat-checkbox id="{{ ds.dockingId }}" [checked]="ds.active" [(ngModel)]="ds.active"
+                (change)="setActive(ds)"></mat-checkbox>
             </td>
             <td style="max-width: 65px;">
               {{ ds.bikes }}
@@ -119,41 +100,17 @@
     <div *ngIf="connected && !loading">
       <div class="inputContainer">
         <mat-icon>search</mat-icon>
-        <input
-          matInput
-          id="typeahead-config"
-          type="text"
-          class="searchInput"
-          (selectItem)="selectedItem($event)"
-          [(ngModel)]="model"
-          [ngbTypeahead]="search"
-          [inputFormatter]="formatter"
-          [resultFormatter]="formatter"
-          [editable]="false"
-          [focusFirst]="true"
-          placement="bottom-left"
-          placeholder="Focus map on Docking Station:"
-          onfocus="this.value=''"
-        />
+        <input matInput id="typeahead-config" type="text" class="searchInput" (selectItem)="selectedItem($event)"
+          [(ngModel)]="model" [ngbTypeahead]="search" [inputFormatter]="formatter" [resultFormatter]="formatter"
+          [editable]="false" [focusFirst]="true" placement="bottom-left" placeholder="Focus map on Docking Station:"
+          onfocus="this.value=''" />
       </div>
       <hr />
       <div class="wrapper" id="wrapmap">
         <div class="first">
-          <agm-map
-            [latitude]="lat"
-            [longitude]="lng"
-            [zoom]="zoom"
-            [disableDefaultUI]="false"
-            [zoomControl]="false"
-          >
-            <agm-marker
-              *ngFor="let ds of dockingStations"
-              [latitude]="ds.lat"
-              [longitude]="ds.lng"
-              [label]="ds.bikes.toString()"
-              [markerDraggable]="false"
-              [opacity]="ds.active ? 1 : 0.5"
-            >
+          <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false">
+            <agm-marker *ngFor="let ds of dockingStations" [latitude]="ds.lat" [longitude]="ds.lng"
+              [label]="ds.bikes.toString()" [markerDraggable]="false" [opacity]="ds.active ? 1 : 0.5">
               <agm-info-window>
                 <strong>{{ ds.name }} {{ ds.bikes }}/{{ ds.capacity }}</strong>
               </agm-info-window>
@@ -161,12 +118,7 @@
           </agm-map>
         </div>
         <div>
-          <table
-            id="tableSmall"
-            matSort
-            (matSortChange)="sortData($event)"
-            class="table-scroll second"
-          >
+          <table id="tableSmall" matSort (matSortChange)="sortData($event)" class="table-scroll second">
             <thead>
               <tr style="margin-left: 5px !important;">
                 <th style="width: 100% !important;" mat-sort-header="name">
@@ -182,22 +134,14 @@
               </tr>
             </thead>
             <tbody>
-              <tr
-                *ngFor="let ds of sortedData"
-                [class.selected]="ds === selectedDs"
-                [ngClass]="{ active: ds == selectedDs }"
-                (click)="onSelect(ds)"
-              >
+              <tr *ngFor="let ds of sortedData" [class.selected]="ds === selectedDs"
+                [ngClass]="{ active: ds == selectedDs }" (click)="onSelect(ds)">
                 <td style="width: 100% !important;">{{ ds.name }}</td>
                 <td style="text-align: right;">{{ ds.bikes }}</td>
                 <td>/{{ ds.capacity }}</td>
                 <td style="min-width: 16px;">
-                  <mat-checkbox
-                    id="{{ ds.id }}"
-                    [checked]="ds.active"
-                    [(ngModel)]="ds.active"
-                    (change)="setActive(ds)"
-                  ></mat-checkbox>
+                  <mat-checkbox id="{{ ds.id }}" [checked]="ds.active" [(ngModel)]="ds.active" (change)="setActive(ds)">
+                  </mat-checkbox>
                 </td>
               </tr>
               <tr></tr>

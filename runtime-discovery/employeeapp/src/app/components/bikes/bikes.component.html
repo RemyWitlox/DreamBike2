@@ -1,13 +1,9 @@
 <div class="contentMargin">
   <mat-button-toggle-group name="bikeBtns">
-    <mat-button-toggle
-      id="onAdd"
-      class="btn"
-      style="height: 30px;"
-      (click)="onAdd()"
-      ><mat-icon style="margin-top: -2px; margin-left: -5px;">add</mat-icon>New
-      Bike</mat-button-toggle
-    >
+    <mat-button-toggle id="onAdd" class="btn" style="height: 30px;" (click)="onAdd()">
+      <mat-icon style="margin-top: -2px; margin-left: -5px;">add</mat-icon>New
+      Bike
+    </mat-button-toggle>
   </mat-button-toggle-group>
   <hr />
   <div *ngIf="loading && !connected">
@@ -40,28 +36,21 @@
           <th style="max-width: 50px;" mat-sort-header="broken">
             Broken
           </th>
+          <th>Docking Station</th>
           <th style="max-width: 120px;" mat-sort-header="created">
             Created
           </th>
         </tr>
       </thead>
       <tbody>
-        <tr
-          id="onSelect"
-          *ngFor="let bike of sortedData; let i = index"
-          [class.selected]="bike === selectedBike"
-          [ngClass]="{ active: bike == selectedBike }"
-          (click)="onSelect(bike)"
-        >
+        <tr id="onSelect" *ngFor="let bike of sortedData; let i = index" [class.selected]="bike === selectedBike"
+          [ngClass]="{ active: bike == selectedBike }" (click)="onSelect(bike)">
           <td style="margin-top: -5px; max-width: 75px;">
             <button id="onEdit" class="buttonIcon" (click)="onEdit(bike)">
               <mat-icon area-hidden="true" class="icon">edit</mat-icon>
             </button>
             <button id="onDelete" class="buttonIcon" (click)="onDelete(bike)">
               <mat-icon area-hidden="true" class="icon">delete</mat-icon>
-            </button>
-            <button id="onDocking" class="buttonIcon" (click)="onDocking(bike)">
-              <mat-icon area-hidden="true" class="icon">home</mat-icon>
             </button>
           </td>
           <td style="max-width: 50px;">
@@ -78,12 +67,13 @@
           </td>
           <td style="max-width: 65px;">{{ bike.size }}"</td>
           <td style="max-width: 50px;">
-            <mat-checkbox
-              id="{{ bike.bikeId }}"
-              [checked]="bike.broken"
-              [(ngModel)]="bike.broken"
-              (change)="setBroken(bike)"
-            ></mat-checkbox>
+            <mat-checkbox id="{{ bike.bikeId }}" [checked]="bike.broken" [(ngModel)]="bike.broken"
+              (change)="setBroken(bike)"></mat-checkbox>
+          </td>
+          <td>
+            <button id="onDocking" class="buttonIcon" (click)="onDocking(bike)">
+              <mat-icon area-hidden="true" class="icon">home</mat-icon>
+            </button>
           </td>
           <td style="max-width: 120px;">
             {{ bike.created | date: "dd-MM-yyyy" }}

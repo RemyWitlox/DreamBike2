@@ -18,7 +18,7 @@ EXPOSE 80
 # version: '3.3'
 # services:
 #   angular-docker:
-#     container_name: angular-docker-container
+#     container_name: employeeapp
 #     build: ./app-to-run-inside-docker
 #     ports:
 #       - '9000:80'

@@ -33,12 +33,10 @@ span {
 }
 
 .dev {
-  background: linear-gradient(
-    90deg,
-    black 0%,
-    $alert 70%,
-    $alert 100%
-  ) !important;
+  background: linear-gradient(90deg,
+      black 0%,
+      $alert 70%,
+      $alert 100%) !important;
 }
 
 .prod {

@@ -7,6 +7,8 @@ import { BikeDialog, DeleteDialog } from 'src/app/dialogs';
 import { MatDialog } from '@angular/material/dialog';
 import { BikeDockDialog } from 'src/app/dialogs/bikeDock-dialog';
 import { BikeService } from 'src/app/services/bike.service';
+import { DockingStation } from 'src/app/models';
+import { DockingService } from 'src/app/services';
 
 @Component({
   selector: 'app-bikes',
@@ -20,14 +22,31 @@ export class BikesComponent {
   public selectedBike: Bike;
   public loading: boolean;
   public connected: boolean;
+  public dockingStations: DockingStation[];
 
-  constructor(public dialog: MatDialog, public bikeService: BikeService) {
+  constructor(
+    public dialog: MatDialog,
+    public bikeService: BikeService,
+    public dockingService: DockingService
+  ) {
     this.connected = false;
     this.loading = false;
   }
 
   ngOnInit(): void {
     this.getBikes();
+    this.getDockingStations();
+  }
+
+  public getDockingStations(): void {
+    this.dockingService.getDockingStations().subscribe(
+      (ds) => {
+        this.dockingStations = ds;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 
   public getType(type) {
@@ -40,6 +59,25 @@ export class BikesComponent {
     return d;
   }
 
+  public setDsOnBike() {
+    let dockings = this.dockingStations;
+    let dockingId: number;
+    let ds: DockingStation;
+    for (var bike of this.bikes) {
+      this.bikeService.getDsOnBike(bike).subscribe(
+        (result) => {
+          dockingId = Number(result);
+          ds = dockings?.find(x => x.dockingId == dockingId)
+          bike.docking = ds;
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }
+    console.log(this.bikes);
+  }
+
   public getBikes(): void {
     this.loading = true;
     this.bikeService.getBikes().subscribe(
@@ -48,33 +86,38 @@ export class BikesComponent {
         this.sortedData = bikes.sort((a, b) => {
           return compare(a.bikeId, b.bikeId, true);
         });
+        this.loading = false;
         this.connected = true;
+        this.setDsOnBike();
       },
       (err) => {
         console.log(err);
-        this.connected = false;
-      },
-      () => {
         this.loading = false;
+        this.connected = false;
       }
     );
     this.selectedBike = new Bike();
   }
 
-  public setBroken(bike: Bike) {
-    this.newBike.bikeId = bike.bikeId;
-    this.newBike.name = bike.name;
-    this.newBike.type = bike.type;
-    this.newBike.driver = bike.driver;
-    this.newBike.created = bike.created;
-    this.newBike.size = bike.size;
-    this.newBike.docking = bike.docking;
-    if (bike.broken) {
-      this.newBike.broken = true;
-    } else {
-      this.newBike.broken = false;
+  public setBroken(b: Bike) {
+    console.log(b);
+    console.log(b.bikeId);
+    let sendBike: Bike;
+    sendBike = {
+      bikeId: b.bikeId,
+      name: b.name,
+      type: b.type,
+      driver: b.driver,
+      created: b.created,
+      size: b.size,
+      docking: b.docking
     }
-    this.bikeService.updateBike(this.newBike).subscribe(
+    if (b.broken) {
+      sendBike.broken = true;
+    } else {
+      sendBike.broken = false;
+    }
+    this.bikeService.updateBike(sendBike).subscribe(
       () => {
         this.getBikes();
         this.connected = true;
@@ -169,6 +212,8 @@ export class BikesComponent {
           return compare(a.type, b.type, isAsc);
         case 'driver':
           return compare(a.driver, b.driver, isAsc);
+        case 'size':
+          return compare(a.size, b.size, isAsc);
         case 'broken':
           return compare(a.broken.toString(), b.broken.toString(), isAsc);
         case 'created':

@@ -1,3 +1,81 @@
-<div>
-  <p style="margin: 0px; padding: 10px;">{{ message }}</p>
+<div class="contentMargin">
+  <div style="height: 36px !important; position: relative;">
+    <h3 style="
+        margin: 0px !important;
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+      ">
+      List of bikes to fix.
+    </h3>
+  </div>
+  <hr />
+  <div *ngIf="loading && !connected">
+    <p id="reapairLoadTxt">Loading,... Please wait.</p>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+  <div *ngIf="!connected && !loading">
+    <p id="repairConErr">
+      There is no connection to the database. Please try again or contact us.
+    </p>
+  </div>
+  <div id="repairMaintable" *ngIf="!loading && connected">
+    <table matSort (matSortChange)="sortData($event)">
+      <thead>
+        <tr>
+          <th style="max-width: 40px;"></th>
+          <th style="max-width: 40px;" mat-sort-header="bikeId">Id</th>
+          <th style="max-width: 50px;" mat-sort-header="name">
+            Name
+          </th>
+          <th style="max-width: 65px;" mat-sort-header="type">
+            Type
+          </th>
+          <th style="max-width: 65px;" mat-sort-header="driver">
+            Driver
+          </th>
+          <th style="max-width: 65px;" mat-sort-header="size">
+            Size
+          </th>
+          <th style="max-width: 120px;" mat-sort-header="created">
+            Created
+          </th>
+          <th style="max-width: 40px;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="onSelect" *ngFor="let bike of sortedData; let i = index" [class.selected]="bike === selectedBike"
+          [ngClass]="{ active: bike == selectedBike }" (click)="onSelect(bike)">
+          <td style="margin-top: -5px; max-width: 40px;">
+            <button id="onFixed" class="btn" (click)="onFixed(bike)">
+              Fixed
+            </button>
+          </td>
+          <td style="max-width: 40px;">
+            {{ bike.bikeId }}
+          </td>
+          <td>
+            {{ bike.name }}
+          </td>
+          <td style="max-width: 65px;">
+            {{ getType(bike.type) }}
+          </td>
+          <td style="max-width: 65px;">
+            {{ getDriver(bike.driver) }}
+          </td>
+          <td style="max-width: 65px;">{{ bike.size }}"</td>
+          <td style="max-width: 120px;">
+            {{ bike.created | date: "dd-MM-yyyy" }}
+          </td>
+          <td style="margin-top: -5px; max-width: 40px;">
+            <button id="onDelete" class="btn" (click)="onDelete(bike)">
+              Not fixable
+            </button>
+          </td>
+        </tr>
+        <tr></tr>
+      </tbody>
+    </table>
+  </div>
 </div>
