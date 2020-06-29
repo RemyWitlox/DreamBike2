@@ -100,20 +100,25 @@ export class BikesComponent {
     this.selectedBike = new Bike();
   }
 
-  public setBroken(bike: Bike) {
-    this.newBike.bikeId = bike.bikeId;
-    this.newBike.name = bike.name;
-    this.newBike.type = bike.type;
-    this.newBike.driver = bike.driver;
-    this.newBike.created = bike.created;
-    this.newBike.size = bike.size;
-    this.newBike.docking = bike.docking;
-    if (bike.broken) {
-      this.newBike.broken = true;
-    } else {
-      this.newBike.broken = false;
+  public setBroken(b: Bike) {
+    console.log(b);
+    console.log(b.bikeId);
+    let sendBike: Bike;
+    sendBike = {
+      bikeId: b.bikeId,
+      name: b.name,
+      type: b.type,
+      driver: b.driver,
+      created: b.created,
+      size: b.size,
+      docking: b.docking
     }
-    this.bikeService.updateBike(this.newBike).subscribe(
+    if (b.broken) {
+      sendBike.broken = true;
+    } else {
+      sendBike.broken = false;
+    }
+    this.bikeService.updateBike(sendBike).subscribe(
       () => {
         this.getBikes();
         this.connected = true;

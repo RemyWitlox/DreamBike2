@@ -45,7 +45,7 @@ $active: rgb(10, 126, 29);
   }
 
   tbody tr:hover {
-    background-color: $hover;
+    background-color: $hover !important;
     cursor: pointer;
   }
 

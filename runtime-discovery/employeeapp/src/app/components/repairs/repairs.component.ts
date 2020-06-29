@@ -13,6 +13,7 @@ import { DeleteDialog } from 'src/app/dialogs';
 export class RepairsComponent {
   public bikes: Bike[];
   public sortedData: Bike[];
+  public selectedBike: Bike;
   public loading: boolean;
   public connected: boolean;
 
@@ -88,6 +89,15 @@ export class RepairsComponent {
     deleteRef.afterClosed().subscribe(() => {
       this.getBikes();
     });
+  }
+
+  public onSelect(bike) {
+    if (this.selectedBike === bike) {
+      this.selectedBike = new Bike();
+      return;
+    } else {
+      this.selectedBike = bike;
+    }
   }
 
   public sortData(sort: Sort) {

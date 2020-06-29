@@ -24,7 +24,7 @@
     <table matSort (matSortChange)="sortData($event)">
       <thead>
         <tr>
-          <th style="max-width: 80px;"></th>
+          <th style="max-width: 40px;"></th>
           <th style="max-width: 40px;" mat-sort-header="bikeId">Id</th>
           <th style="max-width: 50px;" mat-sort-header="name">
             Name
@@ -41,16 +41,15 @@
           <th style="max-width: 120px;" mat-sort-header="created">
             Created
           </th>
+          <th style="max-width: 40px;"></th>
         </tr>
       </thead>
       <tbody>
-        <tr id="onSelect" *ngFor="let bike of sortedData; let i = index">
-          <td style="margin-top: -5px; max-width: 80px;">
+        <tr id="onSelect" *ngFor="let bike of sortedData; let i = index" [class.selected]="bike === selectedBike"
+          [ngClass]="{ active: bike == selectedBike }" (click)="onSelect(bike)">
+          <td style="margin-top: -5px; max-width: 40px;">
             <button id="onFixed" class="btn" (click)="onFixed(bike)">
               Fixed
-            </button>
-            <button id="onDelete" class="btn" (click)="onDelete(bike)">
-              Not fixable
             </button>
           </td>
           <td style="max-width: 40px;">
@@ -68,6 +67,11 @@
           <td style="max-width: 65px;">{{ bike.size }}"</td>
           <td style="max-width: 120px;">
             {{ bike.created | date: "dd-MM-yyyy" }}
+          </td>
+          <td style="margin-top: -5px; max-width: 40px;">
+            <button id="onDelete" class="btn" (click)="onDelete(bike)">
+              Not fixable
+            </button>
           </td>
         </tr>
         <tr></tr>
