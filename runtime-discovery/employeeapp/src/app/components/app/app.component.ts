@@ -49,10 +49,10 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.loading = true;
     this.dev = false;
-    this.onConnect();
-    // this.interval = setInterval(() => {
-    //   this.onConnect();
-    // }, 5000);
+    // this.onConnect();
+    this.interval = setInterval(() => {
+      this.onConnect();
+    }, 5000);
     this.zone.run(() => this.getCurrentBackendUser());
     if (this.currentApplicationVersion.includes('dev')) {
       console.log('dev is true');
