@@ -19,7 +19,7 @@ export class BikeService {
   }
 
   getDsOnBike(bike: Bike): Observable<any> {
-    const url = this.urlBd + 'getDockingId';
+    const url = this.urlBd + 'getDockingId/';
     const id: string = bike.bikeId.toString();
     return this.http.get<any>(url, {
       params: { bikeId: id },

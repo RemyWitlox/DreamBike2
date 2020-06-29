@@ -51,6 +51,23 @@ public class DockingBikeController {
 			return false;
 		}
 	}
+	
+	@CrossOrigin(origins = "http://localhost:9000/")
+	@GetMapping("getAll")
+	public List<DockingBikeDTO> getAll() {
+		List<DockingBikeDTO> dockingBike = new ArrayList<DockingBikeDTO>();
+		List<Docking> dockings = dockingService.getAll();
+		dockings.forEach(docking -> {
+			Set<Bike> bikes = this.dockingService.getByDockingId(docking.getDockingId()).getBikes();
+			bikes.forEach(bike -> {
+				DockingBikeDTO dbDTO = new DockingBikeDTO();
+				dbDTO.setBikeId(bike.getBikeId());
+				dbDTO.setDockingId(docking.getDockingId());
+				dockingBike.add(dbDTO);
+			});
+		});
+		return dockingBike;
+	}
 
 	@CrossOrigin(origins = "http://localhost:9000/")
 	@PostMapping("addBikeToDocking")

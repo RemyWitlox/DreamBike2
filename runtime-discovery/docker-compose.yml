@@ -53,7 +53,7 @@ services:
       - "registry"
   angular-docker:
      image: dreambike/angular-app:prod
-     container_name: angular-docker-container
+     container_name: employeeapp
      build: ./employeeapp
      ports:
        - "9000:80"

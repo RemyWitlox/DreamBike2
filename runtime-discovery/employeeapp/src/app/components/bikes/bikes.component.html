@@ -36,6 +36,7 @@
           <th style="max-width: 50px;" mat-sort-header="broken">
             Broken
           </th>
+          <th>Docking Station</th>
           <th style="max-width: 120px;" mat-sort-header="created">
             Created
           </th>
@@ -50,9 +51,6 @@
             </button>
             <button id="onDelete" class="buttonIcon" (click)="onDelete(bike)">
               <mat-icon area-hidden="true" class="icon">delete</mat-icon>
-            </button>
-            <button id="onDocking" class="buttonIcon" (click)="onDocking(bike)">
-              <mat-icon area-hidden="true" class="icon">home</mat-icon>
             </button>
           </td>
           <td style="max-width: 50px;">
@@ -71,6 +69,11 @@
           <td style="max-width: 50px;">
             <mat-checkbox id="{{ bike.bikeId }}" [checked]="bike.broken" [(ngModel)]="bike.broken"
               (change)="setBroken(bike)"></mat-checkbox>
+          </td>
+          <td>
+            <button id="onDocking" class="buttonIcon" (click)="onDocking(bike)">
+              <mat-icon area-hidden="true" class="icon">home</mat-icon>
+            </button>
           </td>
           <td style="max-width: 120px;">
             {{ bike.created | date: "dd-MM-yyyy" }}

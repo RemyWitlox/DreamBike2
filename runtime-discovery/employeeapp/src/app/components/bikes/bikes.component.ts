@@ -35,6 +35,7 @@ export class BikesComponent {
 
   ngOnInit(): void {
     this.getBikes();
+    this.getDockingStations();
   }
 
   public getDockingStations(): void {
@@ -58,26 +59,23 @@ export class BikesComponent {
     return d;
   }
 
-  public getDs(bike): string {
-    console.log(bike);
-    let dockingId: string = '';
-    let dockString = '';
-    let ds;
-    this.bikeService.getDsOnBike(bike).subscribe(
-      (result) => {
-        console.log(result);
-        dockingId = result;
-        ds = this.dockingStations.find(
-          (x) => (x.dockingId = Number(dockingId))
-        );
-        dockString = ds.name;
-        console.log(result);
-      },
-      (error) => {
-        dockString = 'No Docking Station';
-      }
-    );
-    return dockString;
+  public setDsOnBike() {
+    let dockings = this.dockingStations;
+    let dockingId: number;
+    let ds: DockingStation;
+    for (var bike of this.bikes) {
+      this.bikeService.getDsOnBike(bike).subscribe(
+        (result) => {
+          dockingId = Number(result);
+          ds = dockings?.find(x => x.dockingId == dockingId)
+          bike.docking = ds;
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }
+    console.log(this.bikes);
   }
 
   public getBikes(): void {
@@ -90,6 +88,7 @@ export class BikesComponent {
         });
         this.loading = false;
         this.connected = true;
+        this.setDsOnBike();
       },
       (err) => {
         console.log(err);
